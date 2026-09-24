@@ -118,7 +118,7 @@ jobs:
 
       - name: Upload core reports and build logs
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: nomessages-host-core-${{ github.run_id }}
           if-no-files-found: warn
@@ -217,7 +217,7 @@ jobs:
           sha256sum "$library" | tee "docs/development/build-logs/jni-${{ matrix.abi }}-ci.log"
 
       - name: Publish libnomessages.so for ${{ matrix.abi }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: nomessages-jni-${{ matrix.abi }}
           if-no-files-found: error
@@ -226,7 +226,7 @@ jobs:
 
       - name: Upload native build logs
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: nomessages-native-logs-${{ matrix.abi }}-${{ github.run_id }}
           if-no-files-found: warn
@@ -342,7 +342,7 @@ jobs:
 
       - name: Upload APKs and verification evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: nomessages-android-${{ github.run_id }}
           if-no-files-found: warn
