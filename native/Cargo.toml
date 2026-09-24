@@ -15,7 +15,7 @@ mls = ["dep:openmls", "dep:openmls_traits", "dep:openmls_rust_crypto", "dep:open
 
 [dependencies]
 anyhow = "1"
-jni = "=0.21.1"
+jni = "=0.22.4"
 libsodium-rs = { version = "=0.2.4", features = ["minimal"] }
 zeroize = "1"
 # `onion-service-cli-extra` only unlocks `TorClient::keymgr()`, the accessor that lets us drop an
