@@ -1,22 +1,67 @@
 version: 2
+
+# Updates are grouped so each ecosystem opens at most one weekly PR for
+# patch/minor bumps. Major bumps still arrive as separate PRs because they
+# usually need code changes and a dedicated review.
+#
+# Security-critical libraries (libsignal, OpenMLS, SQLCipher, libsodium, Arti)
+# are excluded from the weekly group so every bump gets its own PR and a
+# careful look at the upstream changelog.
+
 updates:
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
     commit-message:
       prefix: "build"
+    groups:
+      gradle-minor-and-patch:
+        update-types: ["minor", "patch"]
+        exclude-patterns:
+          - "org.signal:*"
+          - "net.zetetic:*"
+    ignore:
+      # Android Gradle Plugin 9.4 needs build script changes; planned migration.
+      - dependency-name: "com.android.application"
+        versions: [">= 9.4.0"]
 
   - package-ecosystem: "cargo"
     directory: "/native"
     schedule:
       interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
     commit-message:
       prefix: "build"
+    groups:
+      cargo-minor-and-patch:
+        update-types: ["minor", "patch"]
+        exclude-patterns:
+          - "openmls*"
+          - "libsodium*"
+          - "arti-*"
+          - "tor-*"
+    ignore:
+      # hmac 0.13 and sha2 0.11 must move together (doorbell HMAC); planned migration.
+      - dependency-name: "hmac"
+        versions: [">= 0.13.0"]
+      - dependency-name: "sha2"
+        versions: [">= 0.11.0"]
+      # jni 0.22 changed the JNI bridge API; planned migration.
+      - dependency-name: "jni"
+        versions: [">= 0.22.0"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
     commit-message:
       prefix: "ci"
+    groups:
+      github-actions:
+        patterns: ["*"]
