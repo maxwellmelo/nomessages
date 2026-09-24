@@ -2974,7 +2974,7 @@ dependencies = [
  "anyhow",
  "arti-client",
  "futures",
- "hmac 0.12.1",
+ "hmac 0.13.0",
  "jni",
  "libsodium-rs",
  "openmls",
