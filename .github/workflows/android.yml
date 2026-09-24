@@ -73,7 +73,7 @@ jobs:
         run: chmod +x gradlew scripts/*.sh
 
       - name: Cache Cargo registry and git checkouts
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             ~/.cargo/registry/index
@@ -84,7 +84,7 @@ jobs:
             cargo-deps-${{ runner.os }}-
 
       - name: Cache JDK, Android SDK and Gradle home
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             .tools/toolchains
@@ -96,7 +96,7 @@ jobs:
             toolchain-base-${{ runner.os }}-
 
       - name: Cache the host Cargo target directory
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: native/target
           key: native-target-host-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}-${{ hashFiles('native/Cargo.toml', 'native/src/**', 'native/tests/**') }}
@@ -160,7 +160,7 @@ jobs:
         run: chmod +x gradlew scripts/*.sh
 
       - name: Cache Cargo registry and git checkouts
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             ~/.cargo/registry/index
@@ -179,7 +179,7 @@ jobs:
       # therefore store the same tree three times against the 10 GiB
       # per-repository cache budget. The base cache stays as a warm fallback.
       - name: Cache JDK, Android SDK and NDK
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             .tools/toolchains
@@ -192,7 +192,7 @@ jobs:
             toolchain-base-${{ runner.os }}-
 
       - name: Cache the Cargo target directory for this ABI
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: native/target
           key: native-target-${{ matrix.abi }}-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}-${{ hashFiles('native/Cargo.toml', 'native/src/**') }}
@@ -294,7 +294,7 @@ jobs:
             | tee docs/development/build-logs/jni-inputs-ci.log
 
       - name: Cache JDK, Android SDK, NDK and Gradle home
-        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             .tools/toolchains
