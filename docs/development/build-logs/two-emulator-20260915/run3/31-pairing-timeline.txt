@@ -1,0 +1,14 @@
+[   8.48s] A exibe o QR de oferta
+[   9.80s] relay emulator-5556->emulator-5560: OK :: [emulator-pair] emulator-5556: QR exibido tem 2708 bytes | [emulator-pair] integridade confirmada (sha256 bd42471d7b00e7b9bbed7b6b6ad0835fdade292fba0d9665c7a785d476544f30) | [emulator-pair] emulator-5560: INJECT_QR entregue (3612 chars de base64) | [emulator-pair] relay emulator-5556 -> emulator-5560 concluÃ­do
+[  12.05s] B derivou SAS=852215 e exibe o QR de resposta
+[  17.01s] relay emulator-5560->emulator-5556: OK :: [emulator-pair] emulator-5560: QR exibido tem 2750 bytes | [emulator-pair] integridade confirmada (sha256 63f867b38a9509a6ef44eaba8f7e2fb2fdf3444d383baf453fa9b372e4f04c19) | [emulator-pair] emulator-5556: INJECT_QR entregue (3668 chars de base64) | [emulator-pair] relay emulator-5560 -> emulator-5556 concluÃ­do
+[  19.25s] A derivou SAS=852215
+[  19.25s] SAS A='852215' bytes=['0x38', '0x35', '0x32', '0x32', '0x31', '0x35']
+[  19.25s] SAS B='852215' bytes=['0x38', '0x35', '0x32', '0x32', '0x31', '0x35']
+[  19.25s] SAS IDENTICOS: True
+[  27.53s] emulator-5556: confirmado
+[  39.25s] emulator-5560: confirmado
+[  43.82s] relay emulator-5556->emulator-5560: OK :: [emulator-pair] emulator-5556: QR exibido tem 314 bytes | [emulator-pair] integridade confirmada (sha256 5034b49461590de17516bfe3dc975dd70e1588de37111171a72faa2a7d60704f) | [emulator-pair] emulator-5560: INJECT_QR entregue (420 chars de base64) | [emulator-pair] relay emulator-5556 -> emulator-5560 concluÃ­do
+[  48.03s] B apos QR de confirmacao de A: Notice / Contact verified and saved. / Close
+[  52.78s] relay emulator-5560->emulator-5556: OK :: [emulator-pair] emulator-5560: QR exibido tem 314 bytes | [emulator-pair] integridade confirmada (sha256 2bc323fcf2742dc5cf51393afa7d5e96f2560dfa3e33a30361fbcdf960a5b6f8) | [emulator-pair] emulator-5556: INJECT_QR entregue (420 chars de base64) | [emulator-pair] relay emulator-5560 -> emulator-5556 concluÃ­do
+[  57.02s] A apos QR de confirmacao de B: Notice / Contact verified and saved. / Close

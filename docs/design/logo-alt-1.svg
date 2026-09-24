@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  logo-alt-1.svg — ALTERNATIVE concept, preview only (not wired into the Android app).
+  Shield outline with a chat bubble cut through it, reinforcing "protection" over
+  "conversation". Same palette family as the chosen concept for a fair side-by-side.
+  Never chosen: still an alternative after the 2026-09-16 revision that promoted the
+  "silenced bubble" concept (docs/design/logo-nomessages.svg) to production.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <rect x="0" y="0" width="108" height="108" fill="#073C31" />
+  <path
+      d="M54,16 C64,16 75,21 82,25 C82,49 80,72 54,94 C28,72 26,49 26,25 C33,21 44,16 54,16 Z
+         M40,42 L60,42 A6,6 0 0 1 66,48 L66,62 A6,6 0 0 1 60,68 L46,68 L40,74 L40,68 A6,6 0 0 1 34,62
+         L34,48 A6,6 0 0 1 40,42 Z"
+      fill="none" fill-rule="evenodd" stroke="#F3F6F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="50" cy="55" r="1.6" fill="#25D366" />
+</svg>

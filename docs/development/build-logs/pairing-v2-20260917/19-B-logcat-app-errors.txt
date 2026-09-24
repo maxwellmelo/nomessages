@@ -1,0 +1,30 @@
+09-17 22:02:32.252  9746  9746 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:02:32.255  9746  9746 I AndroidRuntime: Using default boot image
+09-17 22:02:32.255  9746  9746 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:02:32.314  9746  9746 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:02:33.352  9746  9746 D AndroidRuntime: Shutting down VM
+09-17 22:02:41.804  9767  9767 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:02:41.807  9767  9767 I AndroidRuntime: Using default boot image
+09-17 22:02:41.807  9767  9767 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:02:41.866  9767  9767 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:02:42.898  9767  9767 D AndroidRuntime: Shutting down VM
+09-17 22:03:19.176  9793  9793 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:03:19.179  9793  9793 I AndroidRuntime: Using default boot image
+09-17 22:03:19.179  9793  9793 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:03:19.236  9793  9793 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:03:20.287  9793  9793 D AndroidRuntime: Shutting down VM
+09-17 22:03:21.642   596   711 I ImeTracker: dev.mx3.nomessages.debug:e543cf84: onRequestHide at ORIGIN_SERVER reason HIDE_DISPLAY_IME_POLICY_HIDE fromUser false
+09-17 22:03:21.642   596   711 I ImeTracker: dev.mx3.nomessages.debug:e543cf84: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-17 22:03:21.642  9586  9586 I ImeTracker: dev.mx3.nomessages.debug:46dc5e47: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+09-17 22:03:21.642   596   711 I ImeTracker: dev.mx3.nomessages.debug:46dc5e47: onFailed at PHASE_SERVER_ACCESSIBILITY
+09-17 22:03:21.644   596  1519 D ContentCapturePerUserService: Notified activity assist data for activity: Token{63fdcb8 ActivityRecord{16ac92a u0 dev.mx3.nomessages.debug/dev.mx3.nomessages.MainActivity t9}} without a session Id
+09-17 22:03:21.647  9586  9586 I ImeTracker: dev.mx3.nomessages.debug:16234238: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+09-17 22:03:21.648   596   711 I ImeTracker: dev.mx3.nomessages.debug:16234238: onFailed at PHASE_SERVER_ACCESSIBILITY
+09-17 22:03:23.987   596   711 I ImeTracker: dev.mx3.nomessages.debug:aec6f05f: onRequestHide at ORIGIN_SERVER reason HIDE_DISPLAY_IME_POLICY_HIDE fromUser false
+09-17 22:03:23.987   596   711 I ImeTracker: dev.mx3.nomessages.debug:aec6f05f: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-17 22:03:29.253  1083  1093 W .gms.persistent: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~MwsmtlIltPz0V6ZkxtjODA==/dev.mx3.nomessages.debug-3bPaWnTllMEDyCDnoNtMJA==/base.apk' with 1 weak references
+09-17 22:03:29.302  9828  9828 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:03:29.304  9828  9828 I AndroidRuntime: Using default boot image
+09-17 22:03:29.304  9828  9828 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:03:29.365  9828  9828 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:03:30.401  9828  9828 D AndroidRuntime: Shutting down VM

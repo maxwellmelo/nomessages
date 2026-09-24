@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <!-- Keep the secure app activity as the only entry point in debug too. -->
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            tools:node="remove" />
+
+        <!--
+             Debug-only QR injection/dump hook used to relay a pairing QR between two emulators
+             whose virtual camera cannot decode the real payload (see the "Residual finding" in
+             docs/development/device-verification.md, T3.3 run3).
+
+             This element lives ONLY in the debug source set's manifest, so it is never merged into
+             a release APK; dev.mx3.nomessages.debug.DebugQrReceiver likewise lives only in
+             app/src/debug/kotlin and is never compiled into release. The proof is reproducible:
+             :app:processReleaseManifest followed by a grep for DebugQrReceiver/INJECT_QR over the
+             merged release manifest returns nothing. See docs/security-model.md.
+
+             Access control, three independent layers (see DebugQrReceiver's KDoc):
+               1. debug-only existence (this file + app/src/debug/kotlin);
+               2. android:permission below — the OS refuses to deliver the broadcast unless the
+                  SENDER holds WRITE_SECURE_SETTINGS. That is a signature|privileged permission
+                  held by com.android.shell (uid 2000, which is what runs `adb shell am broadcast`)
+                  and by root, and unobtainable by any installable third-party app;
+               3. an explicit opt-in debug system property, checked in code.
+
+             A UID check alone would NOT work here and is not relied upon: measured on API 35,
+             Binder.getCallingUid() inside onReceive returns this app's own uid (no active binder
+             transaction) and BroadcastReceiver.getSentFromUid() returns -1 (the sender must opt in
+             via BroadcastOptions.setShareIdentityEnabled, which `am broadcast` does not).
+             ExportedReceiver is therefore suppressed only because lint cannot see that
+             android:permission is already present and sufficient for a debug-only component.
+        -->
+        <receiver
+            android:name="dev.mx3.nomessages.debug.DebugQrReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.WRITE_SECURE_SETTINGS"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="dev.mx3.nomessages.debug.INJECT_QR" />
+                <action android:name="dev.mx3.nomessages.debug.DUMP_QR" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

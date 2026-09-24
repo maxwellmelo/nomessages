@@ -1,0 +1,86 @@
+name: Bug report
+description: Report something that isn't working as expected.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please **do not** use this form for security
+        vulnerabilities — see [SECURITY.md](../../blob/main/SECURITY.md) for private reporting.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+      placeholder: Describe what you did, what you expected, and what happened instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen instead?
+    validations:
+      required: false
+
+  - type: input
+    id: app-version
+    attributes:
+      label: App version / build
+      description: e.g. release v1.0.0, or debug build from a specific commit.
+      placeholder: v1.0.0 (release)
+    validations:
+      required: true
+
+  - type: input
+    id: android-version
+    attributes:
+      label: Android version
+      placeholder: Android 14
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device or emulator
+      placeholder: Samsung Galaxy Note10+ / Pixel 6 emulator API 34
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: >
+        Only include logs you're certain contain no message content, contact identities,
+        passwords, or other vault secrets. When in doubt, describe the log instead of pasting it.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and didn't find a duplicate.
+          required: true
+        - label: This is not a security vulnerability (those go through private reporting).
+          required: true

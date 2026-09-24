@@ -1,0 +1,43 @@
+=== 24 — logcat literal do build de diagnóstico que expôs o erro do Rust (emulator-5560) ===
+
+Build TEMPORÁRIO e já revertido: `native/src/tor_jni.rs` devolvia `format!("{failure}: {e:#}")` no
+lugar da string fixa, só para esta medição. A árvore foi restaurada e a `libnomessages.so` do
+`jniLibs/x86_64` foi recompilada a partir do fonte revertido (ver 22-handoff-root-cause.txt).
+
+Filtro: `adb -s emulator-5560 logcat -d -s NoMessagesController:D TorService:D`
+
+09-18 19:29:13.952 22314 22363 D NoMessagesController: doorbell handoff: no kept child (minimal=null)
+09-18 19:29:14.007 22314 22433 D NoMessagesController: transport attempt: reusingDoorbellChild=false
+09-18 19:29:14.381 22436 22451 D TorService: START: native transport slot before start = STOPPED
+09-18 19:29:47.751 22436 22451 D TorService: messaging start/pump ended: java.lang.IllegalStateException: Tor operation failed: Transport stopped
+09-18 19:29:47.757 22436 22452 D TorService: minimal mode: messaging pump cancelled, START latch cleared
+09-18 19:29:47.840 22314 22363 D NoMessagesController: lock: minimal doorbell kept=true (stopped=false dead=false cause=none)
+09-18 19:30:24.370 22314 22363 D NoMessagesController: doorbell handoff: reuse=true sameSlot=true hasSlot=true alive=true (stopped=false dead=false cause=none)
+09-18 19:30:24.377 22314 22364 D NoMessagesController: transport attempt: reusingDoorbellChild=true
+09-18 19:30:24.393 22436 22451 D TorService: START: native transport slot before start = STOPPED
+09-18 19:30:24.393 22436 22451 D TorService: messaging start/pump ended: java.lang.IllegalStateException: Tor operation failed: tor: bad API usage (bug): Error while trying to access a key store: Error while trying to access a key store: Key already exists
+09-18 19:30:24.436 22314 22363 D NoMessagesController: transport attempt: failed (reused=true): java.lang.IllegalStateException: Transporte indisponível
+09-18 19:30:24.436 22314 22363 D NoMessagesController: java.lang.IllegalStateException: Transporte indisponível
+09-18 19:30:24.436 22314 22363 D NoMessagesController: 	at dev.mx3.nomessages.runtime.TorConnection.reply$lambda$0(TorConnection.kt:54)
+09-18 19:30:24.436 22314 22363 D NoMessagesController: 	at dev.mx3.nomessages.runtime.TorConnection$$ExternalSyntheticLambda0.handleMessage(D8$$SyntheticClass:0)
+09-18 19:30:24.436 22314 22363 D NoMessagesController: 	at android.os.Handler.dispatchMessage(Handler.java:103)
+09-18 19:30:24.436 22314 22363 D NoMessagesController: 	at android.os.Looper.loopOnce(Looper.java:232)
+09-18 19:30:24.436 22314 22363 D NoMessagesController: 	at android.os.Looper.loop(Looper.java:317)
+09-18 19:30:24.436 22314 22363 D NoMessagesController: 	at android.app.ActivityThread.main(ActivityThread.java:8705)
+09-18 19:30:29.444 22314 22432 D NoMessagesController: transport attempt: reusingDoorbellChild=false
+09-18 19:30:29.762 22557 22571 D TorService: START: native transport slot before start = STOPPED
+
+Duas linhas decidem tudo:
+
+  19:30:24.393  "native transport slot before start = STOPPED"
+      → o slot nativo `CURRENT` está vazio e a trava `started` do TorService também. Nenhuma das
+        duas travas de segundo-START recusou nada.
+
+  19:30:24.393  "... Key already exists"   (mesmo milissegundo)
+      → `tor::start` morre em `launch_onion_service_with_hsid`: a chave HsId do nickname
+        "nomessages" continua no keystore efêmero do `TorClient` compartilhado, que a campainha
+        manteve vivo durante o bloqueio. `tor::stop()` larga o `RunningOnionService` mas não
+        remove a chave.
+
+O primeiro "Transport stopped" (19:29:47.751) é a bomba de frames antiga sendo cancelada pelo modo
+mínimo — comportamento esperado, não confundir com o erro acima.

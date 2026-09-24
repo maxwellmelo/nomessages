@@ -1,0 +1,79 @@
+   Compiling nomessages v0.1.0 (/mnt/e/Vibe Coding/NoMessages/native)
+    Finished `test` profile [unoptimized] target(s) in 4.68s
+     Running unittests src/lib.rs (/home/maxwe/nomessages-target/debug/deps/nomessages-3197d28119112770)
+
+running 36 tests
+test crypto::tests::argon2id_rejects_parameters_outside_the_contract ... ok
+test crypto::tests::ed25519_matches_rfc8032_test_vector_one ... ok
+test crypto::tests::allocation_limits_are_rejected_before_work ... ok
+test crypto::tests::keyed_blake2b_256_matches_independent_vector ... ok
+test crypto::tests::ed25519_rejects_tampering_and_bad_lengths ... ok
+test crypto::tests::xchacha_rejects_bad_key_and_truncated_input ... ok
+test crypto::tests::sha256_matches_fips_vector ... ok
+test crypto::tests::random_and_generated_signing_keys_have_contract_lengths ... ok
+test crypto::tests::xchacha_round_trip_binds_aad_and_rejects_tampering ... ok
+test doorbell::tests::a_replayed_nonce_is_refused ... ok
+test doorbell::tests::a_token_is_limited_to_one_accepted_knock_per_ten_minutes ... ok
+test doorbell::tests::an_over_long_frame_is_refused_even_with_a_valid_prefix ... ok
+test doorbell::tests::constant_time_comparison_matches_plain_equality ... ok
+test doorbell::tests::empty_token_set_rejects_everything_without_panicking ... ok
+test doorbell::tests::expiry_bounds_both_caches ... ok
+test doorbell::tests::frame_rejects_a_nonce_of_the_wrong_length ... ok
+test doorbell::tests::frame_layout_is_fixed_at_fifty_seven_bytes ... ok
+test doorbell::tests::the_doorbell_port_is_not_the_messaging_port ... ok
+test doorbell::tests::frames_of_the_wrong_size_or_version_are_rejected_without_panicking ... ok
+test doorbell::tests::the_rate_limit_lifts_after_ten_minutes_of_injected_clock ... ok
+test doorbell::tests::reloading_tokens_does_not_reset_the_rate_limit ... ok
+test doorbell::tests::timestamps_outside_the_window_are_rejected_on_both_sides ... ok
+test doorbell::tests::unknown_token_is_always_rejected ... ok
+test doorbell::tests::valid_knock_from_a_known_token_is_accepted ... ok
+test doorbell::tests::token_sets_are_bounded_and_validated ... ok
+test doorbell::tests::window_edges_are_inclusive_to_the_second ... ok
+test tor::tests::closing_connection_cancels_an_unflushed_reply ... ok
+test tor::tests::readiness_wait_rejects_timeouts_outside_its_own_budget ... ok
+test tor::tests::readiness_states_are_named_and_never_resurrect_a_stopped_transport ... ok
+test tor::tests::onions_are_stable_distinct_and_only_destinations ... ok
+test tor::tests::reply_acknowledges_write_and_rejects_oversized_frame ... ok
+test tor::tests::stale_start_cleanup_preserves_new_generation ... ok
+test wire::tests::untrusted_lengths_do_not_allocate ... ok
+test tor::tests::relaunching_a_nickname_needs_its_key_forgotten_first ... ok
+test doorbell::tests::an_accepted_knock_is_acknowledged_and_an_invalid_one_is_not ... ok
+test crypto::tests::argon2id_uses_exact_memory_iterations_and_parallelism ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests/kat.rs (/home/maxwe/nomessages-target/debug/deps/kat-d8f6fbfc00530943)
+
+running 7 tests
+test rfc8439_chacha20_poly1305_aead_vector ... ok
+test wycheproof_chacha20_poly1305 ... ok
+test wycheproof_xchacha20_poly1305 ... ok
+test xchacha_draft_a_3_1_aead_vector ... ok
+test wycheproof_ed25519_verify ... ok
+test wycheproof_x25519 ... ok
+test embedded_vector_corpus_is_intact ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/mls_roundtrip.rs (/home/maxwe/nomessages-target/debug/deps/mls_roundtrip-89a5428082e8991e)
+
+running 3 tests
+test membership_and_snapshot_boundaries_fail_closed ... ok
+test late_application_is_accepted_only_within_two_retained_epochs ... ok
+test three_members_persist_authenticate_remove_and_reject_replay ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests/tor_live.rs (/home/maxwe/nomessages-target/debug/deps/tor_live-fc64a397190e4e23)
+
+running 1 test
+test onion_self_roundtrip_replies_and_stops ... ignored, requires live Tor bootstrap and descriptor publication
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nomessages
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

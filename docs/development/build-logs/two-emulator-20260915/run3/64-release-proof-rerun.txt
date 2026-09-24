@@ -1,0 +1,12 @@
+=== PROVA DE RELEASE — reexecutada com o estado atual do repo (2026-09-15, pos-commit 6d29c04) ===
+
+### grep -rn "DebugQrReceiver|INJECT_QR|DUMP_QR" em merged_manifest/release/
+AUSENTE (exit=1) -> OK
+
+### grep -rn "DebugQrReceiver|INJECT_QR|DUMP_QR" em merged_manifest/debug/  (linhas exatas)
+AndroidManifest.xml:48:             a release APK; dev.mx3.nomessages.debug.DebugQrReceiver likewise lives only in
+AndroidManifest.xml:50:             :app:processReleaseManifest followed by a grep for DebugQrReceiver/INJECT_QR over the
+AndroidManifest.xml:53:             Access control, three independent layers (see DebugQrReceiver's KDoc):
+AndroidManifest.xml:69:            android:name="dev.mx3.nomessages.debug.DebugQrReceiver"
+AndroidManifest.xml:74:                <action android:name="dev.mx3.nomessages.debug.INJECT_QR" />
+AndroidManifest.xml:75:                <action android:name="dev.mx3.nomessages.debug.DUMP_QR" />

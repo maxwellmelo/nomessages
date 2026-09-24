@@ -1,0 +1,9 @@
+test_fifth_quota_request_does_not_block_invites_that_free_first_four_slots (test_messaging_queue.MessagingQueueRegression.test_fifth_quota_request_does_not_block_invites_that_free_first_four_slots) ... ok
+test_membership_commit_waits_for_prior_group_application_ack (test_messaging_queue.MessagingQueueRegression.test_membership_commit_waits_for_prior_group_application_ack) ... ok
+test_previously_attempted_offline_peer_yields_to_untried_peer (test_messaging_queue.MessagingQueueRegression.test_previously_attempted_offline_peer_yields_to_untried_peer) ... ok
+test_recipient_offline_does_not_block_same_group_to_other_recipient (test_messaging_queue.MessagingQueueRegression.test_recipient_offline_does_not_block_same_group_to_other_recipient) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.008s
+
+OK

@@ -1,0 +1,686 @@
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.storage.AndroidVaultStorageTest:
+INSTRUMENTATION_STATUS: test=emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(AndroidVaultStorageTest.kt:222)
+
+INSTRUMENTATION_STATUS: stream=
+Error in emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(AndroidVaultStorageTest.kt:222)
+
+INSTRUMENTATION_STATUS: test=emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=typedRecordsAndOpaqueStateRoundTripAsCopies
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.typedRecordsAndOpaqueStateRoundTripAsCopies(AndroidVaultStorageTest.kt:172)
+
+INSTRUMENTATION_STATUS: stream=
+Error in typedRecordsAndOpaqueStateRoundTripAsCopies(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.typedRecordsAndOpaqueStateRoundTripAsCopies(AndroidVaultStorageTest.kt:172)
+
+INSTRUMENTATION_STATUS: test=typedRecordsAndOpaqueStateRoundTripAsCopies
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=transactionRollsBackBothReserveAndDataOnFailure
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.transactionRollsBackBothReserveAndDataOnFailure(AndroidVaultStorageTest.kt:255)
+
+INSTRUMENTATION_STATUS: stream=
+Error in transactionRollsBackBothReserveAndDataOnFailure(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.transactionRollsBackBothReserveAndDataOnFailure(AndroidVaultStorageTest.kt:255)
+
+INSTRUMENTATION_STATUS: test=transactionRollsBackBothReserveAndDataOnFailure
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=identicalOutboxPayloadsShareOneEncryptedDatabaseBlob
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(AndroidVaultStorageTest.kt:203)
+
+INSTRUMENTATION_STATUS: stream=
+Error in identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(AndroidVaultStorageTest.kt:203)
+
+INSTRUMENTATION_STATUS: test=identicalOutboxPayloadsShareOneEncryptedDatabaseBlob
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(AndroidVaultStorageTest.kt:127)
+
+INSTRUMENTATION_STATUS: stream=
+Error in decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(AndroidVaultStorageTest.kt:127)
+
+INSTRUMENTATION_STATUS: test=decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=repeatedWritesConsumeReserveWithoutChangingObservableFileSize
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.repeatedWritesConsumeReserveWithoutChangingObservableFileSize(AndroidVaultStorageTest.kt:273)
+
+INSTRUMENTATION_STATUS: stream=
+Error in repeatedWritesConsumeReserveWithoutChangingObservableFileSize(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.repeatedWritesConsumeReserveWithoutChangingObservableFileSize(AndroidVaultStorageTest.kt:273)
+
+INSTRUMENTATION_STATUS: test=repeatedWritesConsumeReserveWithoutChangingObservableFileSize
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=exportGuardRequiresTheSelectedDatabaseToBeClosed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.exportGuardRequiresTheSelectedDatabaseToBeClosed(AndroidVaultStorageTest.kt:297)
+
+INSTRUMENTATION_STATUS: stream=
+Error in exportGuardRequiresTheSelectedDatabaseToBeClosed(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.exportGuardRequiresTheSelectedDatabaseToBeClosed(AndroidVaultStorageTest.kt:297)
+
+INSTRUMENTATION_STATUS: test=exportGuardRequiresTheSelectedDatabaseToBeClosed
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=createProducesFixedEncryptedDatabasesAndBalancedMedia
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createProducesFixedEncryptedDatabasesAndBalancedMedia(AndroidVaultStorageTest.kt:60)
+
+INSTRUMENTATION_STATUS: stream=
+Error in createProducesFixedEncryptedDatabasesAndBalancedMedia(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createProducesFixedEncryptedDatabasesAndBalancedMedia(AndroidVaultStorageTest.kt:60)
+
+INSTRUMENTATION_STATUS: test=createProducesFixedEncryptedDatabasesAndBalancedMedia
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=selectedVaultsAreIsolatedAndCloseClearsActive
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.selectedVaultsAreIsolatedAndCloseClearsActive(AndroidVaultStorageTest.kt:89)
+
+INSTRUMENTATION_STATUS: stream=
+Error in selectedVaultsAreIsolatedAndCloseClearsActive(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.selectedVaultsAreIsolatedAndCloseClearsActive(AndroidVaultStorageTest.kt:89)
+
+INSTRUMENTATION_STATUS: test=selectedVaultsAreIsolatedAndCloseClearsActive
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=syntheticDecoyContactsHavePersistedSignalSessions
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.syntheticDecoyContactsHavePersistedSignalSessions(AndroidVaultStorageTest.kt:154)
+
+INSTRUMENTATION_STATUS: stream=
+Error in syntheticDecoyContactsHavePersistedSignalSessions(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.syntheticDecoyContactsHavePersistedSignalSessions(AndroidVaultStorageTest.kt:154)
+
+INSTRUMENTATION_STATUS: test=syntheticDecoyContactsHavePersistedSignalSessions
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=sqlCipherRejectsAnUnrelatedKey
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stack=java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.sqlCipherRejectsAnUnrelatedKey(AndroidVaultStorageTest.kt:73)
+
+INSTRUMENTATION_STATUS: stream=
+Error in sqlCipherRejectsAnUnrelatedKey(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.sqlCipherRejectsAnUnrelatedKey(AndroidVaultStorageTest.kt:73)
+
+INSTRUMENTATION_STATUS: test=sqlCipherRejectsAnUnrelatedKey
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryPdfDocumentTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.MemoryPdfDocumentTest:
+INSTRUMENTATION_STATUS: test=rendersGeneratedPagesFromAnonymousMemory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryPdfDocumentTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=12
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=rendersGeneratedPagesFromAnonymousMemory
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 30.891
+There were 11 failures:
+1) emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(AndroidVaultStorageTest.kt:222)
+2) typedRecordsAndOpaqueStateRoundTripAsCopies(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.typedRecordsAndOpaqueStateRoundTripAsCopies(AndroidVaultStorageTest.kt:172)
+3) transactionRollsBackBothReserveAndDataOnFailure(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.transactionRollsBackBothReserveAndDataOnFailure(AndroidVaultStorageTest.kt:255)
+4) identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(AndroidVaultStorageTest.kt:203)
+5) decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(AndroidVaultStorageTest.kt:127)
+6) repeatedWritesConsumeReserveWithoutChangingObservableFileSize(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.repeatedWritesConsumeReserveWithoutChangingObservableFileSize(AndroidVaultStorageTest.kt:273)
+7) exportGuardRequiresTheSelectedDatabaseToBeClosed(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.exportGuardRequiresTheSelectedDatabaseToBeClosed(AndroidVaultStorageTest.kt:297)
+8) createProducesFixedEncryptedDatabasesAndBalancedMedia(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createProducesFixedEncryptedDatabasesAndBalancedMedia(AndroidVaultStorageTest.kt:60)
+9) selectedVaultsAreIsolatedAndCloseClearsActive(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.selectedVaultsAreIsolatedAndCloseClearsActive(AndroidVaultStorageTest.kt:89)
+10) syntheticDecoyContactsHavePersistedSignalSessions(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.syntheticDecoyContactsHavePersistedSignalSessions(AndroidVaultStorageTest.kt:154)
+11) sqlCipherRejectsAnUnrelatedKey(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.security.NoSuchAlgorithmException: SHA3-256 MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:628)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:211)
+	at dev.mx3.nomessages.storage.DecoyFactory.syntheticOnion(DecoyFactory.kt:65)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:12)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:267)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda3.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:411)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:266)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:312)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.sqlCipherRejectsAnUnrelatedKey(AndroidVaultStorageTest.kt:73)
+
+FAILURES!!!
+Tests run: 12,  Failures: 11
+
+
+INSTRUMENTATION_CODE: -1

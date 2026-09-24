@@ -1,0 +1,40 @@
+   Compiling jni-sys v0.3.1
+   Compiling jni v0.21.1
+   Compiling nomessages v0.1.0 (/mnt/e/Vibe Coding/NoMessages/native)
+    Finished `test` profile [unoptimized] target(s) in 10.19s
+     Running tests/tor_live.rs (/home/maxwe/nomessages-target/debug/deps/tor_live-ed61cac52dae76a3)
+
+running 1 test
+ INFO tor_memquota::mtracker: Memory quota tracking initialised max=5.68 GiB low_water=4.26 GiB
+ INFO tor_dirmgr: Didn't get usable directory from cache.
+ INFO tor_dirmgr::bootstrap: 1: Looking for a consensus. attempt=1
+ INFO tor_dirmgr::bootstrap: 1: Downloading certificates for consensus (we are missing 8/8). attempt=1
+ INFO tor_dirmgr::bootstrap: 1: Downloading microdescriptors (we are missing 9333). attempt=1
+ INFO tor_dirclient: Circ 1.0: Retiring circuit because of directory failure: Partial response
+ INFO tor_dirmgr::bootstrap: Marking SourceInfo { tunnel: UniqId { chan: 1, circ: 0 }, cache_id: [scrubbed] } as failed error=Problem downloading directory object error.sources=[Error fetching directory information, Request failed from [scrubbed] via Circ 1.0: directory timed out, directory timed out]
+ INFO tor_dirclient: Circ 1.0: Retiring circuit because of directory failure: Partial response
+ INFO tor_dirmgr::bootstrap: Marking SourceInfo { tunnel: UniqId { chan: 1, circ: 0 }, cache_id: [scrubbed] } as failed error=Problem downloading directory object error.sources=[Error fetching directory information, Request failed from [scrubbed] via Circ 1.0: directory timed out, directory timed out]
+ INFO tor_dirclient: Circ 1.0: Retiring circuit because of directory failure: Partial response
+ INFO tor_dirmgr::bootstrap: Marking SourceInfo { tunnel: UniqId { chan: 1, circ: 0 }, cache_id: [scrubbed] } as failed error=Problem downloading directory object error.sources=[Error fetching directory information, Request failed from [scrubbed] via Circ 1.0: directory timed out, directory timed out]
+ INFO tor_dirclient: Circ 1.0: Retiring circuit because of directory failure: Partial response
+ INFO tor_dirmgr::bootstrap: Marking SourceInfo { tunnel: UniqId { chan: 1, circ: 0 }, cache_id: [scrubbed] } as failed error=Problem downloading directory object error.sources=[Error fetching directory information, Request failed from [scrubbed] via Circ 1.0: directory timed out, directory timed out]
+ INFO tor_dirmgr: Marked consensus usable.
+ INFO tor_dirmgr: We have enough information to build circuits.
+ INFO tor_hsservice: Using existing identity for service nomessages: […]7yd.onion
+ INFO tor_hsservice: Launching onion service nickname=nomessages
+Tor bootstrap completed; waiting for the synthetic onion service
+ INFO tor_dirmgr::bootstrap: 2: Downloading microdescriptors (we are missing 1022). attempt=1
+ INFO tor_guardmgr::guard: We have found that guard [scrubbed] is usable.
+ INFO tor_dirmgr: Directory is complete. attempt=1
+ INFO tor_guardmgr::guard: We have found that guard [scrubbed] is usable.
+ INFO tor_hsservice::publish::reactor: reuploading descriptor in 1h 27m time_period=TimePeriod { interval_num: 20710, length: IntegerMinutes { value: 1440 }, epoch_offset_in_sec: 43200 }
+test onion_self_roundtrip_replies_and_stops has been running for over 60 seconds
+ INFO tor_hsservice::publish::reactor: reuploading descriptor in 1h 22m time_period=TimePeriod { interval_num: 20711, length: IntegerMinutes { value: 1440 }, epoch_offset_in_sec: 43200 }
+Descriptor published after 102.5s; starting the synthetic self-connect
+Time to first frame after publication: 3.9s
+ INFO tor_hsservice::ipt_mgr: HS service nomessages: terminating due to shutdown signal
+ INFO tor_circmgr: Flushed persistent state at exit.
+test onion_self_roundtrip_replies_and_stops ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 134.20s
+

@@ -1,0 +1,24 @@
+.gradle/
+.kotlin/
+**/build/
+**/target/
+local.properties
+.idea/
+*.iml
+.codegraph/
+.superpowers/
+.tools/
+*.jks
+*.keystore
+*.hprof
+captures/
+artifacts/
+/app/src/main/jniLibs/
+__pycache__/
+*.pyc
+
+# Log de falha de 2,9 MB; resumo em docs/development/build-report.md
+/docs/development/build-logs/apk-recovery-assembly.log
+
+# Saída do emulador gravada por scripts/emulator-with-qr.ps1
+/scripts/emulator-*.log

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Single-color silhouette for Android 13+ themed icons (2026-09-16, silenced-bubble concept).
+  Color values are ignored by the system (it applies its own tint), only alpha/shape matters.
+  The diagonal slash is a real stroked path with its own strokeWidth, so it reads by shape
+  alone; it does not depend on the accent color to stand out once tinted monochrome.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Chat bubble contour -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M38,34 L70,34 A8,8 0 0 1 78,42 L78,66 A8,8 0 0 1 70,74 L38,74 L30,66 L30,42 A8,8 0 0 1 38,34 Z" />
+
+    <!-- Diagonal "silenced" slash -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="6"
+        android:strokeLineCap="butt"
+        android:pathData="M33,33 L75,75" />
+</vector>

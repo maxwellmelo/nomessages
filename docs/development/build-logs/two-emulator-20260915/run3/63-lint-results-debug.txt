@@ -1,0 +1,298 @@
+/mnt/e/Vibe Coding/NoMessages/app/build.gradle.kts:16: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 35
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdk specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdk is
+   less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdk to the highest available value. Then
+   test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/mnt/e/Vibe Coding/NoMessages/app/src/main/kotlin/dev/mx3/nomessages/MainActivity.kt:93: Warning: Accessing internal APIs via reflection is not supported and may not work on all devices or in the future [PrivateApi]
+    Class.forName("android.os.SystemProperties")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PrivateApi":
+   Using reflection to access hidden/private Android APIs is not safe; it will
+   often not work on devices from other vendors, and it may suddenly stop
+   working (if the API is removed) or crash spectacularly (if the API behavior
+   changes, since there are no guarantees for compatibility).
+
+   https://developer.android.com/preview/restrictions-non-sdk-interfaces
+
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:80: Warning: Formatting %d followed by words ("selecionados"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="selected_count">%1$d selecionados</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values-en/strings.xml:80: Warning: Formatting %d followed by words ("selected"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="selected_count">%1$d selected</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values-en/strings.xml:84: Warning: Formatting %d followed by words ("pairings"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="missing_pairs_title">%1$d pairings are still missing</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:84: Warning: Formatting %d followed by words ("pareamentos"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="missing_pairs_title">Ainda faltam %1$d pareamentos</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values-en/strings.xml:128: Warning: Formatting %d followed by words ("seconds"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="timeout_seconds">%1$d seconds</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:128: Warning: Formatting %d followed by words ("segundos"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="timeout_seconds">%1$d segundos</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values-en/strings.xml:130: Warning: Formatting %d followed by words ("minutes"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="timeout_minutes">%1$d minutes</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:130: Warning: Formatting %d followed by words ("minutos"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="timeout_minutes">%1$d minutos</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PluralsCandidate":
+   This lint check looks for potential errors in internationalization where
+   you have translated a message which involves a quantity and it looks like
+   other parts of the string may need grammatical changes.
+
+   For example, rather than something like this:
+     <string name="try_again">Try again in %d seconds.</string>
+   you should be using a plural:
+      <plurals name="try_again">
+           <item quantity="one">Try again in %d second</item>
+           <item quantity="other">Try again in %d seconds</item>
+       </plurals>
+   This will ensure that in other languages the right set of translations are
+   provided for the different quantity classes.
+
+   (This check depends on some heuristics, so it may not accurately determine
+   whether a string really should be a quantity. You can use tools:ignore to
+   filter out false positives.
+
+   https://developer.android.com/guide/topics/resources/string-resource.html#Plurals
+
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/mipmap-anydpi-v26: Warning: This folder configuration (v26) is unnecessary; minSdkVersion is 31. Merge all the resources in this folder into mipmap-anydpi. [ObsoleteSdkInt]
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+/mnt/e/Vibe Coding/NoMessages/app/src/main/kotlin/dev/mx3/nomessages/ui/AttachmentViewer.kt:178: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    var pageIndex by remember(bytes) { mutableStateOf(0) }
+                                       ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AutoboxingStateCreation":
+   Calling mutableStateOf<T>() when T is either backed by a primitive type on
+   the JVM or is a value class results in a state implementation that requires
+   all state values to be boxed. This usually causes an additional allocation
+   for each state write, and adds some additional work to auto-unbox values
+   when reading the value of the state. Instead, prefer to use a specialized
+   primitive state implementation for Int, Long, Float, and Double when the
+   state does not need to track null values and does not override the default
+   SnapshotMutationPolicy. See mutableIntStateOf(), mutableLongStateOf(),
+   mutableFloatStateOf(), and mutableDoubleStateOf() for more information.
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.runtime
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.wf_bubble appears to be unused [UnusedResources]
+    <color name="wf_bubble">#DCF8C6</color>
+           ~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/colors.xml:7: Warning: The resource R.color.wf_surface appears to be unused [UnusedResources]
+    <color name="wf_surface">#EDEDED</color>
+           ~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/drawable/ic_launcher_background.xml:2: Warning: The resource R.drawable.ic_launcher_background appears to be unused [UnusedResources]
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+^
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:4: Warning: The resource R.string.brand_mark appears to be unused [UnusedResources]
+    <string name="brand_mark">NM</string>
+            ~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:51: Warning: The resource R.string.scan_again appears to be unused [UnusedResources]
+    <string name="scan_again">Escanear outro QR</string>
+            ~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:94: Warning: The resource R.string.group_info appears to be unused [UnusedResources]
+    <string name="group_info">Opções do grupo</string>
+            ~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:105: Warning: The resource R.string.open_attachment appears to be unused [UnusedResources]
+    <string name="open_attachment">Abrir anexo %1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:114: Warning: The resource R.string.media_unsupported appears to be unused [UnusedResources]
+    <string name="media_unsupported">A reprodução interna segura deste formato não está disponível nesta versão.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:126: Warning: The resource R.string.offline_message_note appears to be unused [UnusedResources]
+    <string name="offline_message_note">Sem mailbox: a entrega espera os dois aparelhos ficarem online.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:155: Warning: The resource R.string.retry appears to be unused [UnusedResources]
+    <string name="retry">Tentar novamente</string>
+            ~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:181: Warning: The resource R.string.error_no_audio_recorded appears to be unused [UnusedResources]
+    <string name="error_no_audio_recorded">Nenhum áudio gravado</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:182: Warning: The resource R.string.error_file_over_limit appears to be unused [UnusedResources]
+    <string name="error_file_over_limit">Arquivo acima do limite</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:183: Warning: The resource R.string.error_type_message appears to be unused [UnusedResources]
+    <string name="error_type_message">Digite uma mensagem</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:184: Warning: The resource R.string.error_file_eight_mib appears to be unused [UnusedResources]
+    <string name="error_file_eight_mib">Arquivo maior que 8 MiB</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:185: Warning: The resource R.string.error_file_unavailable appears to be unused [UnusedResources]
+    <string name="error_file_unavailable">Arquivo indisponível</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:186: Warning: The resource R.string.error_file_invalid appears to be unused [UnusedResources]
+    <string name="error_file_invalid">Arquivo inválido</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:187: Warning: The resource R.string.error_no_other_members appears to be unused [UnusedResources]
+    <string name="error_no_other_members">Não há outros membros</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:188: Warning: The resource R.string.error_group_sync_failed appears to be unused [UnusedResources]
+    <string name="error_group_sync_failed">Grupo com falha de sincronização; recrie o grupo</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:189: Warning: The resource R.string.error_group_waiting_online appears to be unused [UnusedResources]
+    <string name="error_group_waiting_online">Grupo aguardando os participantes ficarem online</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:190: Warning: The resource R.string.error_left_group appears to be unused [UnusedResources]
+    <string name="error_left_group">Você saiu deste grupo</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:191: Warning: The resource R.string.error_contact_unavailable appears to be unused [UnusedResources]
+    <string name="error_contact_unavailable">Contato indisponível para envio</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:192: Warning: The resource R.string.error_contact_unpaired appears to be unused [UnusedResources]
+    <string name="error_contact_unpaired">Contato não pareado</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:193: Warning: The resource R.string.error_group_unavailable appears to be unused [UnusedResources]
+    <string name="error_group_unavailable">Grupo indisponível</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:194: Warning: The resource R.string.error_unauthenticated_message appears to be unused [UnusedResources]
+    <string name="error_unauthenticated_message">Mensagem não autenticada</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:195: Warning: The resource R.string.error_invalid_message appears to be unused [UnusedResources]
+    <string name="error_invalid_message">Mensagem inválida</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:197: Warning: The resource R.string.error_unknown_group appears to be unused [UnusedResources]
+    <string name="error_unknown_group">Grupo desconhecido</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:198: Warning: The resource R.string.error_invalid_membership_change appears to be unused [UnusedResources]
+    <string name="error_invalid_membership_change">Alteração de membros inválida</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:199: Warning: The resource R.string.error_invalid_pairing_proof appears to be unused [UnusedResources]
+    <string name="error_invalid_pairing_proof">Prova de pareamento inválida</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:200: Warning: The resource R.string.error_duplicate_file appears to be unused [UnusedResources]
+    <string name="error_duplicate_file">Arquivo repetido</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/res/values/strings.xml:201: Warning: The resource R.string.error_existing_file_mismatch appears to be unused [UnusedResources]
+    <string name="error_existing_file_mismatch">Arquivo existente incompatível</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+/mnt/e/Vibe Coding/NoMessages/app/src/main/kotlin/dev/mx3/nomessages/ui/MemoryPdfDocument.kt:52: Warning: Use the KTX function createBitmap instead? [UseKtx]
+                val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/mnt/e/Vibe Coding/NoMessages/app/src/main/kotlin/dev/mx3/nomessages/ui/PairingScreen.kt:281: Warning: Use the KTX function createBitmap instead? [UseKtx]
+    val bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling
+
+   ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+0 errors, 43 warnings, 1 hint

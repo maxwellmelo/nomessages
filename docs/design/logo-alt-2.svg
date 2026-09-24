@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  logo-alt-2.svg — ALTERNATIVE concept (retired 2026-09-16), preview only, not wired into the
+  Android app. This was the original production concept: a chat bubble with a solid padlock
+  centered inside, the most literal "encrypted message" metaphor. Replaced by the "silenced
+  bubble" concept (docs/design/logo-nomessages.svg) per user decision on 2026-09-16.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <rect x="0" y="0" width="108" height="108" fill="#073C31" />
+  <path d="M38,34 L70,34 A8,8 0 0 1 78,42 L78,66 A8,8 0 0 1 70,74 L38,74 L30,66 L30,42 A8,8 0 0 1 38,34 Z"
+        fill="none" stroke="#F3F6F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M47,54 V46 A7,7 0 0 1 61,46 V54"
+        fill="none" stroke="#F3F6F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M48,54 L60,54 A3,3 0 0 1 63,57 L63,67 A3,3 0 0 1 60,70 L48,70 A3,3 0 0 1 45,67 L45,57 A3,3 0 0 1 48,54 Z"
+        fill="#F3F6F5" />
+  <circle cx="54" cy="60.5" r="2" fill="#25D366" />
+  <rect x="53" y="61" width="2" height="4" fill="#128C7E" />
+</svg>

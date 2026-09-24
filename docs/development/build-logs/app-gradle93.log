@@ -1,0 +1,51 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: :app:compileDebugKotlin :app:testDebugUnitTest
+This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Checking the license for package Android SDK Platform 37.0 in /tmp/nomessages-tools/android-sdk/licenses
+License for package Android SDK Platform 37.0 accepted.
+Preparing "Install Android SDK Platform 37.0 (revision 2)".
+Warning: Package "Android SDK Platform 37.0" (platforms;android-37.0) should be installed in 
+"/tmp/nomessages-tools/android-sdk/platforms/android-37.0" but 
+it already exists.
+Installing in "/tmp/nomessages-tools/android-sdk/platforms/android-37.0-2" instead.
+"Install Android SDK Platform 37.0 (revision 2)" ready.
+Installing Android SDK Platform 37.0 in /tmp/nomessages-tools/android-sdk/platforms/android-37.0-2
+"Install Android SDK Platform 37.0 (revision 2)" complete.
+"Install Android SDK Platform 37.0 (revision 2)" finished.
+Observed package id 'platforms;android-37.0' in inconsistent location '/tmp/nomessages-tools/android-sdk/platforms/android-37.0-2' (Expected '/tmp/nomessages-tools/android-sdk/platforms/android-37.0')
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:protobufDummy UP-TO-DATE
+> Task :core:extractIncludeProto
+> Task :core:extractProto
+> Task :core:generateProto
+> Task :core:compileKotlin
+> Task :core:compileJava
+> Task :core:processProtoResources
+> Task :core:processResources
+> Task :core:classes
+> Task :core:jar
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugResources
+
+> Task :app:packageDebugResources FAILED
+ERROR: /root/projects/nomessages/app/src/main/res/values-en/strings.xml: Resource and asset merger: import is not a valid resource name (reserved Java keyword)
+ERROR: /root/projects/nomessages/app/src/main/res/values/strings.xml: Resource and asset merger: import is not a valid resource name (reserved Java keyword)
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:packageDebugResources'.
+> /root/projects/nomessages/app/src/main/res/values-en/strings.xml: Error: import is not a valid resource name (reserved Java keyword)
+  /root/projects/nomessages/app/src/main/res/values/strings.xml: Error: import is not a valid resource name (reserved Java keyword)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 20m 52s
+10 actionable tasks: 10 executed
+Configuration cache entry stored.

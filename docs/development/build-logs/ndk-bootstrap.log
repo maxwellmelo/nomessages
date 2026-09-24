@@ -1,0 +1,13 @@
+info: downloading component rust-std
+info: downloading component rust-std
+Android (13691557, +pgo, +bolt, +lto, +mlgo, based on r522817d) clang version 18.0.4 (https://android.googlesource.com/toolchain/llvm-project d8003a456d14a3deb8054cdaa529ffbf02d9b262)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /tmp/nomessages-tools/android-sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin
+NoMessages Android tools ready.
+JAVA_HOME=/tmp/nomessages-tools/jdk-21
+ANDROID_SDK_ROOT=/tmp/nomessages-tools/android-sdk
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)
+javac 21.0.12.1

@@ -1,0 +1,61 @@
+Native crypto host verification
+Date: 2026-09-13 America/Fortaleza
+Working directory: /root/projects/nomessages
+
+$ SODIUM_LIB_DIR=/tmp/nomessages-host-sodium SODIUM_SHARED=1 CARGO_TARGET_DIR=/tmp/nomessages-system-target CARGO_BUILD_JOBS=1 cargo test --manifest-path native/Cargo.toml --no-default-features crypto::tests
+Finished `test` profile [unoptimized] target(s) in 54.39s
+running 10 tests
+test crypto::tests::argon2id_rejects_parameters_outside_the_contract ... ok
+test crypto::tests::ed25519_matches_rfc8032_test_vector_one ... ok
+test crypto::tests::keyed_blake2b_256_matches_independent_vector ... ok
+test crypto::tests::random_and_generated_signing_keys_have_contract_lengths ... ok
+test crypto::tests::allocation_limits_are_rejected_before_work ... ok
+test crypto::tests::sha256_matches_fips_vector ... ok
+test crypto::tests::ed25519_rejects_tampering_and_bad_lengths ... ok
+test crypto::tests::xchacha_rejects_bad_key_and_truncated_input ... ok
+test crypto::tests::xchacha_round_trip_binds_aad_and_rejects_tampering ... ok
+test crypto::tests::argon2id_uses_exact_memory_iterations_and_parallelism ... ok
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 6.38s
+
+$ SODIUM_LIB_DIR=/tmp/nomessages-host-sodium SODIUM_SHARED=1 CARGO_TARGET_DIR=/tmp/nomessages-system-target CARGO_BUILD_JOBS=1 cargo build --manifest-path native/Cargo.toml --no-default-features
+Finished `dev` profile [unoptimized] target(s) in 9.24s
+Exit status: 0
+Unrelated no-default dead-code warnings were emitted for native/src/wire.rs.
+
+$ ls -lh /tmp/nomessages-system-target/debug/libnomessages.so
+-rwxr-xr-x 2 root root 673K Sep 13 21:05 /tmp/nomessages-system-target/debug/libnomessages.so
+
+$ nm -D --defined-only /tmp/nomessages-system-target/debug/libnomessages.so | rg 'Java_dev_mx3_nomessages_core_crypto_NativeCrypto_|JNI_OnLoad'
+JNI_OnLoad
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeDerive
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeHash
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeMac
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeOpen
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeRandom
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeSeal
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeSign
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeSigningKeyPair
+Java_dev_mx3_nomessages_core_crypto_NativeCrypto_nativeVerify
+
+$ ldd /tmp/nomessages-system-target/debug/libnomessages.so
+libsodium.so.23 => /lib/x86_64-linux-gnu/libsodium.so.23
+libc.so.6
+libgcc_s.so.1
+
+This accelerated host artifact used the installed libsodium 1.0.18 shared library and the now-superseded sodiumoxide implementation. It is integration-only and must not be released.
+
+Maintained dependency migration
+Cargo.toml: libsodium-rs =0.2.4, feature minimal
+Cargo.lock: libsodium-rs 0.2.4 and libsodium-sys-stable 1.24.0
+sodiumoxide is absent from Cargo.lock.
+Embedded libsodium archive: libsodium-sys-stable-1.24.0/LATEST.tar.gz
+Embedded archive SHA-256: b20a92e7ec25b285eafa349d721a5bb27e3a8ba94c0816630a127883f1d1b3ab
+Embedded configure metadata: PACKAGE_VERSION='1.0.22'
+Upstream 1.0.22 point-release archive SHA-256: adbdd8f16149e81ac6078a03aca6fc03b592b89ef7b5ed83841c086191be3349
+The embedded signed stable snapshot is not byte-identical to the point-release archive.
+
+$ CARGO_TARGET_DIR=/tmp/nomessages-libsodium122-target CARGO_BUILD_JOBS=1 env -u SODIUM_LIB_DIR -u SODIUM_SHARED -u SODIUM_USE_PKG_CONFIG cargo test --manifest-path native/Cargo.toml --no-default-features crypto::tests
+Status at capture: paused with SIGINT (exit 130) at the central Gradle owner's request because the host effectively had one CPU and low free swap. Downloaded dependencies and partial objects are preserved in /tmp/nomessages-libsodium122-target. No test or release result is claimed from this interrupted run.
+Partial command output: /tmp/nomessages-crypto-bundled-test.log
+
+The resumed command uses libsodium-sys-stable's default verified source build. It deliberately omits all host libsodium override variables. A successful artifact from this command replaces the integration-only library above.

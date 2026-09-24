@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Small icon for every notification this app shows (ids 1, 2 and 3 - see PrivacyNotifications.kt).
+
+  Monochrome on purpose: Android draws a small icon by its ALPHA channel only and applies its own
+  tint, so any colour here would be discarded, and a filled shape would come out as a solid blob.
+  Everything is therefore an opaque white stroke over a transparent canvas.
+
+  The glyph is the silenced chat bubble of ic_launcher_monochrome.xml, affinely mapped from that
+  file's 108x108 viewport into this 24x24 one by `new = (old - 54) * 0.370 + 12`. The same factor is
+  applied to the corner radius (8 -> 2.96) and to the stroke (6 -> 2.2), so the proportions of the
+  brand mark are preserved exactly rather than redrawn by eye.
+
+  Safe area: the painted extent is about 20x17dp centred in the 24x24 canvas, leaving ~2dp of margin
+  on the sides - the keyline a system status bar expects. The glyph is NOT stretched to the edges.
+
+  Legibility at a real 24px: the bubble's clear interior is ~9.6px across and the slash that crosses
+  it is 2.2px, so neither collapses into the contour at status-bar size.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Chat bubble contour, with the notched tail at the bottom left. -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M6.08,4.6 L17.92,4.6 A2.96,2.96 0 0 1 20.88,7.56 L20.88,16.44 A2.96,2.96 0 0 1 17.92,19.4 L6.08,19.4 L3.12,16.44 L3.12,7.56 A2.96,2.96 0 0 1 6.08,4.6 Z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.2" />
+
+    <!-- Diagonal "silenced" slash. Butt cap, exactly as in the launcher glyph: it reads by shape
+         alone and must not gain rounded ends that would soften the mark at small sizes. -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M4.23,4.23 L19.77,19.77"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="butt"
+        android:strokeWidth="2.2" />
+</vector>

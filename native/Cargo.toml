@@ -1,0 +1,71 @@
+[package]
+name = "nomessages"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.91"
+license = "AGPL-3.0-or-later"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["tor", "mls"]
+tor = ["dep:arti-client", "dep:tor-keymgr", "dep:tor-config", "dep:tor-hscrypto", "dep:tor-hsservice", "dep:tor-llcrypto", "dep:tor-cell", "dep:tor-proto", "dep:tor-rtcompat", "dep:tokio", "dep:tokio-util", "dep:futures", "dep:safelog", "dep:rustls", "dep:hmac", "dep:sha2"]
+mls = ["dep:openmls", "dep:openmls_traits", "dep:openmls_rust_crypto", "dep:openmls_basic_credential", "dep:tls_codec", "dep:serde_json"]
+
+[dependencies]
+anyhow = "1"
+jni = "=0.21.1"
+libsodium-rs = { version = "=0.2.4", features = ["minimal"] }
+zeroize = "1"
+# `onion-service-cli-extra` only unlocks `TorClient::keymgr()`, the accessor that lets us drop an
+# onion service's identity key when we drop the service itself (see `tor::forget_onion_key`).
+# It is a pure feature flag: it expands to `tor-keymgr/onion-service-cli-extra`, which in turn is
+# `keymgr` (already enabled through `onion-service-service`) plus an empty marker. No crate enters
+# the build graph and `Cargo.lock` is unchanged.
+arti-client = { version = "=0.46.0", optional = true, default-features = false, features = ["tokio", "rustls", "compression", "static-sqlite", "onion-service-client", "onion-service-service", "ephemeral-keystore", "experimental-api", "onion-service-cli-extra", "bridge-client"] }
+tor-keymgr = { version = "=0.46.0", optional = true, features = ["ephemeral-keystore"] }
+tor-config = { version = "=0.46.0", optional = true }
+tor-hscrypto = { version = "=0.46.0", optional = true }
+tor-hsservice = { version = "=0.46.0", optional = true }
+tor-llcrypto = { version = "=0.46.0", optional = true }
+tor-cell = { version = "=0.46.0", optional = true }
+tor-proto = { version = "=0.46.0", optional = true }
+tor-rtcompat = { version = "=0.46.0", optional = true, features = ["tokio", "rustls"] }
+tokio = { version = "1", optional = true, features = ["rt-multi-thread", "sync", "time", "io-util", "macros"] }
+tokio-util = { version = "0.7", optional = true, features = ["compat"] }
+futures = { version = "0.3", optional = true }
+safelog = { version = "=0.9.0", optional = true }
+rustls = { version = "=0.23.44", optional = true, default-features = false, features = ["ring", "std", "tls12"] }
+# Doorbell knock authentication (HMAC-SHA256). Both versions are already in Cargo.lock as
+# transitive dependencies of the Tor stack — hmac 0.12.1 via tor-proto, sha2 0.10.9 via
+# tor-llcrypto — so pinning them here promotes crates that are already compiled by the "tor"
+# feature to direct dependencies. Nothing new enters the build graph.
+hmac = { version = "=0.12.1", optional = true, default-features = false }
+sha2 = { version = "=0.10.9", optional = true, default-features = false }
+openmls = { version = "=0.9.0", optional = true }
+openmls_traits = { version = "=0.6.0", optional = true }
+openmls_rust_crypto = { version = "=0.6.0", optional = true }
+openmls_basic_credential = { version = "=0.6.0", optional = true }
+tls_codec = { version = "=0.5.0", optional = true, features = ["derive", "serde"] }
+serde_json = { version = "1", optional = true }
+
+[dev-dependencies]
+tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
+
+[profile.dev]
+debug = 0
+incremental = false
+panic = "unwind"
+[profile.test]
+debug = 0
+incremental = false
+[profile.release]
+debug = 0
+panic = "unwind"
+strip = true
+lto = "thin"
+codegen-units = 1
+
+[patch.crates-io]
+openmls_memory_storage = { path = "vendor/openmls_memory_storage" }

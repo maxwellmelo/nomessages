@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Normal permission (API 34+): lets registerScreenCaptureCallback notify this app when the
+         system detects a screenshot/recording attempt, for the non-blocking notice in MainActivity.
+         FLAG_SECURE (see MainActivity.shouldApplySecureFlag) already blocks the capture itself; this
+         is detection-only, for whenever a screenshot/recording is still attempted. -->
+    <uses-permission android:name="android.permission.DETECT_SCREEN_CAPTURE" />
+
+    <!-- Normal permissions, granted at install. The `:tor` child promotes itself to a foreground
+         service ONLY while the vault is locked with the doorbell running (T4.17): without it the
+         system reclaims the background process and the doorbell stops answering. `specialUse` is
+         the honest type here - the service holds a listening onion, which is neither a data sync
+         nor a media session - and it is the only type Android 15 does not put on a runtime clock. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="false" />
+
+    <application
+        android:name=".NoMessagesApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NoMessages"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- stopWithTask stays true: swiping the app away must still take the transport with it,
+             doorbell or not. The foreground type is declared, but the service only ever runs in
+             the foreground while it is in minimal (doorbell-only) mode. -->
+        <service
+            android:name=".runtime.TorService"
+            android:directBootAware="false"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:process=":tor"
+            android:stopWithTask="true">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="background_transport" />
+        </service>
+
+        <!--
+             Use system emoji; never initialize a downloadable font provider.
+             androidx.emoji2 arrives transitively and would register
+             EmojiCompatInitializer here; removing that single meta-data keeps the
+             provider itself (ProcessLifecycleInitializer and
+             ProfileInstallerInitializer still need it) while guaranteeing no
+             downloadable-font provider is ever started. scripts/verify-apk.py
+             asserts the initializer is absent from the packaged manifest.
+
+             MissingClass is a false positive: androidx.startup:startup-runtime is
+             pulled in as a runtime-scoped transitive dependency (lifecycle-process
+             and profileinstaller), so the class exists in the APK but not on the
+             compile classpath lint resolves against. Declaring the dependency
+             directly only to satisfy lint would enlarge the compile surface for no
+             runtime benefit.
+        -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge"
+            tools:ignore="MissingClass">
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                tools:node="remove" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dedicated to the app launcher icon (silenced chat bubble concept, 2026-09-16). Do not reuse for UI chrome. -->
+    <color name="ic_launcher_bg">#1B1F22</color>
+    <color name="ic_launcher_glyph">#F3F6F5</color>
+    <!-- Dedicated to the launcher icon's diagonal slash (Grafite e Âmbar palette, 2026-09-17). Do not reuse for UI chrome. -->
+    <color name="ic_launcher_accent">#E8A33B</color>
+
+    <!-- Legacy android:* theme attributes only (themes.xml); Compose screens use MaterialTheme.colorScheme. -->
+    <color name="theme_accent">#D98E2B</color>
+    <color name="theme_chrome">#23282C</color>
+</resources>

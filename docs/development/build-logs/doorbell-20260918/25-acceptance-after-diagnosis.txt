@@ -1,0 +1,42 @@
+=== 25 - Cenario de aceite completo, build pos-diagnostico (2026-09-18 UTC) ===
+A = emulator-5556 (cofre TesteA)  B = emulator-5560 (cofre TesteB)
+APK app-debug.apk sha256 f2641478d46900226436d3ae8ff960423ca3f66ffeddc795fdc4ae3d1e317c9a
+(mesmo APK com a instrumentacao de diagnostico; nenhuma mudanca de comportamento)
+
+-- 19:40:03  B destrancado, "Tor connected" --
+     22656 dev.mx3.nomessages.debug
+     22778 dev.mx3.nomessages.debug:tor
+
+-- 19:40:17  B bloqueado (campainha ligada): :tor SOBREVIVE com o mesmo PID --
+      22656 dev.mx3.nomessages.debug
+      22778 dev.mx3.nomessages.debug:tor
+   notificacoes do app em B (so a de foreground, id=3; nao ha id=2):
+     channel=safety_center_recommendation vis=PRIVATE pkg=dev.mx3.nomessages.debug user=UserHandle{0} id=3 tag=null importance=2 channel=background_service vis=SECRET vis=PUBLIC vis=PRIVATE vis=PUBLIC
+
+-- 19:41:08  A envia "aceite-pos-diagnostico" para TesteB --
+
+-- 19:41:36  Notificacao da campainha em B (28 s depois do envio) --
+         NotificationRecord(0x0573fc12: pkg=dev.mx3.nomessages.debug user=UserHandle{0} id=2 tag=null importance=3 key=0|dev.mx3.nomessages.debug|2|null|10212: Notification(channel=private_messages shortcut=null contentView=null vibrate=null sound=null defaults=0 flags=ONLY_ALERT_ONCE|AUTO_CANCEL|LOCAL_ONLY color=0x00000000 vis=SECRET))
+   PIDs em B (o :tor da campainha continua sendo o mesmo):
+      22656 dev.mx3.nomessages.debug
+      22778 dev.mx3.nomessages.debug:tor
+
+-- 19:41:58  B destrancado com a senha do cofre --
+     id=2 cancelada no desbloqueio: notificacoes id=2 do app agora = 0
+     :tor NAO foi reaproveitado: PID 22778 -> 22954 (o defeito investigado; causa raiz no nativo, ver abaixo)
+   19:42:33  "Tor connected" de novo (bootstrap completo do zero)
+
+-- 19:42:57  Mensagem "aceite-pos-diagnostico" ENTREGUE em B --
+     text="1"
+     text="7:41 PM"
+     text="NoMessages"
+     text="T"
+     text="TesteA"
+     text="Tor connected"
+     text="aceite-pos-diagnostico"
+
+=== Conclusao ===
+O caminho de aceite da campainha continua funcionando de ponta a ponta apos a fase de
+diagnostico: bloquear com a campainha ligada, bater de outro aparelho, notificar, destravar
+e entregar. O unico item que continua em aberto e o reaproveitamento do filho :tor no
+desbloqueio (T4.19), cuja causa raiz esta provada em 22-handoff-root-cause.txt.

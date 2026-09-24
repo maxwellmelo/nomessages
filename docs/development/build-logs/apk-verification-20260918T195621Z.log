@@ -1,0 +1,15 @@
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libandroidx.graphics.path.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libimage_processing_util_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsignal_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsqlcipher.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsurface_util_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libandroidx.graphics.path.so
+PASS ELF64 / 16 KiB: lib/x86_64/libimage_processing_util_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsignal_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsqlcipher.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsurface_util_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libnomessages.so
+PASS ELF64 / 16 KiB: lib/x86_64/libnomessages.so
+PASS packaged manifest: API 31 / no backup / no cleartext / no font download initializer or auxiliary activities
+PASS compiled cloud-backup and device-transfer exclusions for app storage
+PASS ZIP alignment for 16 KiB pages

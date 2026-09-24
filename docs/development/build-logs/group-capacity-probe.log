@@ -1,0 +1,2 @@
+PASS: 100 real MLS members; member 100 joined and decrypted. Welcome=36049 bytes; state=118941 bytes.
+Invitations: 4950 proofs; 1369584 bytes each; 99 queued invites + graph + MLS state need at least 137014557 bytes (130.67 MiB), before Signal/SQL overhead.

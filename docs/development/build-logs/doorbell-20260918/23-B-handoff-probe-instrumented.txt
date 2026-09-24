@@ -1,0 +1,32 @@
+=== 23 — Sonda do handoff com o build instrumentado (emulator-5560, cofre B, 2026-09-18 UTC) ===
+Lock/unlock puro do MESMO cofre, sem nenhuma batida. Cinco repetições, sempre o mesmo resultado.
+
+Rodada 1 (19:09–19:10)
+  t0 (destrancado, "Tor connected")   20828 app   21063 :tor
+  t1 (bloqueado, campainha)           20828 app   21063 :tor   <-- sobrevive
+  t2 (+20 s, ainda bloqueado)         20828 app   21063 :tor   <-- sobrevive
+  t3 (destrancado, MESMO cofre)       20828 app   21213 :tor   <-- PID NOVO
+
+Rodada 2 (19:14–19:15)   21426 -> 21563
+Rodada 3 (19:19–19:20)   21748 -> 21886
+Rodada 4 (19:24–19:25)   22119 -> 22245
+Rodada 5 (19:29–19:30)   22436 -> 22557   (build com o erro nativo exposto; ver 22-handoff-root-cause.txt)
+
+Em TODAS as rodadas o log de decisão diz a mesma coisa:
+
+  lock: minimal doorbell kept=true (stopped=false dead=false cause=none)
+  doorbell handoff: reuse=true sameSlot=true hasSlot=true alive=true (stopped=false dead=false cause=none)
+  transport attempt: reusingDoorbellChild=true
+  TorService: START: native transport slot before start = STOPPED
+  TorService: messaging start/pump ended: java.lang.IllegalStateException: Tor operation failed
+  transport attempt: failed (reused=true): java.lang.IllegalStateException: Transporte indisponível
+  ... 5 s de backoff ...
+  transport attempt: reusingDoorbellChild=false
+  TorConnection: shutdown() requested; stopped=false dead=false cause=shutdown
+      em NoMessagesController.recycleTransport → attemptTransport → TransportSupervisor.supervise
+
+Isto é: a adoção é decidida, é tentada, e morre no segundo START dentro do filho. Quem mata o
+filho é a tentativa SEGUINTE do supervisor, no caminho normal de filho novo — não o `lock()`.
+
+O PID só se estabilizaria com a correção no nativo descrita em 22-handoff-root-cause.txt, que não
+foi feita nesta fase (escopo/risco: exige mexer em `native/src/tor.rs` e no keystore do Arti).

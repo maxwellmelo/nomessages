@@ -1,0 +1,209 @@
+Build storage: 2.84 GiB; free: 28.49 GiB
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+Build storage: 2.85 GiB; free: 28.48 GiB
+Build storage: 2.89 GiB; free: 28.43 GiB
+Build storage: 3.00 GiB; free: 28.32 GiB
+Build storage: 3.02 GiB; free: 28.31 GiB
+Build storage: 3.02 GiB; free: 28.31 GiB
+Build storage: 3.02 GiB; free: 28.31 GiB
+Build storage: 3.02 GiB; free: 28.31 GiB
+Build storage: 3.03 GiB; free: 28.30 GiB
+Build storage: 3.09 GiB; free: 28.24 GiB
+Build storage: 3.15 GiB; free: 28.18 GiB
+Build storage: 3.17 GiB; free: 28.16 GiB
+Build storage: 3.20 GiB; free: 28.13 GiB
+Build storage: 3.27 GiB; free: 28.06 GiB
+Build storage: 3.37 GiB; free: 27.96 GiB
+Build storage: 3.43 GiB; free: 27.90 GiB
+Build storage: 3.43 GiB; free: 27.90 GiB
+Build storage: 3.43 GiB; free: 27.90 GiB
+Build storage: 3.43 GiB; free: 27.90 GiB
+Build storage: 3.43 GiB; free: 27.89 GiB
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Build storage: 3.44 GiB; free: 27.89 GiB
+Build storage: 3.45 GiB; free: 27.88 GiB
+Build storage: 3.70 GiB; free: 27.63 GiB
+Build storage: 3.73 GiB; free: 27.60 GiB
+Build storage: 3.75 GiB; free: 27.58 GiB
+Build storage: 3.87 GiB; free: 27.46 GiB
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:protobufDummy UP-TO-DATE
+> Task :core:extractIncludeProto UP-TO-DATE
+> Task :core:extractProto UP-TO-DATE
+> Task :core:generateProto
+> Task :core:compileKotlin
+Build storage: 3.87 GiB; free: 27.46 GiB
+Build storage: 3.87 GiB; free: 27.46 GiB
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava UP-TO-DATE
+> Task :core:processProtoResources UP-TO-DATE
+> Task :core:processResources UP-TO-DATE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+Build storage: 3.91 GiB; free: 27.42 GiB
+Build storage: 3.96 GiB; free: 27.35 GiB
+Build storage: 4.78 GiB; free: 26.50 GiB
+> Task :app:parseDebugLocalResources
+> Task :app:generateDebugRFile
+Build storage: 4.93 GiB; free: 26.39 GiB
+> Task :app:compileDebugKotlin
+Build storage: 5.03 GiB; free: 26.30 GiB
+Build storage: 5.03 GiB; free: 26.30 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+
+The Daemon will expire after the build after running out of JVM Metaspace.
+The project memory settings are likely not configured or are configured to an insufficient value.
+The daemon will restart for the next build, which may increase subsequent build times.
+These settings can be adjusted by setting 'org.gradle.jvmargs' in 'gradle.properties'.
+The currently configured max heap space is '768 MiB' and the configured max metaspace is '384 MiB'.
+For more information on how to set these values, please refer to https://docs.gradle.org/9.3.1/userguide/build_environment.html#sec:configuring_jvm_memory in the Gradle documentation.
+To disable this warning, set 'org.gradle.daemon.performance.disable-logging=true'.
+Build storage: 5.04 GiB; free: 26.29 GiB
+Build storage: 5.04 GiB; free: 26.29 GiB
+
+> Task :app:javaPreCompileDebug
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+Build storage: 5.04 GiB; free: 26.28 GiB
+> Task :app:l8DexDesugarLibDebug
+> Task :app:desugarDebugFileDependencies
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:compileDebugNavigationResources
+Build storage: 5.05 GiB; free: 26.27 GiB
+> Task :app:mergeDebugResources
+Build storage: 5.06 GiB; free: 26.27 GiB
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+Build storage: 5.06 GiB; free: 26.26 GiB
+> Task :app:processDebugManifestForPackage
+> Task :app:processDebugResources
+Build storage: 5.07 GiB; free: 26.26 GiB
+> Task :app:dexBuilderDebug
+Build storage: 5.07 GiB; free: 26.26 GiB
+Build storage: 5.07 GiB; free: 26.26 GiB
+Build storage: 5.07 GiB; free: 26.25 GiB
+Build storage: 5.08 GiB; free: 26.25 GiB
+> Task :app:mergeDebugGlobalSynthetics
+Build storage: 5.08 GiB; free: 26.25 GiB
+Build storage: 5.08 GiB; free: 26.24 GiB
+Build storage: 5.09 GiB; free: 26.24 GiB
+Build storage: 5.09 GiB; free: 26.24 GiB
+Build storage: 5.09 GiB; free: 26.23 GiB
+Build storage: 5.11 GiB; free: 26.22 GiB
+Build storage: 5.11 GiB; free: 26.22 GiB
+Build storage: 5.11 GiB; free: 26.22 GiB
+Build storage: 5.11 GiB; free: 26.22 GiB
+Build storage: 5.11 GiB; free: 26.21 GiB
+Build storage: 5.12 GiB; free: 26.21 GiB
+Build storage: 5.13 GiB; free: 26.20 GiB
+Build storage: 5.13 GiB; free: 26.20 GiB
+Build storage: 5.14 GiB; free: 26.19 GiB
+Build storage: 5.15 GiB; free: 26.18 GiB
+Build storage: 5.15 GiB; free: 26.18 GiB
+Build storage: 5.16 GiB; free: 26.17 GiB
+Build storage: 5.17 GiB; free: 26.14 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.25 GiB; free: 26.08 GiB
+Build storage: 5.26 GiB; free: 26.06 GiB
+Build storage: 5.30 GiB; free: 26.02 GiB
+
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=b984d2e9-ba25-4a7a-9a8d-a471db7a4c32, currentDir=/root/projects/nomessages}
+Attempting to read last messages from the daemon log...
+Daemon pid: 671435
+  log file: /root/projects/nomessages/.tools/toolchains/gradle-home/daemon/9.3.1/daemon-671435.out.log
+----- Last 20 lines from daemon log file - daemon-671435.out.log -----
+2026-09-14T08:06:04.651-0300 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 31: dispatching org.gradle.launcher.daemon.protocol.BuildStarted@400fd762
+2026-09-14T08:06:04.707-0300 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: [PATH, CODEX_REMOTE_PAYLOAD, NOMESSAGES_NATIVE_DIR, NOMESSAGES_BUILD_GUARDED, GIT_PAGER, JAVA_HOME, TERM, MOTD_SHOWN, LANG, DBUS_SESSION_BUS_ADDRESS, XDG_SESSION_ID, XDG_SESSION_TYPE, ANDROID_HOME, GH_PAGER, NVM_INC, GRADLE_USER_HOME, COLORTERM, LOGNAME, CODEX_THREAD_ID, NO_COLOR, PWD, XDG_SESSION_CLASS, _, CODEX_MANAGED_BY_NPM, CODEX_CI, NVM_CD_FLAGS, SHELL, NVM_DIR, CODEX_SANDBOX_NETWORK_DISABLED, PAGER, SSH_CLIENT, CODEX_HOME, ANDROID_USER_HOME, USER, ANDROID_SDK_ROOT, CODEX_PERMISSION_PROFILE, TMPDIR, SSH_AUTH_SOCK, SSH_CONNECTION, LC_ALL, LC_CTYPE, CODEX_SESSION_ID, XDG_RUNTIME_DIR, CODEX_MANAGED_PACKAGE_ROOT, NVM_BIN, SHLVL, HOME]
+2026-09-14T08:06:04.776-0300 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+2026-09-14T08:06:04.778-0300 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 671435). The daemon log file: /root/projects/nomessages/.tools/toolchains/gradle-home/daemon/9.3.1/daemon-671435.out.log
+2026-09-14T08:06:04.803-0300 [DEBUG] [org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon] Requesting daemon stop after processing Build{id=b984d2e9-ba25-4a7a-9a8d-a471db7a4c32, currentDir=/root/projects/nomessages}
+2026-09-14T08:06:04.805-0300 [LIFECYCLE] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Daemon will be stopped at the end of the build 
+2026-09-14T08:06:04.807-0300 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Stop as soon as idle requested. The daemon is busy
+2026-09-14T08:06:04.809-0300 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon stop has been requested. Sleeping until state changes.
+2026-09-14T08:06:04.862-0300 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+2026-09-14T08:06:04.867-0300 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=c5292bbe-4ab9-4b3b-b61c-46d9ea76db34,javaHome=/root/projects/nomessages/.tools/toolchains/jdk-21,javaVersion=21,javaVendor=Eclipse Adoptium,daemonRegistryDir=/root/projects/nomessages/.tools/toolchains/gradle-home/daemon,pid=671435,idleTimeout=120000,priority=NORMAL,applyInstrumentationAgent=true,nativeServicesMode=ENABLED,daemonOpts=-XX:MaxMetaspaceSize=384m,-Xmx768m,-Dfile.encoding=UTF-8,-Djava.io.tmpdir=/root/projects/nomessages/.tools/toolchains/tmp,-Duser.country,-Duser.language=en,-Duser.variant]
+Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug :app:assembleDebugAndroidTest :app:lintDebug
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+The Daemon will expire after the build after running out of JVM Metaspace.
+The project memory settings are likely not configured or are configured to an insufficient value.
+The daemon will restart for the next build, which may increase subsequent build times.
+These settings can be adjusted by setting 'org.gradle.jvmargs' in 'gradle.properties'.
+The currently configured max heap space is '768 MiB' and the configured max metaspace is '384 MiB'.
+For more information on how to set these values, please refer to https://docs.gradle.org/9.3.1/userguide/build_environment.html#sec:configuring_jvm_memory in the Gradle documentation.
+To disable this warning, set 'org.gradle.daemon.performance.disable-logging=true'.
+Daemon vm is shutting down... The daemon has exited normally or was terminated in response to a user interrupt.----- End of the daemon log -----
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+	at org.gradle.launcher.daemon.client.DaemonClient.handleDaemonDisappearance(DaemonClient.java:283)
+	at org.gradle.launcher.daemon.client.DaemonClient.monitorBuild(DaemonClient.java:256)
+	at org.gradle.launcher.daemon.client.DaemonClient.executeBuild(DaemonClient.java:209)
+	at org.gradle.launcher.daemon.client.SingleUseDaemonClient.execute(SingleUseDaemonClient.java:63)
+	at org.gradle.launcher.daemon.client.SingleUseDaemonClient.execute(SingleUseDaemonClient.java:37)
+	at org.gradle.launcher.cli.RunBuildAction.run(RunBuildAction.java:56)
+	at org.gradle.internal.Actions$RunnableActionAdapter.execute(Actions.java:167)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:377)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:341)
+	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:74)
+	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:30)
+	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:97)
+	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:40)
+	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:50)
+	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:27)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:41)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:26)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$WithLogging.execute(DefaultCommandLineActionFactory.java:489)
+	at org.gradle.launcher.Main.doAction(Main.java:35)
+	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:72)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:39)
+	at org.gradle.launcher.GradleMain.main(GradleMain.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.wrapper.GradleWrapperMain.main(SourceFile:70)
+
+Build storage: 5.30 GiB; free: 26.02 GiB

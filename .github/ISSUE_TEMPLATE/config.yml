@@ -1,0 +1,7 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/maxwellmelo/nomessages/security/advisories/new
+    about: >
+      Please do not report security vulnerabilities through public issues. Use GitHub's Private
+      Vulnerability Reporting instead — see SECURITY.md for details.

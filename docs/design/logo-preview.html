@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>NoMessages — Launcher Icon Preview</title>
+<style>
+  :root {
+    --page-bg: #f4f5f6;
+    --card-bg: #ffffff;
+    --text: #1a1f1e;
+    --muted: #5b6560;
+    --border: #e1e4e2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 64px;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 40px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  p.lead { color: var(--muted); margin: 0 0 24px; max-width: 640px; line-height: 1.5; }
+  .swatch-row { display: flex; flex-wrap: wrap; gap: 24px; }
+  .swatch-group {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .swatch-group h3 { font-size: 13px; margin: 0 0 12px; color: var(--muted); font-weight: 600; }
+  .swatch-cells { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+  .cell { text-align: center; }
+  .cell .frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cell .frame.on-light { background: #f0f2f1; }
+  .cell .frame.on-dark { background: #101413; }
+  .cell .label { font-size: 11px; color: var(--muted); margin-top: 6px; }
+  .mask-circle { border-radius: 50%; }
+  .mask-squircle { border-radius: 38%; }
+  .mask-square { border-radius: 20%; }
+  .alt-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+  .alt-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+  }
+  .alt-card .frame {
+    width: 108px; height: 108px;
+    margin: 0 auto 16px;
+    border-radius: 20%;
+    overflow: hidden;
+  }
+  .alt-card h3 { font-size: 14px; margin: 0 0 8px; }
+  .alt-card p { font-size: 12.5px; color: var(--muted); line-height: 1.5; margin: 0; }
+  .chosen-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #0a3d33;
+    background: #cdeee0;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+  <h1>NoMessages — Launcher Icon</h1>
+  <p class="lead">
+    Conceito escolhido (atualizado em 2026-09-16): balão de conversa sóbrio (contorno arredondado,
+    com um pequeno entalhe chanfrado no canto inferior esquerdo no lugar da cauda triangular do
+    WhatsApp) cruzado por um traço diagonal em verde-destaque — "balão silenciado", comunicando
+    que nenhuma mensagem fica armazenada/interceptável. Fundo verde-teal profundo (#073C31), glifo
+    quase-branco frio (#F3F6F5, contraste ≈ 11.4:1 sobre o fundo) e traço diagonal em #25D366
+    (contraste ≈ 6.2:1 sobre o fundo). Substitui o conceito anterior (balão + cadeado sólido),
+    mantido como Alternativa 2 abaixo.
+  </p>
+
+  <h2>Ícone principal — tamanhos e máscaras</h2>
+  <div class="swatch-row">
+    <div class="swatch-group">
+      <h3>Fundo claro</h3>
+      <div class="swatch-cells" id="light-sizes"></div>
+    </div>
+    <div class="swatch-group">
+      <h3>Fundo escuro</h3>
+      <div class="swatch-cells" id="dark-sizes"></div>
+    </div>
+  </div>
+
+  <h2>Máscaras do sistema (108px, fundo claro e escuro)</h2>
+  <div class="swatch-row">
+    <div class="swatch-group">
+      <h3>Redonda / Squircle / Quadrado arredondado</h3>
+      <div class="swatch-cells" id="masks"></div>
+    </div>
+  </div>
+
+  <h2>Alternativas (apenas preview — não usadas no app)</h2>
+  <div class="alt-grid">
+    <div class="alt-card">
+      <div class="frame" id="alt1-frame"></div>
+      <h3>Alternativa 1 — Escudo + balão</h3>
+      <p>
+        Um escudo com o contorno de um balão de conversa recortado dentro. Reforça a ideia de
+        "proteção" acima de "conversa" — mais defensivo, menos direto que o cadeado.
+      </p>
+    </div>
+    <div class="alt-card">
+      <div class="frame" id="alt2-frame"></div>
+      <h3>Alternativa 2 — Balão + cadeado (conceito anterior)</h3>
+      <p>
+        Conceito de produção original: balão de conversa com um cadeado sólido centralizado —
+        "mensagem cifrada" de forma bem literal. Retirado em 2026-09-16 em favor do balão
+        silenciado, mantido aqui como registro/alternativa.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Master icon SVG markup (mirrors app/src/main/res/drawable/ic_launcher_{background,foreground}.xml)
+    var ICON_SVG = ''
+      + '<svg viewBox="0 0 108 108" width="__SIZE__" height="__SIZE__" xmlns="http://www.w3.org/2000/svg">'
+      + '<rect x="0" y="0" width="108" height="108" fill="#073C31" />'
+      + '<path d="M38,34 L70,34 A8,8 0 0 1 78,42 L78,66 A8,8 0 0 1 70,74 L38,74 L30,66 L30,42 A8,8 0 0 1 38,34 Z" fill="none" stroke="#F3F6F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />'
+      + '<path d="M33,33 L75,75" fill="none" stroke="#25D366" stroke-width="6" stroke-linecap="butt" />'
+      + '</svg>';
+
+    var ALT1_SVG = ''
+      + '<svg viewBox="0 0 108 108" width="108" height="108" xmlns="http://www.w3.org/2000/svg">'
+      + '<rect x="0" y="0" width="108" height="108" fill="#073C31" />'
+      + '<path d="M54,16 C64,16 75,21 82,25 C82,49 80,72 54,94 C28,72 26,49 26,25 C33,21 44,16 54,16 Z'
+      + '         M40,42 L60,42 A6,6 0 0 1 66,48 L66,62 A6,6 0 0 1 60,68 L46,68 L40,74 L40,68 A6,6 0 0 1 34,62'
+      + '         L34,48 A6,6 0 0 1 40,42 Z" fill="none" fill-rule="evenodd" stroke="#F3F6F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />'
+      + '<circle cx="50" cy="55" r="1.6" fill="#25D366" />'
+      + '</svg>';
+
+    var ALT2_SVG = ''
+      + '<svg viewBox="0 0 108 108" width="108" height="108" xmlns="http://www.w3.org/2000/svg">'
+      + '<rect x="0" y="0" width="108" height="108" fill="#073C31" />'
+      + '<path d="M38,34 L70,34 A8,8 0 0 1 78,42 L78,66 A8,8 0 0 1 70,74 L38,74 L30,66 L30,42 A8,8 0 0 1 38,34 Z" fill="none" stroke="#F3F6F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />'
+      + '<path d="M47,54 V46 A7,7 0 0 1 61,46 V54" fill="none" stroke="#F3F6F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />'
+      + '<path d="M48,54 L60,54 A3,3 0 0 1 63,57 L63,67 A3,3 0 0 1 60,70 L48,70 A3,3 0 0 1 45,67 L45,57 A3,3 0 0 1 48,54 Z" fill="#F3F6F5" />'
+      + '<circle cx="54" cy="60.5" r="2" fill="#25D366" />'
+      + '<rect x="53" y="61" width="2" height="4" fill="#128C7E" />'
+      + '</svg>';
+
+    function iconMarkup(size) {
+      return ICON_SVG.split('__SIZE__').join(String(size));
+    }
+
+    function buildSizes(containerId, bgClass) {
+      var sizes = [48, 72, 108, 192];
+      var el = document.getElementById(containerId);
+      sizes.forEach(function (s) {
+        var cell = document.createElement('div');
+        cell.className = 'cell';
+        var frame = document.createElement('div');
+        frame.className = 'frame mask-circle ' + bgClass;
+        frame.style.width = s + 'px';
+        frame.style.height = s + 'px';
+        frame.innerHTML = iconMarkup(s);
+        var label = document.createElement('div');
+        label.className = 'label';
+        label.textContent = s + 'px';
+        cell.appendChild(frame);
+        cell.appendChild(label);
+        el.appendChild(cell);
+      });
+    }
+
+    function buildMasks() {
+      var masks = [
+        { cls: 'mask-circle', label: 'Redonda' },
+        { cls: 'mask-squircle', label: 'Squircle' },
+        { cls: 'mask-square', label: 'Quadrado arred.' }
+      ];
+      var bgs = [
+        { cls: 'on-light', label: 'claro' },
+        { cls: 'on-dark', label: 'escuro' }
+      ];
+      var el = document.getElementById('masks');
+      masks.forEach(function (m) {
+        bgs.forEach(function (b) {
+          var cell = document.createElement('div');
+          cell.className = 'cell';
+          var frame = document.createElement('div');
+          frame.className = 'frame ' + m.cls + ' ' + b.cls;
+          frame.style.width = '108px';
+          frame.style.height = '108px';
+          frame.innerHTML = iconMarkup(108);
+          var label = document.createElement('div');
+          label.className = 'label';
+          label.textContent = m.label + ' / ' + b.label;
+          cell.appendChild(frame);
+          cell.appendChild(label);
+          el.appendChild(cell);
+        });
+      });
+    }
+
+    buildSizes('light-sizes', 'on-light');
+    buildSizes('dark-sizes', 'on-dark');
+    buildMasks();
+    document.getElementById('alt1-frame').innerHTML = ALT1_SVG;
+    document.getElementById('alt2-frame').innerHTML = ALT2_SVG;
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+warning: constant `MAX_STATE` is never used
+ --> src/wire.rs:3:11
+  |
+3 | pub const MAX_STATE: usize = 16 * 1024 * 1024;
+  |           ^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_FRAME` is never used
+ --> src/wire.rs:5:11
+  |
+5 | pub const MAX_FRAME: usize = 4 + 16 * 1024;
+  |           ^^^^^^^^^
+
+warning: struct `Reader` is never constructed
+ --> src/wire.rs:7:12
+  |
+7 | pub struct Reader<'a> {
+  |            ^^^^^^
+
+warning: associated items `new`, `u32`, `bytes`, `list`, and `finish` are never used
+  --> src/wire.rs:12:12
+   |
+11 | impl<'a> Reader<'a> {
+   | ------------------- associated items in this implementation
+12 |     pub fn new(data: &'a [u8]) -> Result<Self> {
+   |            ^^^
+...
+16 |     pub fn u32(&mut self) -> Result<u32> {
+   |            ^^^
+...
+25 |     pub fn bytes(&mut self, cap: usize) -> Result<&'a [u8]> {
+   |            ^^^^^
+...
+35 |     pub fn list(&mut self, count_cap: usize, item_cap: usize) -> Result<Vec<Vec<u8>>> {
+   |            ^^^^
+...
+42 |     pub fn finish(self) -> Result<()> {
+   |            ^^^^^^
+
+warning: function `put_u32` is never used
+  --> src/wire.rs:47:8
+   |
+47 | pub fn put_u32(out: &mut Vec<u8>, n: usize) {
+   |        ^^^^^^^
+
+warning: function `put_bytes` is never used
+  --> src/wire.rs:50:8
+   |
+50 | pub fn put_bytes(out: &mut Vec<u8>, value: &[u8]) {
+   |        ^^^^^^^^^
+
+warning: `nomessages` (lib) generated 6 warnings
+    Finished `dev` profile [unoptimized] target(s) in 1.76s

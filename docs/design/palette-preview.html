@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NoMessages — Comparativo de paletas</title>
+<style>
+  :root {
+    --page-bg: #f1f2f4;
+    --ink: #15171a;
+    --ink-muted: #5b6169;
+    --ink-faint: #868d95;
+    --card: #ffffff;
+    --card-border: #e3e5e8;
+    --shadow: 0 1px 2px rgba(16,17,20,.04), 0 10px 28px rgba(16,17,20,.07);
+    --chrome-dark: #23282c;
+    --pass: #1c7a4d;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 24px 80px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  header.page-header {
+    margin-bottom: 28px;
+  }
+  .eyebrow {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.15;
+    margin: 0 0 12px;
+    letter-spacing: -0.015em;
+  }
+  p.lead {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 760px;
+    margin: 0 0 16px;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    color: var(--ink-muted);
+  }
+  .chip.adopted {
+    background: var(--chrome-dark);
+    border-color: var(--chrome-dark);
+    color: #fff;
+  }
+  .chip.adopted .dot-check { color: #f2a83d; }
+
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  nav.toc a {
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    padding: 7px 13px;
+    border-radius: 10px;
+    transition: border-color .15s ease;
+  }
+  nav.toc a:hover { border-color: #b9bec4; }
+  nav.toc a .tag {
+    font-weight: 700;
+    color: var(--ink-faint);
+    margin-right: 5px;
+  }
+
+  .legend {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin: 20px 0 36px;
+    box-shadow: var(--shadow);
+  }
+  .legend h2 {
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+    margin: 0 0 10px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 6px 24px;
+  }
+  .legend-grid div {
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .legend-grid b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Palette section ---------- */
+  section.palette {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 28px 28px 30px;
+    margin-bottom: 32px;
+    scroll-margin-top: 20px;
+  }
+  section.palette.recommended {
+    border: 1.5px solid var(--chrome-dark);
+  }
+  .palette-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .palette-titles h2 {
+    font-size: 21px;
+    margin: 0 0 2px;
+    letter-spacing: -0.01em;
+  }
+  .palette-titles .name-en {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .rationale {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+    max-width: 680px;
+    margin: 10px 0 24px;
+  }
+  .badge-recommended {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--chrome-dark);
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .badge-recommended .ck { color: #f2a83d; }
+
+  h3.block-title {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--ink-faint);
+    margin: 26px 0 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--card-border);
+  }
+  h3.block-title:first-of-type { padding-top: 0; border-top: none; margin-top: 0; }
+
+  /* Swatches + icon row */
+  .identity-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .icon-card {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 18px;
+    background: #fafafb;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+  }
+  .icon-card .icon-box {
+    width: 76px;
+    height: 76px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.18);
+  }
+  .icon-card .icon-caption {
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    text-align: center;
+    line-height: 1.4;
+  }
+  .swatch-cols {
+    flex: 1 1 420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .swatch-col h4 {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+    margin: 0 0 10px;
+  }
+  .swatch-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .swatch {
+    width: 84px;
+  }
+  .swatch .chip-color {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,.08);
+  }
+  .swatch .tok-name {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 5px;
+    line-height: 1.25;
+  }
+  .swatch .tok-hex {
+    font-size: 9px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    color: var(--ink-faint);
+  }
+
+  /* Screens grid */
+  .screens-grid {
+    display: grid;
+    grid-template-columns: 108px repeat(2, 182px);
+    row-gap: 18px;
+    column-gap: 22px;
+    align-items: start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .col-head {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding-bottom: 2px;
+  }
+  .row-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+    padding-top: 14px;
+  }
+  .row-label .sub {
+    display: block;
+    font-size: 10.5px;
+    font-weight: 400;
+    color: var(--ink-faint);
+    margin-top: 2px;
+  }
+
+  .phone {
+    width: 182px;
+    padding: 9px 8px 16px;
+    border-radius: 28px;
+    background: #202124;
+    box-shadow: 0 7px 18px rgba(15,16,18,.22);
+    position: relative;
+  }
+  .phone .phone-notch {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background: #3a3b3f;
+  }
+  .phone-screen {
+    width: 100%;
+    height: 352px;
+    border-radius: 19px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-size: 9px;
+  }
+  .phone-screen.gray { filter: grayscale(1) contrast(1.02); }
+
+  .screen-header {
+    height: 32px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  .hdr-icons { display: flex; gap: 5px; }
+  .hdr-icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7.5px;
+    line-height: 1;
+  }
+
+  .chat-list { flex: 1 1 auto; overflow: hidden; }
+  .chat-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 8px 10px;
+  }
+  .avatar {
+    flex: 0 0 auto;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+  }
+  .chat-row-main { flex: 1 1 auto; min-width: 0; }
+  .chat-row-top { display: flex; justify-content: space-between; gap: 6px; }
+  .chat-name {
+    font-size: 9.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chat-time { font-size: 7.5px; flex: 0 0 auto; padding-top: 1px; }
+  .chat-row-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+    gap: 6px;
+  }
+  .chat-preview {
+    font-size: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chat-badge {
+    flex: 0 0 auto;
+    min-width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    font-size: 7px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+  }
+
+  .conv-body {
+    flex: 1 1 auto;
+    padding: 9px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+  }
+  .bubble-wrap { display: flex; }
+  .bubble-wrap.out { justify-content: flex-end; }
+  .bubble-wrap.in { justify-content: flex-start; }
+  .bubble {
+    max-width: 80%;
+    padding: 6px 8px;
+    font-size: 8.3px;
+    line-height: 1.35;
+  }
+  .bubble.out { border-radius: 12px 12px 3px 12px; }
+  .bubble.in { border-radius: 12px 12px 12px 3px; }
+  .fwd-tag { font-size: 7px; font-style: italic; margin-bottom: 2px; }
+  .bubble-text { white-space: pre-line; }
+  .bubble-meta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3px;
+    margin-top: 3px;
+    font-size: 6.7px;
+  }
+
+  .setup-screen {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    text-align: center;
+  }
+  .setup-screen .brand-mark { line-height: 0; margin-bottom: 8px; }
+  .setup-title { font-size: 13.5px; font-weight: 700; }
+  .setup-subtitle { font-size: 8.5px; margin-top: 2px; margin-bottom: 14px; }
+  .field {
+    width: 100%;
+    padding: 7px 9px;
+    border-radius: 8px;
+    font-size: 8px;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .strength-row { display: flex; gap: 4px; width: 100%; margin-top: 2px; }
+  .seg { flex: 1 1 auto; height: 5px; border-radius: 3px; }
+  .strength-label { font-size: 8px; font-weight: 700; align-self: flex-start; margin-top: 5px; }
+  .strength-tip { font-size: 7.3px; align-self: flex-start; margin-top: 3px; line-height: 1.45; }
+
+  /* WCAG note */
+  .wcag-note {
+    margin-top: 26px;
+    background: #fafafb;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .wcag-note-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .wcag-note-head h4 {
+    font-size: 12.5px;
+    margin: 0;
+  }
+  .wcag-note-head .threshold {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  table.wcag-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  table.wcag-table th {
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--ink-faint);
+    font-weight: 700;
+    padding: 4px 8px 6px;
+    border-bottom: 1px solid var(--card-border);
+  }
+  table.wcag-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #eceded;
+    vertical-align: middle;
+  }
+  table.wcag-table tr:last-child td { border-bottom: none; }
+  .pair-swatch {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.12);
+    margin-right: 5px;
+    vertical-align: -1px;
+  }
+  .ratio { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-weight: 700; }
+  .result.pass { color: var(--pass); font-weight: 700; }
+
+  footer.page-footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--card-border);
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    max-width: 760px;
+  }
+  footer.page-footer code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    background: #e9eaec;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page-header">
+    <p class="eyebrow">NoMessages &middot; Design review &middot; 2026-09-17</p>
+    <h1>Comparativo de paletas de identidade visual</h1>
+    <p class="lead">
+      Este documento apresenta três paletas candidatas para substituir o esquema verde do
+      WhatsApp (<code>#075E54</code>/<code>#128C7E</code>/<code>#25D366</code>/<code>#DCF8C6</code>/<code>#EDEDED</code>),
+      herdado do fato de o NoMessages ter começado como um clone visual direto do app. Cada
+      seção mostra os tokens de cor claro/escuro, o ícone do launcher recolorido e mockups
+      estáticos das três telas mais representativas do app. A <strong>Paleta 1 — "Grafite e
+      Âmbar" — é a recomendação final e já está sendo implementada como novo padrão do app</strong>
+      em paralelo a este documento; as Paletas 2 e 3 ficam registradas como alternativas avaliadas.
+    </p>
+    <div class="meta-row">
+      <span class="chip adopted"><span class="dot-check">&#10003;</span> Paleta 1 adotada como padrão</span>
+      <span class="chip">Data: 17 de setembro de 2026</span>
+      <span class="chip">3 paletas avaliadas</span>
+      <span class="chip">Contraste AA verificado (fórmula WCAG de luminância relativa)</span>
+    </div>
+    <nav class="toc">
+      <a href="#palette-1"><span class="tag">01</span>Grafite e Âmbar</a>
+      <a href="#palette-2"><span class="tag">02</span>Ardósia e Cobre</a>
+      <a href="#palette-3"><span class="tag">03</span>Meia-noite e Menta</a>
+    </nav>
+  </header>
+
+  <div class="legend">
+    <h2>Como ler os tokens</h2>
+    <div class="legend-grid">
+      <div><b>background / onBackground</b> — fundo de tela cheia e o texto padrão sobre ele.</div>
+      <div><b>surface / onSurface</b> — cards, barras de lista e o texto sobre eles.</div>
+      <div><b>surfaceVariant / onSurfaceVariant</b> — bolha de mensagem recebida.</div>
+      <div><b>primary / onPrimary ("chrome")</b> — barra superior e acentos de marca.</div>
+      <div><b>primaryContainer / onPrimaryContainer</b> — bolha de mensagem enviada.</div>
+      <div><b>secondary / onSecondary ("accent")</b> — FAB, selos de não lidas, links.</div>
+      <div><b>tertiary</b> — marca de confirmação de leitura (double-check).</div>
+    </div>
+  </div>
+
+  <div id="palettes"></div>
+
+  <footer class="page-footer">
+    <strong>Decisão:</strong> a <strong>Paleta 1 — "Grafite e Âmbar"</strong> é a paleta escolhida
+    para substituir o verde do WhatsApp e está sendo implementada como novo padrão do app em
+    <code>NoMessagesTheme.kt</code>, <code>colors.xml</code> e no ícone do launcher
+    (<code>ic_launcher_background.xml</code> / <code>ic_launcher_foreground.xml</code>). Consulte
+    <code>docs/development/ui-report.md</code> para a tabela completa de tokens assim que essa
+    implementação for concluída. Este arquivo permanece como registro do comparativo e da
+    justificativa da escolha.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- WCAG contrast (relative luminance, sRGB) ---------- */
+  function hexToRgb(hex) {
+    var h = hex.replace('#', '');
+    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+  }
+  function srgbToLin(c) {
+    c = c / 255;
+    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+  function luminance(hex) {
+    var rgb = hexToRgb(hex).map(srgbToLin);
+    return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+  }
+  function contrast(hexA, hexB) {
+    var la = luminance(hexA), lb = luminance(hexB);
+    var lighter = Math.max(la, lb), darker = Math.min(la, lb);
+    return (lighter + 0.05) / (darker + 0.05);
+  }
+  function rgba(hex, a) {
+    var rgb = hexToRgb(hex);
+    return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + a + ')';
+  }
+
+  /* ---------- Palette data (exact hex values from spec) ---------- */
+  var PALETTES = [
+    {
+      id: 1,
+      slug: 'palette-1',
+      name: 'Grafite e Âmbar',
+      nameEn: 'Graphite and Amber',
+      recommended: true,
+      rationale: 'Grafite neutro e sóbrio no chrome comunica confiabilidade e discrição — o oposto do verde "app de bate-papo" — enquanto o âmbar entra só nos pontos de ação (FAB, selos, links), dando calor humano sem competir com o conteúdo das conversas. É a paleta que melhor separa "chrome de segurança" de "acento de uso".',
+      light: { background:'#FAFBFB', onBackground:'#1B1F22', surface:'#FFFFFF', onSurface:'#1B1F22', surfaceVariant:'#F4F6F7', onSurfaceVariant:'#3A4147', primary:'#23282C', onPrimary:'#FFFFFF', primaryContainer:'#F6DFB8', onPrimaryContainer:'#1B1F22', secondary:'#D98E2B', onSecondary:'#1B1F22', tertiary:'#2E7BB6', outline:'#C7CDD1' },
+      dark:  { background:'#14171A', onBackground:'#ECEFF1', surface:'#1B1F22', onSurface:'#ECEFF1', surfaceVariant:'#2E353A', onSurfaceVariant:'#B7C0C6', primary:'#3A4147', onPrimary:'#FFFFFF', primaryContainer:'#4A3419', onPrimaryContainer:'#F3EDE3', secondary:'#F2A83D', onSecondary:'#14171A', tertiary:'#6FB8E8', outline:'#4A5157' },
+      icon: { bg:'#1B1F22', glyph:'#F3F6F5', slash:'#E8A33B' }
+    },
+    {
+      id: 2,
+      slug: 'palette-2',
+      name: 'Ardósia e Cobre',
+      nameEn: 'Slate and Copper',
+      recommended: false,
+      rationale: 'Ardósia azulada no chrome puxa para um registro mais técnico/"engenharia de segurança"; o cobre como accent é um metal mais industrial que o âmbar, com leitura ligeiramente mais fria e utilitária — uma alternativa sólida, porém menos calorosa que a Paleta 1.',
+      light: { background:'#F7FAFB', onBackground:'#10171F', surface:'#FFFFFF', onSurface:'#10171F', surfaceVariant:'#EEF3F6', onSurfaceVariant:'#3A4E60', primary:'#16212C', onPrimary:'#FFFFFF', primaryContainer:'#F3DCC9', onPrimaryContainer:'#10171F', secondary:'#C97A45', onSecondary:'#10171F', tertiary:'#2F8FA6', outline:'#C3CDD3' },
+      dark:  { background:'#0B1118', onBackground:'#E7ECEF', surface:'#10171F', onSurface:'#E7ECEF', surfaceVariant:'#1E2E3C', onSurfaceVariant:'#A9BAC7', primary:'#2E4457', onPrimary:'#FFFFFF', primaryContainer:'#4A2E1D', onPrimaryContainer:'#F4E9DE', secondary:'#E29A66', onSecondary:'#10171F', tertiary:'#5FC2D6', outline:'#445A6B' },
+      icon: { bg:'#10171F', glyph:'#F3F6F5', slash:'#D97A45' }
+    },
+    {
+      id: 3,
+      slug: 'palette-3',
+      name: 'Meia-noite e Menta',
+      nameEn: 'Midnight and Mint',
+      recommended: false,
+      rationale: 'Índigo quase-preto no chrome dá um tom noturno e discreto, como se o app fosse "feito para escurecer a tela"; a menta como accent é o toque mais contemporâneo/consumer das três opções — atraente, mas se afasta mais do registro sóbrio que o produto busca para transmitir segurança.',
+      light: { background:'#FAFAFE', onBackground:'#0D0F1F', surface:'#FFFFFF', onSurface:'#0D0F1F', surfaceVariant:'#F1F1F8', onSurfaceVariant:'#454C74', primary:'#1C2038', onPrimary:'#FFFFFF', primaryContainer:'#D8F2EE', onPrimaryContainer:'#0D0F1F', secondary:'#16A398', onSecondary:'#0D0F1F', tertiary:'#3B7FC4', outline:'#C7C9DB' },
+      dark:  { background:'#0D0F1F', onBackground:'#E3E4F2', surface:'#14172B', onSurface:'#E3E4F2', surfaceVariant:'#1C2038', onSurfaceVariant:'#B0B4D1', primary:'#2A3050', onPrimary:'#FFFFFF', primaryContainer:'#12332F', onPrimaryContainer:'#E3F7F4', secondary:'#4FD8CB', onSecondary:'#0D0F1F', tertiary:'#6FD3E0', outline:'#454C74' },
+      icon: { bg:'#14172B', glyph:'#F3F6F5', slash:'#1FBFAE' }
+    }
+  ];
+
+  var SWATCH_TOKENS = [
+    ['background', 'onBackground'],
+    ['surface', 'onSurface'],
+    ['surfaceVariant', 'onSurfaceVariant'],
+    ['primary', 'onPrimary'],
+    ['primaryContainer', 'onPrimaryContainer'],
+    ['secondary', 'onSecondary'],
+    ['tertiary', null]
+  ];
+
+  /* ---------- Icon SVG (reproduces ic_launcher_{background,foreground}.xml geometry) ---------- */
+  function iconSvg(bg, glyph, slash, size) {
+    return '' +
+      '<svg viewBox="0 0 108 108" width="' + size + '" height="' + size + '" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ícone do app recolorido">' +
+      '<rect x="0" y="0" width="108" height="108" fill="' + bg + '" />' +
+      '<path d="M38,34 L70,34 A8,8 0 0 1 78,42 L78,66 A8,8 0 0 1 70,74 L38,74 L30,66 L30,42 A8,8 0 0 1 38,34 Z" fill="none" stroke="' + glyph + '" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />' +
+      '<path d="M33,33 L75,75" fill="none" stroke="' + slash + '" stroke-width="6" stroke-linecap="butt" />' +
+      '</svg>';
+  }
+
+  /* ---------- Swatch strip ---------- */
+  function swatchStrip(theme) {
+    return SWATCH_TOKENS.map(function (pair) {
+      var tok = pair[0], onTok = pair[1];
+      var color = theme[tok];
+      var textColor = onTok ? theme[onTok] : '#ffffff';
+      return (
+        '<div class="swatch">' +
+          '<div class="chip-color" style="background:' + color + ';color:' + textColor + '"></div>' +
+          '<div class="tok-name">' + tok + '</div>' +
+          '<div class="tok-hex">' + color + '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  /* ---------- Phone screens ---------- */
+  function screenHeader(theme, title) {
+    return (
+      '<div class="screen-header" style="background:' + theme.primary + ';color:' + theme.onPrimary + '">' +
+        '<span>' + title + '</span>' +
+        '<span class="hdr-icons">' +
+          '<span class="hdr-icon" style="background:' + rgba(theme.onPrimary, 0.18) + '">&#9679;</span>' +
+          '<span class="hdr-icon" style="background:' + rgba(theme.onPrimary, 0.18) + '">&#9881;</span>' +
+          '<span class="hdr-icon" style="background:' + rgba(theme.onPrimary, 0.18) + '">&#128274;</span>' +
+        '</span>' +
+      '</div>'
+    );
+  }
+
+  function chatRow(r, theme) {
+    return (
+      '<div class="chat-row" style="border-bottom:1px solid ' + theme.outline + '">' +
+        '<div class="avatar" style="background:' + r.avatarBg + ';color:' + r.avatarFg + '">' + r.initials + '</div>' +
+        '<div class="chat-row-main">' +
+          '<div class="chat-row-top">' +
+            '<span class="chat-name" style="color:' + theme.onBackground + '">' + r.name + '</span>' +
+            '<span class="chat-time" style="color:' + theme.onSurfaceVariant + '">' + r.time + '</span>' +
+          '</div>' +
+          '<div class="chat-row-bottom">' +
+            '<span class="chat-preview" style="color:' + theme.onSurfaceVariant + '">' + r.preview + '</span>' +
+            (r.unread ? '<span class="chat-badge" style="background:' + theme.secondary + ';color:' + theme.onSecondary + '">' + r.unread + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function chatListScreen(theme) {
+    var rows = [
+      { initials:'MF', avatarBg: theme.primaryContainer, avatarFg: theme.onPrimaryContainer, name:'Marina Falcão', preview:'Combinado, te aviso quando chegar', time:'09:41', unread:0 },
+      { initials:'GT', avatarBg: theme.secondary, avatarFg: theme.onSecondary, name:'Grupo Trilha', preview:'Rafa: bora sábado de manhã?', time:'09:15', unread:3 },
+      { initials:'CB', avatarBg: theme.surfaceVariant, avatarFg: theme.onSurfaceVariant, name:'Caio Bittencourt', preview:'Te mandei o arquivo revisado', time:'ontem', unread:0 },
+      { initials:'PL', avatarBg: theme.primaryContainer, avatarFg: theme.onPrimaryContainer, name:'Paula Lemos', preview:'Perfeito, muito obrigada!', time:'ontem', unread:0 },
+      { initials:'EQ', avatarBg: theme.secondary, avatarFg: theme.onSecondary, name:'Equipe Suporte', preview:'Novo protocolo de verificação', time:'seg', unread:1 }
+    ];
+    return (
+      '<div class="phone-screen" style="background:' + theme.background + '">' +
+        screenHeader(theme, 'NoMessages') +
+        '<div class="chat-list" style="background:' + theme.surface + '">' +
+          rows.map(function (r) { return chatRow(r, theme); }).join('') +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function bubble(b, theme) {
+    var bg = b.dir === 'out' ? theme.primaryContainer : theme.surfaceVariant;
+    var fg = b.dir === 'out' ? theme.onPrimaryContainer : theme.onSurfaceVariant;
+    return (
+      '<div class="bubble-wrap ' + b.dir + '">' +
+        '<div class="bubble ' + b.dir + '" style="background:' + bg + ';color:' + fg + '">' +
+          (b.forwarded ? '<div class="fwd-tag" style="color:' + rgba(fg, 0.68) + '"><em>&#8618; Encaminhada</em></div>' : '') +
+          '<div class="bubble-text">' + b.text + '</div>' +
+          '<div class="bubble-meta">' +
+            '<span style="color:' + rgba(fg, 0.62) + '">' + b.time + '</span>' +
+            (b.read ? '<span style="color:' + theme.tertiary + '">&#10003;&#10003;</span>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function conversationScreen(theme) {
+    var bubbles = [
+      { dir:'in',  text:'Oi! Chegou bem no endereço novo?' , time:'09:12' },
+      { dir:'out', text:'Cheguei sim, obrigado por perguntar!', time:'09:13' },
+      { dir:'in',  text:'Ótimo. Consegue me mandar aquele arquivo depois?', time:'09:15' },
+      { dir:'out', text:'Segue o documento combinado.', time:'09:16', forwarded:true, read:true }
+    ];
+    return (
+      '<div class="phone-screen" style="background:' + theme.background + '">' +
+        screenHeader(theme, 'Marina Falcão') +
+        '<div class="conv-body" style="background:' + theme.background + '">' +
+          bubbles.map(function (b) { return bubble(b, theme); }).join('') +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function setupScreen(theme, icon) {
+    var segFilled = [1, 1, 1, 0];
+    return (
+      '<div class="phone-screen" style="background:' + theme.background + ';color:' + theme.onBackground + '">' +
+        '<div class="setup-screen">' +
+          '<div class="brand-mark">' + iconSvg(icon.bg, icon.glyph, icon.slash, 46) + '</div>' +
+          '<div class="setup-title" style="color:' + theme.onBackground + '">NoMessages</div>' +
+          '<div class="setup-subtitle" style="color:' + theme.onSurfaceVariant + '">Configuração inicial</div>' +
+          '<div class="field" style="background:' + theme.surface + ';border:1px solid ' + theme.outline + ';color:' + theme.onSurfaceVariant + '">Nome</div>' +
+          '<div class="field" style="background:' + theme.surface + ';border:1px solid ' + theme.outline + ';color:' + theme.onSurfaceVariant + '">Senha &nbsp;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</div>' +
+          '<div class="strength-row">' +
+            segFilled.map(function (f) { return '<span class="seg" style="background:' + (f ? theme.secondary : theme.outline) + '"></span>'; }).join('') +
+          '</div>' +
+          '<div class="strength-label" style="color:' + theme.secondary + '">Boa</div>' +
+          '<div class="strength-tip" style="color:' + theme.onSurfaceVariant + '">Adicione mais variedade de caracteres.</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function phoneFrame(screenHtml, grayscale) {
+    return (
+      '<div class="phone">' +
+        '<div class="phone-notch"></div>' +
+        screenHtml.replace('class="phone-screen"', 'class="phone-screen' + (grayscale ? ' gray' : '') + '"') +
+      '</div>'
+    );
+  }
+
+  /* ---------- WCAG note ---------- */
+  function wcagRow(modeLabel, pairLabel, colorA, colorB) {
+    var ratio = contrast(colorA, colorB);
+    var pass = ratio >= 4.5;
+    return (
+      '<tr>' +
+        '<td>' + modeLabel + '</td>' +
+        '<td>' + pairLabel + '</td>' +
+        '<td><span class="pair-swatch" style="background:' + colorA + '"></span>' + colorA + '</td>' +
+        '<td><span class="pair-swatch" style="background:' + colorB + '"></span>' + colorB + '</td>' +
+        '<td class="ratio">' + ratio.toFixed(2) + ':1</td>' +
+        '<td class="result ' + (pass ? 'pass' : 'fail') + '">' + (pass ? 'AA &#10003;' : 'reprovado') + '</td>' +
+      '</tr>'
+    );
+  }
+
+  function wcagNote(p) {
+    var rows = [
+      wcagRow('Claro', 'primary / onPrimary', p.light.primary, p.light.onPrimary),
+      wcagRow('Claro', 'primaryContainer / onPrimaryContainer', p.light.primaryContainer, p.light.onPrimaryContainer),
+      wcagRow('Claro', 'secondary / onSecondary', p.light.secondary, p.light.onSecondary),
+      wcagRow('Escuro', 'primary / onPrimary', p.dark.primary, p.dark.onPrimary),
+      wcagRow('Escuro', 'primaryContainer / onPrimaryContainer', p.dark.primaryContainer, p.dark.onPrimaryContainer),
+      wcagRow('Escuro', 'secondary / onSecondary', p.dark.secondary, p.dark.onSecondary)
+    ];
+    return (
+      '<div class="wcag-note">' +
+        '<div class="wcag-note-head">' +
+          '<h4>Contraste WCAG — pares de texto sobre cor</h4>' +
+          '<span class="threshold">Meta: AA para texto normal &ge; 4.5:1 (fórmula de luminância relativa sRGB, calculada nesta página)</span>' +
+        '</div>' +
+        '<table class="wcag-table">' +
+          '<thead><tr><th>Modo</th><th>Par</th><th>Cor A</th><th>Cor B</th><th>Razão</th><th>Resultado</th></tr></thead>' +
+          '<tbody>' + rows.join('') + '</tbody>' +
+        '</table>' +
+      '</div>'
+    );
+  }
+
+  /* ---------- Assemble one palette section ---------- */
+  function renderPalette(p) {
+    var section = document.createElement('section');
+    section.className = 'palette' + (p.recommended ? ' recommended' : '');
+    section.id = p.slug;
+
+    var head =
+      '<div class="palette-head">' +
+        '<div class="palette-titles">' +
+          '<h2>Paleta ' + p.id + ' — "' + p.name + '" <span class="name-en">(' + p.nameEn + ')</span></h2>' +
+        '</div>' +
+        (p.recommended ? '<span class="badge-recommended"><span class="ck">&#10003;</span> Recomendada — adotada como padrão do app</span>' : '') +
+      '</div>' +
+      '<p class="rationale">' + p.rationale + '</p>';
+
+    var identity =
+      '<h3 class="block-title">Tokens e ícone</h3>' +
+      '<div class="identity-row">' +
+        '<div class="icon-card">' +
+          '<div class="icon-box">' + iconSvg(p.icon.bg, p.icon.glyph, p.icon.slash, 76) + '</div>' +
+          '<div class="icon-caption">Ícone recolorido<br>fundo ' + p.icon.bg + ' &middot; glifo ' + p.icon.glyph + '<br>traço ' + p.icon.slash + '</div>' +
+        '</div>' +
+        '<div class="swatch-cols">' +
+          '<div class="swatch-col"><h4>Modo claro</h4><div class="swatch-strip">' + swatchStrip(p.light) + '</div></div>' +
+          '<div class="swatch-col"><h4>Modo escuro</h4><div class="swatch-strip">' + swatchStrip(p.dark) + '</div></div>' +
+        '</div>' +
+      '</div>';
+
+    var screens =
+      '<h3 class="block-title">Telas — lista de conversas, conversa e configuração inicial</h3>' +
+      '<div class="screens-grid">' +
+        '<div></div><div class="col-head">Claro</div><div class="col-head">Escuro</div>' +
+
+        '<div class="row-label">Lista de<br>conversas</div>' +
+        '<div>' + phoneFrame(chatListScreen(p.light), false) + '</div>' +
+        '<div>' + phoneFrame(chatListScreen(p.dark), false) + '</div>' +
+
+        '<div class="row-label">Conversa</div>' +
+        '<div>' + phoneFrame(conversationScreen(p.light), false) + '</div>' +
+        '<div>' + phoneFrame(conversationScreen(p.dark), false) + '</div>' +
+
+        '<div class="row-label">Conversa<span class="sub">escala de cinza — checa se enviada/recebida seguem distinguíveis sem cor</span></div>' +
+        '<div>' + phoneFrame(conversationScreen(p.light), true) + '</div>' +
+        '<div>' + phoneFrame(conversationScreen(p.dark), true) + '</div>' +
+
+        '<div class="row-label">Configuração<br>inicial</div>' +
+        '<div>' + phoneFrame(setupScreen(p.light, p.icon), false) + '</div>' +
+        '<div>' + phoneFrame(setupScreen(p.dark, p.icon), false) + '</div>' +
+      '</div>';
+
+    section.innerHTML = head + identity + screens + wcagNote(p);
+    return section;
+  }
+
+  var host = document.getElementById('palettes');
+  PALETTES.forEach(function (p) {
+    host.appendChild(renderPalette(p));
+  });
+})();
+</script>
+</body>
+</html>

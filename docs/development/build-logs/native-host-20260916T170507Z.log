@@ -1,0 +1,60 @@
+   Compiling nomessages v0.1.0 (/mnt/e/Vibe Coding/NoMessages/native)
+    Finished `test` profile [unoptimized] target(s) in 10.45s
+     Running unittests src/lib.rs (/home/maxwe/nomessages-target/debug/deps/nomessages-da8e2caea044acf7)
+
+running 17 tests
+test crypto::tests::argon2id_rejects_parameters_outside_the_contract ... ok
+test crypto::tests::allocation_limits_are_rejected_before_work ... ok
+test crypto::tests::keyed_blake2b_256_matches_independent_vector ... ok
+test crypto::tests::ed25519_matches_rfc8032_test_vector_one ... ok
+test crypto::tests::ed25519_rejects_tampering_and_bad_lengths ... ok
+test crypto::tests::sha256_matches_fips_vector ... ok
+test crypto::tests::xchacha_rejects_bad_key_and_truncated_input ... ok
+test crypto::tests::xchacha_round_trip_binds_aad_and_rejects_tampering ... ok
+test crypto::tests::random_and_generated_signing_keys_have_contract_lengths ... ok
+test tor::tests::readiness_states_are_named_and_never_resurrect_a_stopped_transport ... ok
+test tor::tests::readiness_wait_rejects_timeouts_outside_its_own_budget ... ok
+test tor::tests::closing_connection_cancels_an_unflushed_reply ... ok
+test tor::tests::stale_start_cleanup_preserves_new_generation ... ok
+test tor::tests::reply_acknowledges_write_and_rejects_oversized_frame ... ok
+test wire::tests::untrusted_lengths_do_not_allocate ... ok
+test tor::tests::onions_are_stable_distinct_and_only_destinations ... ok
+test crypto::tests::argon2id_uses_exact_memory_iterations_and_parallelism ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+
+     Running tests/kat.rs (/home/maxwe/nomessages-target/debug/deps/kat-51effe0eee6cc578)
+
+running 7 tests
+test rfc8439_chacha20_poly1305_aead_vector ... ok
+test wycheproof_xchacha20_poly1305 ... ok
+test xchacha_draft_a_3_1_aead_vector ... ok
+test wycheproof_chacha20_poly1305 ... ok
+test wycheproof_ed25519_verify ... ok
+test wycheproof_x25519 ... ok
+test embedded_vector_corpus_is_intact ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/mls_roundtrip.rs (/home/maxwe/nomessages-target/debug/deps/mls_roundtrip-31a5a6850f7274b5)
+
+running 3 tests
+test membership_and_snapshot_boundaries_fail_closed ... ok
+test late_application_is_accepted_only_within_two_retained_epochs ... ok
+test three_members_persist_authenticate_remove_and_reject_replay ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests/tor_live.rs (/home/maxwe/nomessages-target/debug/deps/tor_live-6bf6469af30496e4)
+
+running 1 test
+test onion_self_roundtrip_replies_and_stops ... ignored, requires live Tor bootstrap and descriptor publication
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nomessages
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

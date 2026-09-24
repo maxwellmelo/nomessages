@@ -1,0 +1,6 @@
+=== B notifications after lock, BEFORE any knock (2026-09-18T18:21:26Z) ===
+    NotificationRecord(0x0fd65c3e: pkg=dev.mx3.nomessages.debug user=UserHandle{0} id=3 tag=null importance=2 key=0|dev.mx3.nomessages.debug|3|null|10212: Notification(channel=background_service shortcut=null contentView=null vibrate=null sound=null defaults=0 flags=ONGOING_EVENT|ONLY_ALERT_ONCE|NO_CLEAR|FOREGROUND_SERVICE|LOCAL_ONLY color=0x00000000 vis=SECRET))
+      uid=10212 userId=0
+      icon=Icon(typ=RESOURCE pkg=dev.mx3.nomessages.debug id=0x7f060067)
+      flags=ONGOING_EVENT|ONLY_ALERT_ONCE|NO_CLEAR|FOREGROUND_SERVICE|LOCAL_ONLY
+            when=1789755664125/1789755664125

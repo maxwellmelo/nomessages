@@ -1,0 +1,355 @@
+name: Android verification
+
+on:
+  pull_request:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+# Least privilege: the workflow only reads the repository. Artifacts are
+# published through the actions/upload-artifact service API, which does not need
+# any extra token scope, and nothing here writes to the repository or packages.
+permissions:
+  contents: read
+
+concurrency:
+  group: android-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Every job keeps the toolchain inside the workspace so that the same relative
+  # path is both what scripts/build-android.sh uses and what actions/cache stores.
+  NOMESSAGES_TOOLS_DIR: ${{ github.workspace }}/.tools/toolchains
+  # scripts/guard-build.py defaults to an 8 GiB cache budget and a 10 GiB free
+  # floor, which were tuned for a developer laptop. A runner carries the JDK, the
+  # Android SDK, the NDK subset, the Gradle cache and a Cargo target directory at
+  # once, and has a smaller disk, so both numbers are retuned here instead of in
+  # the script.
+  NOMESSAGES_GUARD_ARGS: --max-gib 24 --min-free-gib 6 --headroom-gib 2
+  # CARGO_BUILD_JOBS is deliberately left unset: scripts/build-android.sh then
+  # resolves it to nproc (4 on the standard runner). Set it here to a number to
+  # throttle a job that turns out to be memory bound.
+  CARGO_INCREMENTAL: "0"
+  CARGO_PROFILE_DEV_DEBUG: "0"
+  CARGO_PROFILE_TEST_DEBUG: "0"
+  CARGO_PROFILE_RELEASE_DEBUG: "0"
+  CARGO_TERM_COLOR: never
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # 1. Host toolchain, host JNI library, Rust suite and the JVM core suite.
+  # ---------------------------------------------------------------------------
+  host-core:
+    name: Host JNI and core JVM suite
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      # AGP generates the debug signing keystore under ANDROID_USER_HOME. It is
+      # pinned to .ci-android-user in the workspace, which no actions/cache entry lists
+      # so a private key can never reach a restorable cache. Since
+      # scripts/build-android.sh now honours an inherited value, this assignment
+      # is the primary protection and the "!.tools/toolchains/android-user"
+      # exclusion below is only a redundant second line of defence.
+      ANDROID_USER_HOME: ${{ github.workspace }}/.ci-android-user
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          # The job runs build code taken from the pull request head (build.rs of
+          # every Cargo dependency, the *.gradle.kts files, bootstrap-tools.sh)
+          # with unrestricted network access. Without this, checkout leaves the
+          # GITHUB_TOKEN in .git/config as an http.extraheader. No step here
+          # performs an authenticated Git operation after the checkout.
+          persist-credentials: false
+
+      - name: Reclaim runner disk
+        run: |
+          set -euo pipefail
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /usr/local/.ghcup /opt/ghc || true
+          df -h /
+
+      - name: Restore executable bits
+        run: chmod +x gradlew scripts/*.sh
+
+      - name: Cache Cargo registry and git checkouts
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+          key: cargo-deps-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}
+          restore-keys: |
+            cargo-deps-${{ runner.os }}-
+
+      - name: Cache JDK, Android SDK and Gradle home
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: |
+            .tools/toolchains
+            !.tools/toolchains/tmp
+            !.tools/toolchains/downloads
+            !.tools/toolchains/android-user
+          key: toolchain-base-${{ runner.os }}-${{ hashFiles('scripts/bootstrap-tools.sh', 'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties', 'settings.gradle.kts', 'build.gradle.kts', 'core/build.gradle.kts', 'app/build.gradle.kts') }}
+          restore-keys: |
+            toolchain-base-${{ runner.os }}-
+
+      - name: Cache the host Cargo target directory
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: native/target
+          key: native-target-host-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}-${{ hashFiles('native/Cargo.toml', 'native/src/**', 'native/tests/**') }}
+          restore-keys: |
+            native-target-host-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}-
+            native-target-host-${{ runner.os }}-
+
+      - name: Bootstrap, build the host JNI library and run the Rust and core JVM suites
+        run: bash scripts/build-android.sh --bootstrap --core-only --with-native-host
+
+      - name: Record the host JNI library digest
+        run: |
+          # The default shell is "bash -e", without pipefail: a missing library
+          # would make sha256sum fail while tee still exits 0, so the step would
+          # pass with an empty log. Both guards below make that a failure.
+          set -euo pipefail
+          test -s native/target/debug/libnomessages.so
+          sha256sum native/target/debug/libnomessages.so | tee docs/development/build-logs/host-jni-ci.log
+
+      - name: Upload core reports and build logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: nomessages-host-core-${{ github.run_id }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            core/build/reports/
+            core/build/test-results/
+            docs/development/build-logs/
+
+  # ---------------------------------------------------------------------------
+  # 2. Android cross-builds, one job per ABI, each publishing its own .so.
+  # ---------------------------------------------------------------------------
+  native-android:
+    name: Android native (${{ matrix.abi }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        abi: [arm64-v8a, x86_64]
+    env:
+      # Same reason as in host-core: keep the generated debug keystore out of
+      # every cached path.
+      ANDROID_USER_HOME: ${{ github.workspace }}/.ci-android-user
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Reclaim runner disk
+        run: |
+          set -euo pipefail
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /usr/local/.ghcup /opt/ghc || true
+          df -h /
+
+      - name: Restore executable bits
+        run: chmod +x gradlew scripts/*.sh
+
+      - name: Cache Cargo registry and git checkouts
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: |
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git/db
+          key: cargo-deps-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}
+          restore-keys: |
+            cargo-deps-${{ runner.os }}-
+
+      # Two key namespaces only: "toolchain-base-*" (host-core, no NDK) and
+      # "toolchain-ndk-*" (this matrix and the app job). The NDK-bearing tree
+      # must not overwrite the smaller one, but it is byte-identical across ABIs
+      # and across jobs: scripts/build-android.sh calls bootstrap-tools.sh
+      # --with-ndk without forwarding any ABI, and that script always extracts
+      # the same NDK subset and adds both rustup targets. A per-ABI suffix would
+      # therefore store the same tree three times against the 10 GiB
+      # per-repository cache budget. The base cache stays as a warm fallback.
+      - name: Cache JDK, Android SDK and NDK
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: |
+            .tools/toolchains
+            !.tools/toolchains/tmp
+            !.tools/toolchains/downloads
+            !.tools/toolchains/android-user
+          key: toolchain-ndk-${{ runner.os }}-${{ hashFiles('scripts/bootstrap-tools.sh', 'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties', 'settings.gradle.kts', 'build.gradle.kts', 'core/build.gradle.kts', 'app/build.gradle.kts') }}
+          restore-keys: |
+            toolchain-ndk-${{ runner.os }}-
+            toolchain-base-${{ runner.os }}-
+
+      - name: Cache the Cargo target directory for this ABI
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: native/target
+          key: native-target-${{ matrix.abi }}-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}-${{ hashFiles('native/Cargo.toml', 'native/src/**') }}
+          restore-keys: |
+            native-target-${{ matrix.abi }}-${{ runner.os }}-${{ hashFiles('native/Cargo.lock') }}-
+            native-target-${{ matrix.abi }}-${{ runner.os }}-
+
+      - name: Cross-build libnomessages.so for ${{ matrix.abi }}
+        run: |
+          bash scripts/build-android.sh \
+            --bootstrap \
+            --skip-gradle \
+            --no-native-host \
+            --with-native-android \
+            --abi "${{ matrix.abi }}"
+
+      - name: Record the library digest
+        run: |
+          set -euo pipefail
+          library="app/src/main/jniLibs/${{ matrix.abi }}/libnomessages.so"
+          test -s "$library"
+          sha256sum "$library" | tee "docs/development/build-logs/jni-${{ matrix.abi }}-ci.log"
+
+      - name: Publish libnomessages.so for ${{ matrix.abi }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: nomessages-jni-${{ matrix.abi }}
+          if-no-files-found: error
+          retention-days: 14
+          path: app/src/main/jniLibs/${{ matrix.abi }}/libnomessages.so
+
+      - name: Upload native build logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: nomessages-native-logs-${{ matrix.abi }}-${{ github.run_id }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: docs/development/build-logs/
+
+  # ---------------------------------------------------------------------------
+  # 3. Android application: unit tests, the Python regression, both APKs, lint
+  #    and the packaged-APK inspection. Consumes the .so files from job 2.
+  # ---------------------------------------------------------------------------
+  app:
+    name: App unit tests, APK, lint and APK inspection
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    # Only native-android: this job consumes the nomessages-jni-* artifacts and
+    # nothing that host-core produces. Waiting for host-core as well would put
+    # the longest job of the workflow in series ahead of packaging, which is the
+    # main risk to the "under 90 minutes" criterion of T6.1. A host-core failure
+    # still fails the whole workflow run.
+    needs: [native-android]
+    env:
+      # Same reason as in host-core: keep the generated debug keystore out of
+      # every cached path.
+      ANDROID_USER_HOME: ${{ github.workspace }}/.ci-android-user
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Reclaim runner disk
+        run: |
+          set -euo pipefail
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /usr/local/.ghcup /opt/ghc || true
+          df -h /
+
+      - name: Restore executable bits
+        run: chmod +x gradlew scripts/*.sh
+
+      - name: Download the Android native libraries
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          pattern: nomessages-jni-*
+          path: ${{ runner.temp }}/jni
+
+      - name: Install the native libraries into app/src/main/jniLibs
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          # The ABI list is derived from the artifacts the matrix published, not
+          # repeated here: adding an ABI to the matrix must not require editing
+          # this step. A missing artifact still fails the build, because
+          # verifyNoMessagesNativeLibraries in app/build.gradle.kts refuses
+          # assembly unless every supported ABI has a non-empty library.
+          installed=0
+          for artifact in "$RUNNER_TEMP"/jni/nomessages-jni-*; do
+            abi="${artifact##*/nomessages-jni-}"
+            test -s "$artifact/libnomessages.so"
+            install -D -m 0644 "$artifact/libnomessages.so" "app/src/main/jniLibs/$abi/libnomessages.so"
+            installed=$((installed + 1))
+          done
+          test "$installed" -gt 0
+          sha256sum app/src/main/jniLibs/*/libnomessages.so \
+            | tee docs/development/build-logs/jni-inputs-ci.log
+
+      - name: Cache JDK, Android SDK, NDK and Gradle home
+        uses: actions/cache@0400d5f644dc74513175e3cd8d07132dd4860809 # v4.2.4
+        with:
+          path: |
+            .tools/toolchains
+            !.tools/toolchains/tmp
+            !.tools/toolchains/downloads
+            !.tools/toolchains/android-user
+          # Same key namespace as native-android on purpose: bootstrap-tools.sh
+          # produces the same tree in both jobs, and the key already carries its
+          # hash. Whichever job saves first wins; the other logs "cache already
+          # exists" and moves on.
+          key: toolchain-ndk-${{ runner.os }}-${{ hashFiles('scripts/bootstrap-tools.sh', 'gradle/libs.versions.toml', 'gradle/wrapper/gradle-wrapper.properties', 'gradle.properties', 'settings.gradle.kts', 'build.gradle.kts', 'core/build.gradle.kts', 'app/build.gradle.kts') }}
+          restore-keys: |
+            toolchain-ndk-${{ runner.os }}-
+            toolchain-base-${{ runner.os }}-
+
+      # --app-only runs, in this order: :app:testDebugUnitTest, the Python
+      # regression of the outbox query (task T4.4), :app:assembleDebug,
+      # :app:assembleDebugAndroidTest, :app:lintDebug and scripts/verify-apk.py.
+      # --skip-native reuses the .so files downloaded above; --with-ndk is still
+      # required because AGP strips the packaged libraries with the NDK tools.
+      - name: Unit tests, Python regression, APKs, lint and APK verification
+        run: bash scripts/build-android.sh --bootstrap --app-only --skip-native --with-ndk
+
+      - name: Verify packaged ABIs and manifest policy
+        run: |
+          set -euo pipefail
+          apk=app/build/outputs/apk/debug/app-debug.apk
+          unzip -l "$apk" | tee docs/development/build-logs/apk-contents-ci.log
+          # The expected entry list comes from the libraries actually installed
+          # above, so the matrix stays the single source of truth for the ABI set.
+          expected="$(cd app/src/main/jniLibs && ls -1d */ | sed 's|/$||;s|^|lib/|;s|$|/libnomessages.so|' | sort | tr '\n' ' ')"
+          packaged="$(unzip -Z1 "$apk" | grep -E '^lib/[^/]+/libnomessages\.so$' | sort | tr '\n' ' ')"
+          printf 'expected: %s\npackaged: %s\n' "$expected" "$packaged"
+          test "$packaged" = "$expected"
+          "$NOMESSAGES_TOOLS_DIR/android-sdk/build-tools/36.0.0/aapt2" dump xmltree --file AndroidManifest.xml "$apk" | tee docs/development/build-logs/manifest-ci.log
+          # Anchored on the VALUE, never on the attribute resource id: the old
+          # pattern 'android:allowBackup.*0x0' matched the "0x0" inside
+          # "(0x0101000d)" and therefore passed for "=true" as well. This form
+          # mirrors the regex of scripts/verify-apk.py, which runs earlier in the
+          # same job and is the primary owner of the manifest policy; these two
+          # lines are the packaged-APK backstop for it.
+          grep -Eq 'android:allowBackup\([^)]*\)=(false|\(type 0x12\)0x0)[[:space:]]*$' docs/development/build-logs/manifest-ci.log
+          grep -Eq 'android:usesCleartextTraffic\([^)]*\)=(false|\(type 0x12\)0x0)[[:space:]]*$' docs/development/build-logs/manifest-ci.log
+          sha256sum "$apk" | tee docs/development/build-logs/apk-sha256-ci.log
+
+      - name: Upload APKs and verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: nomessages-android-${{ github.run_id }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/outputs/apk/androidTest/debug/*.apk
+            app/build/reports/
+            app/build/test-results/
+            docs/development/build-logs/

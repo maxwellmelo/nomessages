@@ -1,0 +1,42 @@
+Downloading https://services.gradle.org/distributions/gradle-9.3.1-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 9.3.1!
+
+Here are the highlights of this release:
+ - Test reporting improvements
+ - Error and warning improvements
+ - Build authoring improvements
+
+For more details see https://docs.gradle.org/9.3.1/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: :core:test :core:nativeBridgeProbe :core:groupCapacityProbe
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:compileKotlin
+> Task :core:compileJava NO-SOURCE
+> Task :core:processResources NO-SOURCE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar
+> Task :core:compileTestKotlin
+> Task :core:compileTestJava NO-SOURCE
+> Task :core:processTestResources NO-SOURCE
+> Task :core:testClasses UP-TO-DATE
+
+> Task :core:test
+
+VaultCleanupFaultTest > committedResetSucceedsWhenRetiredBackupCannotBeDeleted SKIPPED
+
+VaultCleanupFaultTest > committedImportSucceedsWhenTemporaryZipCannotBeDeleted SKIPPED
+
+> Task :core:nativeBridgeProbe
+Native JNI probe passed: Kotlin MLS codecs, group transaction, exception mapping, offline Tor identity.
+
+> Task :core:groupCapacityProbe
+PASS: 100 real MLS members; member 100 joined and decrypted. Welcome=36049 bytes; state=119067 bytes.
+Invitations: 4950 proofs; 1369584 bytes each; 99 queued invites + graph + MLS state need at least 137014683 bytes (130.67 MiB), before Signal/SQL overhead.
+
+BUILD SUCCESSFUL in 4m 30s
+6 actionable tasks: 6 executed
+Configuration cache entry stored.

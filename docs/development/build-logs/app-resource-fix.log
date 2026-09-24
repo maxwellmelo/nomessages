@@ -1,0 +1,44 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as configuration cache cannot be reused because the file system entry '../../../tmp/nomessages-tools/android-sdk/platforms/android-37.0/package.xml' has been created.
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:protobufDummy UP-TO-DATE
+> Task :core:extractIncludeProto UP-TO-DATE
+> Task :core:extractProto UP-TO-DATE
+> Task :core:generateProto UP-TO-DATE
+> Task :core:compileKotlin UP-TO-DATE
+> Task :core:compileJava UP-TO-DATE
+> Task :core:processProtoResources UP-TO-DATE
+> Task :core:processResources UP-TO-DATE
+> Task :core:classes UP-TO-DATE
+> Task :core:jar UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:parseDebugLocalResources
+> Task :app:generateDebugRFile
+> Task :app:compileDebugKotlin
+e: file:///root/projects/nomessages/app/src/main/kotlin/dev/mx3/nomessages/storage/ChatDatabase.kt:180:20 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged.
+e: file:///root/projects/nomessages/app/src/main/kotlin/dev/mx3/nomessages/storage/ChatDatabase.kt:183:20 Type argument for reified type parameter 'T' was inferred to the intersection of ['Comparable<*>' & 'Serializable']. Reification of an intersection type results in the common supertype being used. This may lead to subtle issues and an explicit type argument is encouraged.
+e: file:///root/projects/nomessages/app/src/main/kotlin/dev/mx3/nomessages/ui/AttachmentViewer.kt:20:43 Cannot access 'val RowColumnParentData?.weight: Float': it is internal in file.
+
+> Task :app:compileDebugKotlin FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.btapi.BuildToolsApiCompilationWork
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 13m 6s
+14 actionable tasks: 6 executed, 8 up-to-date
+Configuration cache entry stored.

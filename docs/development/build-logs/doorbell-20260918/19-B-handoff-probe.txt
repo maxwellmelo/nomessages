@@ -1,0 +1,20 @@
+=== Handoff probe: same-vault unlock should REUSE the ":tor" child (gate 10(b)(vi)) ===
+Device: emulator-5560 (vault B, password EncaminharTesteGamma03), 2026-09-18 ~18:25-18:27 UTC.
+No knock involved in this probe: plain lock, wait, unlock of the SAME vault.
+
+-- t0 (unlocked) --
+16971 dev.mx3.nomessages.debug
+19421 dev.mx3.nomessages.debug:tor
+-- t1 (locked, minimal doorbell) --
+16971 dev.mx3.nomessages.debug
+19421 dev.mx3.nomessages.debug:tor          <-- child SURVIVES the lock: minimal mode works
+-- t2 (20 s later, still locked) --
+16971 dev.mx3.nomessages.debug
+19421 dev.mx3.nomessages.debug:tor          <-- still the same child
+-- t3 (unlocked again, SAME vault, SAME app process 16971) --
+16971 dev.mx3.nomessages.debug
+19636 dev.mx3.nomessages.debug:tor          <-- NEW PID: child was torn down and rebuilt
+UI after t3: "Reconnecting to Tor - sends are waiting."  (a full re-bootstrap, not an adoption)
+
+Same result was observed in the main doorbell run:
+  18555 before + during lock  ->  19421 after unlocking the same vault.

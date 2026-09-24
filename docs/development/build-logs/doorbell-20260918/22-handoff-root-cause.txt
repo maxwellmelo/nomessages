@@ -1,0 +1,97 @@
+=== T4.19 — causa raiz CONFIRMADA do handoff que não acontece (2026-09-18, UTC) ===
+
+Aparelho: emulator-5560 (cofre B, senha de teste). Sonda isolada: destrancar → "Lock now" →
+esperar → destrancar de novo com a MESMA senha. Nenhuma batida envolvida.
+
+A hipótese anterior (ver session-log.md: "minimal == null" ou "transport.alive == false") está
+DESCARTADA. A instrumentação nova prova o contrário: a adoção é decidida corretamente e o
+transporte preservado está vivo. O que falha é o `START` seguinte, dentro do filho `:tor`.
+
+
+-- Log de decisão do handoff (NoMessagesController + TorService + TorConnection, debug) --
+
+  19:24:21.146  TorService: START: native transport slot before start = STOPPED
+  19:24:54.103  TorService: minimal mode: messaging pump cancelled, START latch cleared
+  19:24:54.148  NoMessagesController: lock: minimal doorbell kept=true (stopped=false dead=false cause=none)
+  19:25:30.419  NoMessagesController: doorbell handoff: reuse=true sameSlot=true hasSlot=true alive=true (stopped=false dead=false cause=none)
+  19:25:30.428  NoMessagesController: transport attempt: reusingDoorbellChild=true
+  19:25:30.433  TorService: START: native transport slot before start = STOPPED
+  19:25:30.436  TorService: messaging start/pump ended: java.lang.IllegalStateException: Tor operation failed
+  19:25:30.475  NoMessagesController: transport attempt: failed (reused=true): java.lang.IllegalStateException: Transporte indisponível
+                  at dev.mx3.nomessages.runtime.TorConnection.reply$lambda$0(TorConnection.kt:54)   <-- ramo TorService.ERROR
+  19:25:35.476  NoMessagesController: transport attempt: reusingDoorbellChild=false                 <-- retry do supervisor, 5 s de backoff
+  19:25:35.xxx  TorConnection: shutdown() requested  (recycleTransport → mata o filho vivo)
+
+Leitura, linha a linha:
+
+  1. `lock: minimal doorbell kept=true`  — o modo mínimo entra, o filho sobrevive, e a
+     `TorConnection` preservada está intacta (`stopped=false dead=false cause=none`).
+  2. `doorbell handoff: reuse=true sameSlot=true alive=true` — `prepareDoorbellHandoff` toma o
+     ramo de ADOÇÃO. O mesmo `VaultSlot`, e o transporte vivo. Nada aqui está errado.
+  3. `reusingDoorbellChild=true` — a primeira tentativa de transporte consome o handoff e chama
+     `TorConnection.restart()` em vez de criar um filho novo. Também correto.
+  4. `START: native transport slot before start = STOPPED` — no filho, a trava de um-START-só do
+     `TorService` foi limpa pelo modo mínimo E o slot nativo `CURRENT` está vazio. Ou seja: as
+     duas travas de nível Kotlin/Rust que poderiam recusar um segundo START estão liberadas.
+  5. **3 ms depois** o START morre e o filho responde `ERROR`. A tentativa adotiva vira FAILED.
+  6. O supervisor espera os 5 s do primeiro degrau do backoff, tenta de novo, já não encontra
+     handoff, cai no caminho normal e `recycleTransport()` → `TorConnection.shutdown()` mata o
+     filho da campainha — que até esse instante estava perfeitamente vivo.
+
+O PID novo que a sonda observa é consequência do passo 6, não de um teardown feito pelo `lock()`.
+
+
+-- O erro real do nativo --
+
+`tor_jni.rs` troca todo erro do Rust por uma string fixa ("Tor operation failed") de propósito, para
+que nenhum endereço/token/texto de erro chegue a uma exceção Java. Para esta investigação foi feito
+um build LOCAL e TEMPORÁRIO com `format!("{failure}: {e:#}")` nesse ponto, a árvore foi revertida em
+seguida (`native/src/tor_jni.rs` está como estava, e `jniLibs/x86_64/libnomessages.so` foi
+recompilado a partir do fonte revertido). Com esse build o filho respondeu:
+
+  19:29:47.751  TorService: messaging start/pump ended:
+                java.lang.IllegalStateException: Tor operation failed: Transport stopped
+                  ^ esta é a bomba de frames ANTIGA morrendo no lock. Esperado.
+
+  19:30:24.393  TorService: START: native transport slot before start = STOPPED
+  19:30:24.393  TorService: messaging start/pump ended:
+                java.lang.IllegalStateException: Tor operation failed:
+                tor: bad API usage (bug): Error while trying to access a key store:
+                Error while trying to access a key store: Key already exists
+                  ^ ESTE é o defeito.
+
+Ou seja: `tor::start` (native/src/tor.rs) chama
+`client.launch_onion_service_with_hsid(config, hsid)` com o nickname fixo "nomessages". Esse
+lançamento INSERE o par de chaves HsId no keystore efêmero do `TorClient`. O `TorHost` (e portanto o
+`TorClient` e o keystore) é COMPARTILHADO e sobrevive ao lock porque a campainha o segura — é
+exatamente isso que torna o reaproveitamento interessante. Só que `tor::stop()` (chamado por
+`doorbell::minimal_mode()`) larga o `RunningOnionService` mas NÃO remove a chave do keystore. No
+segundo `start` dentro do mesmo processo a chave ainda está lá e o Arti recusa na hora com
+"Key already exists".
+
+Não é corrida, não é timing, não é estado de cofre: é determinístico e reproduziu em 100% das
+tentativas (5 de 5 nesta sessão).
+
+
+-- O que isto NÃO é --
+
+  - NÃO é `lock()` derrubando a `TorConnection` preservada. Ela chega viva ao desbloqueio
+    (`alive=true`, `cause=none`), e nenhum `shutdown()` roda entre o lock e a adoção.
+  - NÃO é `minimal`/`kept` nulo. O log mostra o objeto presente e o slot batendo.
+  - NÃO é a trava `started` do `TorService`: o modo mínimo a limpa ("START latch cleared") e o log
+    "START refused: a messaging transport is already started" nunca apareceu.
+  - NÃO é o `ensure!(slot.is_none(), "Transport already started")` de `tor::start`: o slot nativo
+    reporta STOPPED imediatamente antes da chamada.
+
+
+-- Consequência prática --
+
+Todo desbloqueio do mesmo cofre paga: (a) uma tentativa adotiva perdida, (b) 5 s de backoff,
+(c) a morte do filho da campainha, (d) um bootstrap completo do Tor. O critério de aceite da
+campainha continua passando (ver 25-acceptance-after-diagnosis.txt) — o custo é desempenho e
+bateria, que é justamente o que o reaproveitamento existia para evitar.
+
+A correção fica em `native/src/tor.rs` (remover a chave do keystore no `shutdown_transport`, ou
+lançar o serviço de forma idempotente, ou usar nickname por geração). É trabalho no Rust, com
+implicações de keystore e de estado de guarda, e por isso NÃO foi tentada nesta fase: fica
+registrada para decisão, sob T4.19.

@@ -1,0 +1,34 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: C=US, O=Android, CN=Android Debug
+Signer #1 certificate SHA-256 digest: 5f59755f2afcdcdca8b90a50ca2712f3becd64d9b73f1501f21fde1461ac666c
+Signer #1 certificate SHA-1 digest: b446698cd21e62bd26984bf138ba15f601fa55a6
+Signer #1 certificate MD5 digest: e215d219e5a946bb9e318dca38dd3767
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: daffd99cc08a3df423a161d237b580a25a715ad3477cedad097d2fba2679ac77
+Signer #1 public key SHA-1 digest: 1ecbd0e490624ab94ad97968d4fdab8bbeb03edf
+Signer #1 public key MD5 digest: 3a9c034158d752070177b163ab5f4ca0
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libandroidx.graphics.path.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libimage_processing_util_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsignal_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsqlcipher.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsurface_util_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libnomessages.so
+PASS ELF64 / 16 KiB: lib/x86_64/libandroidx.graphics.path.so
+PASS ELF64 / 16 KiB: lib/x86_64/libimage_processing_util_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsignal_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsqlcipher.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsurface_util_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libnomessages.so
+PASS packaged manifest: API 31 / no backup / no cleartext / no font download initializer or auxiliary activities
+PASS compiled cloud-backup and device-transfer exclusions for app storage
+PASS ZIP alignment for 16 KiB pages
+PASS APK signature
+SHA-256 c42b35c48202fdf731eebcddec8d044f1fffcc948632789a20220ff99169a537  app/build/outputs/apk/debug/app-debug.apk

@@ -1,0 +1,20 @@
+[18:15:03] estado em A (tick simples = enfileirado, duplo = entregue): []
+[18:14:32] B com o cofre BLOQUEADO; enviando 3 mensagens de A
+[18:14:36] off-01 enviado: True
+[18:14:42] off-02 enviado: True
+[18:14:48] off-03 enviado: True
+  B> T
+  B> TesteA
+  B> ✓✓
+  B> b2a-20
+  B> 9:12 PM
+  B> NoMessages
+  B> Contacts
+  B> Settings
+[18:15:38] desbloqueando B
+[18:16:05] B desbloqueado em ~27s
+[18:16:36] ticks em A apos desbloqueio: [('off-03', '✓✓'), ('off-02', '✓✓'), ('off-01', '✓✓')]
+[18:16:28] B recebeu off-03 (6s apos desbloqueio)
+[18:16:28] B recebeu off-02 (6s apos desbloqueio)
+[18:16:28] B recebeu off-01 (6s apos desbloqueio)
+[18:16:29] fila offline: 3/3 entregues -> ['off-01', 'off-02', 'off-03']

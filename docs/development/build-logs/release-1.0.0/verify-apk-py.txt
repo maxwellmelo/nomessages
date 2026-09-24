@@ -1,0 +1,35 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=NoMessages, O=NoMessages
+Signer #1 certificate SHA-256 digest: 289dc1885bbea096979474093a64f853504227cc6241a1b384ac15e010393999
+Signer #1 certificate SHA-1 digest: 364b09b3cf406a2b58894602f10fde3a6b6cde4d
+Signer #1 certificate MD5 digest: 37114e3f000c0d7df2dc075a65527c49
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 4096
+Signer #1 public key SHA-256 digest: 90dfb4d29ac8c757b248ce9a62c590b917f4925b9e87d844144bace2c9cf2ea1
+Signer #1 public key SHA-1 digest: f131a3c7740ef4c690edcc5fd83584b8403bf457
+Signer #1 public key MD5 digest: 6ab38c22c9fd3f173cc714dd1e89ab1e
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libandroidx.graphics.path.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libimage_processing_util_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libnomessages.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsignal_jni.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsqlcipher.so
+PASS ELF64 / 16 KiB: lib/arm64-v8a/libsurface_util_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libandroidx.graphics.path.so
+PASS ELF64 / 16 KiB: lib/x86_64/libimage_processing_util_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libnomessages.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsignal_jni.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsqlcipher.so
+PASS ELF64 / 16 KiB: lib/x86_64/libsurface_util_jni.so
+PASS packaged manifest: API 31 / no backup / no cleartext / no font download initializer or auxiliary activities
+PASS compiled cloud-backup and device-transfer exclusions for app storage
+PASS ZIP alignment for 16 KiB pages
+PASS APK signature
+SHA-256 dfadbcb7c500e25cd9e46a5d5c916e5b3534a4cb5edd278687e6a4751343d729  /mnt/e/Vibe Coding/NoMessages/app/build/outputs/apk/release/app-release.apk
+exit=0

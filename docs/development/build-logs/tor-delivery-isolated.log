@@ -1,0 +1,11 @@
+Build storage: 6.12 GiB; free: 25.18 GiB
+    1.4s Starting fresh self-addressed onion service
+Build storage: 6.12 GiB; free: 25.17 GiB
+Build storage: 6.12 GiB; free: 25.17 GiB
+  184.1s Transport stopped; temporary state removed
+Exception in thread "main" java.lang.IllegalStateException: Tor operation failed
+	at dev.mx3.nomessages.core.nativebridge.TorNative.transact(Native Method)
+	at dev.mx3.nomessages.core.nativebridge.TorNative.call(TorNative.kt:60)
+	at dev.mx3.nomessages.core.nativebridge.TorNative.start(TorNative.kt:23)
+	at TorDeliveryProbe.main(TorDeliveryProbe.java:38)
+Build storage: 6.21 GiB; free: 25.08 GiB

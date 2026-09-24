@@ -1,0 +1,3 @@
+   Compiling nomessages v0.1.0 (/root/projects/nomessages/native)
+    Finished `test` profile [unoptimized] target(s) in 8.37s
+  Executable tests/tor_live.rs (/tmp/nomessages-libsodium122-target/debug/deps/tor_live-14132a397b090221)

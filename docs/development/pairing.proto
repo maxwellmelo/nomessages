@@ -1,0 +1,28 @@
+// Reference schema only. Not compiled: the protobuf Gradle plugin and the
+// protobuf-javalite dependency were removed in T4.5 because no generated
+// class was ever consumed. The wire bytes described here are produced and
+// parsed by the hand-written strict subset in
+// core/src/main/kotlin/dev/mx3/nomessages/core/protocol/Wire.kt (object Proto),
+// which rejects duplicate, unknown and noncanonical fields. Keep this file
+// and Wire.kt in sync by hand.
+syntax = "proto3";
+package dev.mx3.nomessages.core.protocol.wire;
+// All fields REQUIRED by application validation. Canonical ascending fields;
+// duplicate/unknown fields rejected. Ed25519 signs deterministic CBOR, not protobuf.
+message PairingOffer {
+  uint64 proto_ver = 1;
+  bytes id_ed25519_pub = 2;
+  bytes id_x25519_pub = 3; // libsignal serialized identity key (33 bytes)
+  bytes eph_x25519_pub = 4; // fresh one-time libsignal prekey (33 bytes)
+  bytes onion_v3 = 5; // ASCII
+  uint64 created_unix = 6;
+  bytes nonce_16 = 7;
+  bytes signal_bundle = 8; // versioned binary PQXDH prekey bundle
+  bytes reply_to_sha256 = 9; // empty offer, offer hash for response
+  bytes sig_ed25519 = 10;
+}
+message PairingConfirmation {
+  bytes evidence_statement = 1;
+  bytes signer_ed25519 = 2;
+  bytes signature = 3;
+}

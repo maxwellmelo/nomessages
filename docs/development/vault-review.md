@@ -1,0 +1,35 @@
+# Independent vault, archive, and encrypted-file review
+
+Source-only review on 2026-09-13 of `core/vault/{VaultManager,VaultHeader,VaultSession,KdfParams,PasswordPolicy,VaultArchive,StrictZip}.kt` and `core/files/EncryptedFiles.kt`, against `SPEC.md` and `docs/development/vault-api.md`. No tests, native vectors, device unlocks, timing measurements, crash injection, or power-loss simulations were executed in this review.
+
+**One concrete transaction-outcome issue was identified; no header, archive or chunk-authentication bypass was found.** This does not establish that the Android storage adapter, lifecycle integration, or native cryptography meets its separate contract.
+
+## Finding
+
+**P2 — Backup cleanup can report reset failure after the new panic password has already committed.** In `VaultManager.resetPanicPassword`, the replacement directory is published by the second `Files.move`, then `deleteTree(backup)` executes outside the rollback block. If a backup file cannot be removed or cleanup is interrupted, that exception escapes even though the new header and decoy are already the live generation. A caller reporting the operation as failed can leave the user believing the old panic password still applies. **Minimum fix:** distinguish the committed reset result from post-commit cleanup failure; report success with cleanup pending (and preserve the remaining backup), rather than implying that credentials were rolled back. Keep uncertain backup cleanup as a separate recovery operation. The implementation owner independently identified this edge during review; a fault injected specifically into backup deletion should verify the returned outcome and the new password.
+
+**Follow-up: addressed in source, execution pending.** Re-read of the later
+`VaultManager.kt:117,170-175` and `VaultArchive.kt:169` confirms cleanup now uses
+`discardCiphertext`, which preserves encrypted leftovers and suppresses cleanup
+exceptions without changing committed success or masking the original failure.
+This also covers staged-ZIP deletion after successful import. The existing
+unresolved-backup refusal remains. This reviewer did not execute the proposed
+deletion-denial fixture or native round-trip tests.
+
+## Reviewed boundaries
+
+- **Real/decoy separation:** each slot receives fresh independent database, file and identity keys. Header creation wraps only the corresponding slot's data keys. The shared header/archive authentication key permits either password to authenticate the container without conveying the other slot's data keys. Unlock and archive import open only the selected storage slot; panic reset requires a live REAL session and recreates the decoy with fresh keys/contents.
+- **Session lifecycle contract:** core does not track or automatically close an earlier session before a new unlock. The Android owner must enforce one live session and close a real session before attempting a panic unlock; this integration boundary was not proven by the core-only review.
+- **Header and password checks:** the fixed header length, magic/version, KDF memory/pass bounds, parallelism and epoch are checked before derivation. `VaultHeader.unlock` computes both KDFs, attempts both AEAD opens and verifies both candidate MACs before selecting exactly one valid slot. A failed KDF causes rejection after both iterations. The authenticated prefix binds the KDF parameters, both salts, epoch and wrap index; the keyed MAC covers both wraps. Password-policy creation enforces normalization, length/alphanumeric restrictions, strength and distinct passwords; reset checks the new password against the real session's wrapping key.
+- **ZIP structure and paths:** `StrictZip` checks the complete classic ZIP layout, exact central-directory/EOCD boundaries, local and central metadata consistency, unique names, methods/flags, local offsets, file attributes and optional descriptors. It rejects ZIP64, multidisk, comments/trailing bytes, Unicode name aliases, traversal names, directory/nonregular entries and inconsistent lengths. Allowed archive paths use bounded canonical ASCII components. Import creates an isolated staging directory and uses `CREATE_NEW` for extracted files.
+- **Streaming size limits and integrity:** compressed input, per-entry output, decompressed total, entry count and manifest size are bounded. Every extraction copy is limited to its validated declared entry size, then exact length is checked, so a lying decompressor cannot write beyond that allowance. The authenticated manifest binds every accepted relative filename, length and SHA-256 digest; all files must appear exactly once. Header/password authentication and selected-database opening occur before publishing the staged directory. Export checks hashes again while streaming to catch source changes after manifest construction.
+- **Encrypted files:** each chunk authenticates the entire versioned file header, file ID, epoch, total plaintext length, chunk index, expected chunk length and terminal flag. The mandatory empty terminal chunk authenticates termination; missing/reordered/substituted chunks, wrong IDs/epochs, modified lengths and extra trailing data are rejected. Chunk allocation is bounded at 64 KiB plus AEAD overhead. Plaintext already emitted before a later error is explicitly an authenticated prefix; callers must discard it unless the complete decrypt returns successfully.
+- **Reset and recovery:** reset closes the selected session before copying encrypted files; the old directory becomes a deterministic sibling backup before publishing the replacement. Ordinary rename failure attempts to restore the backup. Cold-start recovery restores that backup only if the destination is absent and the backup has a structurally valid header plus equal nonempty regular database files. It does not select a backup merely because a password failed, and actual authentication is still required on unlock.
+
+## Existing limitations and required execution
+
+The documented reset protocol deliberately provides neither a power-loss durability guarantee nor an atomic directory exchange: staged copies/renames and parent directories are not fsynced, and a crash after replacement publication may leave both generations. Recovery preserves both when the destination exists; subsequent reset refuses that unresolved backup. This is already explicitly documented in `vault-api.md`, not a newly discovered guarantee or a proof that reset survives sudden power failure.
+
+Equal database file sizes are checked by core, while valid SQLCipher padding/reserves and runtime growth bounds remain responsibilities of the Android storage adapter. Immutable managed-memory intermediates have already documented erasure limits and were not raised as new findings.
+
+Still required: native dual-password round trips and failure injection, malformed-header KDF allocation checks, real ZIP round trips and adversarial size/truncation/path inputs, selected-slot isolation instrumentation, every chunk/terminal truncation boundary, reset rename/crash boundaries, and physical-device storage durability/timing measurements where those properties are claimed.

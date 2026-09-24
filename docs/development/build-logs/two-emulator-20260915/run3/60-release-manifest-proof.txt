@@ -1,0 +1,39 @@
+=== PROVA: nada do hook debug vaza para release (2026-09-15) ===
+
+--- manifestos de release encontrados ---
+app/build/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml
+
+--- grep -r "DebugQrReceiver\|INJECT_QR" app/build/intermediates/merged_manifest/release/ ---
+(vazio) -> OK, exit=1
+
+--- grep -r "DebugQrReceiver\|INJECT_QR" app/build/intermediates/merged_manifest/debug/ ---
+app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml:5
+
+--- linhas do receiver no manifesto de debug ---
+50:             :app:processReleaseManifest followed by a grep for DebugQrReceiver/INJECT_QR over the
+56:                  SENDER holds WRITE_SECURE_SETTINGS. That is a signature|privileged permission
+68:        <receiver
+72:            android:permission="android.permission.WRITE_SECURE_SETTINGS" >
+74:                <action android:name="dev.mx3.nomessages.debug.INJECT_QR" />
+75:                <action android:name="dev.mx3.nomessages.debug.DUMP_QR" />
+77:        </receiver>
+140:        <receiver
+158:        </receiver>
+
+--- grep por WRITE_SECURE_SETTINGS no manifesto de release ---
+app/build/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml:0
+(vazio) OK
+
+=== Quem LE/INVOCA os hooks (prova por grep, ignorando linhas de comentario) ===
+--- src/main: INVOCACOES reais (linhas que nao comecam com * ou //) ---
+(vazio) -> OK: nenhuma linha de codigo em src/main invoca os hooks
+
+--- src/main: usos reais (so registro/limpeza pelos composables) ---
+app/src/main/kotlin/dev/mx3/nomessages/ui/PairingScreen.kt:230:        QrScannerHooks.shownPayload = provider
+app/src/main/kotlin/dev/mx3/nomessages/ui/PairingScreen.kt:231:        onDispose { if (QrScannerHooks.shownPayload === provider) QrScannerHooks.shownPayload = null }
+app/src/main/kotlin/dev/mx3/nomessages/ui/PairingScreen.kt:330:        QrScannerHooks.scanSink = sink
+app/src/main/kotlin/dev/mx3/nomessages/ui/PairingScreen.kt:331:        onDispose { if (QrScannerHooks.scanSink === sink) QrScannerHooks.scanSink = null }
+
+--- src/debug: o unico invocador do projeto ---
+app/src/debug/kotlin/dev/mx3/nomessages/debug/DebugQrReceiver.kt:106:            QrScannerHooks.scanSink?.invoke(payload)
+app/src/debug/kotlin/dev/mx3/nomessages/debug/DebugQrReceiver.kt:120:        val payload = QrScannerHooks.shownPayload?.invoke()

@@ -1,0 +1,19 @@
+
+running 1 test
+
+thread 'onion_self_roundtrip_replies_and_stops' (4115798) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustls-0.23.44/src/crypto/mod.rs:249:14:
+
+Could not automatically determine the process-level CryptoProvider from Rustls crate features.
+Call CryptoProvider::install_default() before this point to select a provider manually, or make sure exactly one of the 'aws-lc-rs' and 'ring' features is enabled.
+See the documentation of the CryptoProvider type for more information.
+            
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test onion_self_roundtrip_replies_and_stops ... FAILED
+
+failures:
+
+failures:
+    onion_self_roundtrip_replies_and_stops
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

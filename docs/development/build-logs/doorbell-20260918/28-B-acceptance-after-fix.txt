@@ -1,0 +1,55 @@
+=== 28 — Cenário de aceite da campainha re-executado DEPOIS da correção (2026-09-18 UTC) ===
+
+Objetivo: garantir que a correção da colisão de chave no keystore (ver 27 e docs/changes/tor.rs.md)
+não quebrou o caminho que já passava em 25-acceptance-after-diagnosis.txt.
+
+Aparelhos: A = emulator-5556 (cofre "Cofre#Real-2026!x"), B = emulator-5560 (cofre
+"EncaminharTesteGamma03"). O aparelho físico RX8MA0GD9ZY NÃO foi tocado.
+
+Ponto de partida: o `:tor` de B é o PID 23229, o MESMO que atravessou as cinco rodadas da sonda de
+PID (27-B-pid-stable-after-fix.txt). Este cenário é, portanto, o sexto ciclo de bloqueio/desbloqueio
+no mesmo processo.
+
+-- Linha do tempo --
+
+  20:15:30Z  B: "Lock now".
+             `ps` → 23120 app, 23229 :tor  — o `:tor` sobrevive (modo mínimo).
+             Notificações de B logo após o bloqueio: só a id=3, canal `background_service`,
+             importance=2, vis=SECRET, ONGOING|ONLY_ALERT_ONCE|NO_CLEAR|FOREGROUND_SERVICE|LOCAL_ONLY.
+             NENHUMA id=2.
+
+  20:16:05Z  A: envia "campainha-pos-correcao" para TesteB. A entrega direta falha (B bloqueado),
+             e a falha dispara a batida.
+
+  20:16:30Z  B: aviso da campainha — 25 s depois do envio (antes da correção: 26 s e 28 s).
+             dumpsys notification --noredact:
+               id=2 tag=null importance=3 key=0|dev.mx3.nomessages.debug|2|null|10212
+               channel=private_messages  vis=SECRET
+               flags=ONLY_ALERT_ONCE|AUTO_CANCEL|LOCAL_ONLY
+               android.title = "NoMessages"
+               android.text  = "You have messages waiting. Open NoMessages."
+               when = 1789762590184  (= 2026-09-18T20:16:30Z)
+             Sem remetente, sem contagem, sem prévia — idêntico ao que 14-B-doorbell-notification.txt
+             registrou antes.
+
+  20:21:01Z  B: destrancado com a MESMA senha do cofre.
+             `ps` → 23120 app, 23229 :tor  — MESMO PID antes e depois do desbloqueio.
+             dumpsys notification: nenhuma NotificationRecord do pacote sobra (id=2 e id=3 sumiram).
+
+  20:21:26Z  B: "Tor connected" e a mensagem "campainha-pos-correcao" já na lista, 8:16 PM,
+             na conversa com TesteA, com o contador "2" no item da conversa.
+             Screenshot: 29-B-acceptance-delivered-after-fix.png
+             A: a bolha de "campainha-pos-correcao" mostra "✓✓" (entregue).
+
+-- O que isto prova --
+
+  1. O critério de aceite da campainha continua passando, ponto a ponto, com os mesmos textos e as
+     mesmas propriedades de notificação.
+  2. O endereço onion de mensagens de B NÃO mudou com a correção. A mensagem foi entregue pelo
+     caminho direto, sobre o onion de mensagens que A guardou no pareamento (07/08-*.png, de antes
+     desta correção existir), depois de SEIS ciclos de bloqueio/desbloqueio dentro do mesmo processo
+     `:tor` — cada um deles removendo e reinserindo a chave HsId no keystore. Se a remoção
+     alterasse a identidade, A estaria falando com um endereço que não existe mais e a entrega
+     nunca teria acontecido.
+  3. O ganho é o pretendido: o desbloqueio deixou de pagar bootstrap, e a campainha deixou de ser
+     morta pela tentativa de adoção.

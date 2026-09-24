@@ -1,0 +1,10 @@
+Identical native cache linked: jni/arm64-v8a/libsignal_jni.so SHA-256 7fb83588a3d96b08b4d9b0250a1650a2e3d33cbe0cf5a7b4eb63ff1a931fb12e
+Identical native cache linked: jni/arm64-v8a/libsignal_jni_testing.so SHA-256 394d99d3bf31ea08341efb125d24587f460514b149260fe4a850c6c9467711de
+Identical native cache linked: jni/armeabi-v7a/libsignal_jni.so SHA-256 e332f0eda90fa71984cf292597d9ed21aac765dc7de9ad38ac128181d39ff32b
+Identical native cache linked: jni/armeabi-v7a/libsignal_jni_testing.so SHA-256 8556ca71b90d40c9eb15005bdc8baeeb8d21bdb9d6bd21c9a5537bd06c62d28d
+Identical native cache linked: jni/x86/libsignal_jni.so SHA-256 8306d3e90df64f4c817f161b191efd901627cffe66c8691c505ed2b58c3db92c
+Identical native cache linked: jni/x86/libsignal_jni_testing.so SHA-256 33ded62a1e1a38d2fa01aef9febc7013eee5347b7017f19c9c734a6352869e11
+Identical native cache linked: jni/x86_64/libsignal_jni.so SHA-256 05b213f2cb6a44487a3cfc590b52f209d56cdbeacf4080b66d92f5b3da4ab910
+Identical native cache linked: jni/x86_64/libsignal_jni_testing.so SHA-256 b6f9e03a5c4a47301f24494d53d62a7346e32da57db0b1e757abb3dc76eab962
+Allocated duplicate bytes removed: 993185792 (947.2 MiB)
+Both original cache paths remain; only identical immutable native inputs share inodes.

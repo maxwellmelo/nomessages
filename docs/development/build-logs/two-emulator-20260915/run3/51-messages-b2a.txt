@@ -1,0 +1,14 @@
+=== B -> A (10 mensagens, rodada limpa b2a-11..20) ===
+b2a-11: 6.0s
+b2a-12: 6.0s
+b2a-13: 9.0s
+b2a-14: 9.0s
+b2a-15: 12.1s
+b2a-16: 8.9s
+b2a-17: 9.0s
+b2a-18: 9.0s
+b2a-19: 11.8s
+b2a-20: 11.9s
+
+emulator-5560 -> emulator-5556: 10/10 entregues
+min=6.0s  max=12.1s  media=9.3s

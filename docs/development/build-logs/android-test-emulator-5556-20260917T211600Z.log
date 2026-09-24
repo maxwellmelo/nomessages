@@ -1,0 +1,970 @@
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.storage.AndroidVaultStorageTest:
+INSTRUMENTATION_STATUS: test=vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage(AndroidVaultStorageTest.kt:344)
+
+INSTRUMENTATION_STATUS: stream=
+Error in vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage(AndroidVaultStorageTest.kt:344)
+
+INSTRUMENTATION_STATUS: test=vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(AndroidVaultStorageTest.kt:386)
+
+INSTRUMENTATION_STATUS: stream=
+Error in emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(AndroidVaultStorageTest.kt:386)
+
+INSTRUMENTATION_STATUS: test=emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration(AndroidVaultStorageTest.kt:507)
+
+INSTRUMENTATION_STATUS: stream=
+Error in doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration(AndroidVaultStorageTest.kt:507)
+
+INSTRUMENTATION_STATUS: test=doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=typedRecordsAndOpaqueStateRoundTripAsCopies
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.typedRecordsAndOpaqueStateRoundTripAsCopies(AndroidVaultStorageTest.kt:179)
+
+INSTRUMENTATION_STATUS: stream=
+Error in typedRecordsAndOpaqueStateRoundTripAsCopies(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.typedRecordsAndOpaqueStateRoundTripAsCopies(AndroidVaultStorageTest.kt:179)
+
+INSTRUMENTATION_STATUS: test=typedRecordsAndOpaqueStateRoundTripAsCopies
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=transactionRollsBackBothReserveAndDataOnFailure
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.transactionRollsBackBothReserveAndDataOnFailure(AndroidVaultStorageTest.kt:419)
+
+INSTRUMENTATION_STATUS: stream=
+Error in transactionRollsBackBothReserveAndDataOnFailure(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.transactionRollsBackBothReserveAndDataOnFailure(AndroidVaultStorageTest.kt:419)
+
+INSTRUMENTATION_STATUS: test=transactionRollsBackBothReserveAndDataOnFailure
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=identicalOutboxPayloadsShareOneEncryptedDatabaseBlob
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(AndroidVaultStorageTest.kt:367)
+
+INSTRUMENTATION_STATUS: stream=
+Error in identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(AndroidVaultStorageTest.kt:367)
+
+INSTRUMENTATION_STATUS: test=identicalOutboxPayloadsShareOneEncryptedDatabaseBlob
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(AndroidVaultStorageTest.kt:269)
+
+INSTRUMENTATION_STATUS: stream=
+Error in vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(AndroidVaultStorageTest.kt:269)
+
+INSTRUMENTATION_STATUS: test=vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(AndroidVaultStorageTest.kt:127)
+
+INSTRUMENTATION_STATUS: stream=
+Error in decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(AndroidVaultStorageTest.kt:127)
+
+INSTRUMENTATION_STATUS: test=decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration(AndroidVaultStorageTest.kt:216)
+
+INSTRUMENTATION_STATUS: stream=
+Error in forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration(AndroidVaultStorageTest.kt:216)
+
+INSTRUMENTATION_STATUS: test=forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=repeatedWritesConsumeReserveWithoutChangingObservableFileSize
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.repeatedWritesConsumeReserveWithoutChangingObservableFileSize(AndroidVaultStorageTest.kt:437)
+
+INSTRUMENTATION_STATUS: stream=
+Error in repeatedWritesConsumeReserveWithoutChangingObservableFileSize(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.repeatedWritesConsumeReserveWithoutChangingObservableFileSize(AndroidVaultStorageTest.kt:437)
+
+INSTRUMENTATION_STATUS: test=repeatedWritesConsumeReserveWithoutChangingObservableFileSize
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=exportGuardRequiresTheSelectedDatabaseToBeClosed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.exportGuardRequiresTheSelectedDatabaseToBeClosed(AndroidVaultStorageTest.kt:461)
+
+INSTRUMENTATION_STATUS: stream=
+Error in exportGuardRequiresTheSelectedDatabaseToBeClosed(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.exportGuardRequiresTheSelectedDatabaseToBeClosed(AndroidVaultStorageTest.kt:461)
+
+INSTRUMENTATION_STATUS: test=exportGuardRequiresTheSelectedDatabaseToBeClosed
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=createProducesFixedEncryptedDatabasesAndBalancedMedia
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createProducesFixedEncryptedDatabasesAndBalancedMedia(AndroidVaultStorageTest.kt:60)
+
+INSTRUMENTATION_STATUS: stream=
+Error in createProducesFixedEncryptedDatabasesAndBalancedMedia(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createProducesFixedEncryptedDatabasesAndBalancedMedia(AndroidVaultStorageTest.kt:60)
+
+INSTRUMENTATION_STATUS: test=createProducesFixedEncryptedDatabasesAndBalancedMedia
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=selectedVaultsAreIsolatedAndCloseClearsActive
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.selectedVaultsAreIsolatedAndCloseClearsActive(AndroidVaultStorageTest.kt:89)
+
+INSTRUMENTATION_STATUS: stream=
+Error in selectedVaultsAreIsolatedAndCloseClearsActive(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.selectedVaultsAreIsolatedAndCloseClearsActive(AndroidVaultStorageTest.kt:89)
+
+INSTRUMENTATION_STATUS: test=selectedVaultsAreIsolatedAndCloseClearsActive
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=syntheticDecoyContactsHavePersistedSignalSessions
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.syntheticDecoyContactsHavePersistedSignalSessions(AndroidVaultStorageTest.kt:161)
+
+INSTRUMENTATION_STATUS: stream=
+Error in syntheticDecoyContactsHavePersistedSignalSessions(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.syntheticDecoyContactsHavePersistedSignalSessions(AndroidVaultStorageTest.kt:161)
+
+INSTRUMENTATION_STATUS: test=syntheticDecoyContactsHavePersistedSignalSessions
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=sqlCipherRejectsAnUnrelatedKey
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.sqlCipherRejectsAnUnrelatedKey(AndroidVaultStorageTest.kt:73)
+
+INSTRUMENTATION_STATUS: stream=
+Error in sqlCipherRejectsAnUnrelatedKey(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.sqlCipherRejectsAnUnrelatedKey(AndroidVaultStorageTest.kt:73)
+
+INSTRUMENTATION_STATUS: test=sqlCipherRejectsAnUnrelatedKey
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.MemoryAudioEncoderTest:
+INSTRUMENTATION_STATUS: test=encodesToPlayableAacOrReturnsNullWithoutThrowing
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=encodesToPlayableAacOrReturnsNullWithoutThrowing
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=emptyPcmNeverThrowsAndYieldsNoOutput
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=emptyPcmNeverThrowsAndYieldsNoOutput
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryPdfDocumentTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.MemoryPdfDocumentTest:
+INSTRUMENTATION_STATUS: test=rendersGeneratedPagesFromAnonymousMemory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryPdfDocumentTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=rendersGeneratedPagesFromAnonymousMemory
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.VideoPreviewDecodeTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.VideoPreviewDecodeTest:
+INSTRUMENTATION_STATUS: test=decodesPosterAndDurationFromSyntheticClipOrSkipsCleanly
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.VideoPreviewDecodeTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=decodesPosterAndDurationFromSyntheticClipOrSkipsCleanly
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 50.378
+There were 15 failures:
+1) vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage(AndroidVaultStorageTest.kt:344)
+2) emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage(AndroidVaultStorageTest.kt:386)
+3) doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration(AndroidVaultStorageTest.kt:507)
+4) typedRecordsAndOpaqueStateRoundTripAsCopies(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.typedRecordsAndOpaqueStateRoundTripAsCopies(AndroidVaultStorageTest.kt:179)
+5) transactionRollsBackBothReserveAndDataOnFailure(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.transactionRollsBackBothReserveAndDataOnFailure(AndroidVaultStorageTest.kt:419)
+6) identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.identicalOutboxPayloadsShareOneEncryptedDatabaseBlob(AndroidVaultStorageTest.kt:367)
+7) vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(AndroidVaultStorageTest.kt:269)
+8) decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer(AndroidVaultStorageTest.kt:127)
+9) forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration(AndroidVaultStorageTest.kt:216)
+10) repeatedWritesConsumeReserveWithoutChangingObservableFileSize(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.repeatedWritesConsumeReserveWithoutChangingObservableFileSize(AndroidVaultStorageTest.kt:437)
+11) exportGuardRequiresTheSelectedDatabaseToBeClosed(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.exportGuardRequiresTheSelectedDatabaseToBeClosed(AndroidVaultStorageTest.kt:461)
+12) createProducesFixedEncryptedDatabasesAndBalancedMedia(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createProducesFixedEncryptedDatabasesAndBalancedMedia(AndroidVaultStorageTest.kt:60)
+13) selectedVaultsAreIsolatedAndCloseClearsActive(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.selectedVaultsAreIsolatedAndCloseClearsActive(AndroidVaultStorageTest.kt:89)
+14) syntheticDecoyContactsHavePersistedSignalSessions(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.syntheticDecoyContactsHavePersistedSignalSessions(AndroidVaultStorageTest.kt:161)
+15) sqlCipherRejectsAnUnrelatedKey(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+java.lang.IllegalArgumentException: Invalid doorbell identity key
+	at dev.mx3.nomessages.core.protocol.Offer$Companion.decode(Pairing.kt:356)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.readOffer(Pairing.kt:269)
+	at dev.mx3.nomessages.core.protocol.PairingEngine.respond(Pairing.kt:141)
+	at dev.mx3.nomessages.storage.DecoyFactory.pair(DecoyFactory.kt:47)
+	at dev.mx3.nomessages.storage.DecoyFactory.create(DecoyFactory.kt:15)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy$lambda$0(AndroidVaultStorage.kt:381)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage$$ExternalSyntheticLambda4.invoke(D8$$SyntheticClass:0)
+	at dev.mx3.nomessages.storage.ChatDatabase.transaction(ChatDatabase.kt:433)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.seedDecoy(AndroidVaultStorage.kt:380)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.initialize(AndroidVaultStorage.kt:57)
+	at dev.mx3.nomessages.core.vault.VaultManager.create(VaultManager.kt:52)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.createVault(AndroidVaultStorageTest.kt:476)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.sqlCipherRejectsAnUnrelatedKey(AndroidVaultStorageTest.kt:73)
+
+FAILURES!!!
+Tests run: 19,  Failures: 15
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,9 @@
+    0.2s Starting fresh self-addressed onion service
+   56.6s Bootstrap complete; waiting for the onion descriptor to be published
+   70.7s Descriptor published after 14.1s
+   70.7s Connecting to own service, attempt 1
+   76.1s Time to first frame after publication: 5.4s
+   76.1s Full-size frame sent; waiting for service receive
+   78.2s Bidirectional transport verified through Kotlin/JNI
+   78.2s Transport stopped; temporary state removed
+   78.2s PASS live self-delivery and reply; device socket accounting and messaging remain separate gates

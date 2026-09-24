@@ -1,0 +1,15 @@
+# NoMessages line-ending policy: LF everywhere except Windows batch files.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.sh text eol=lf
+gradlew text eol=lf
+*.jar binary
+*.apk binary
+*.aab binary
+*.so binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.keystore binary
+*.zip binary

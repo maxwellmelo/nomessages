@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  logo-nomessages.svg — master concept (CHOSEN direction as of 2026-09-16), 1:1 faithful to
+  the Android vector drawables at app/src/main/res/drawable/ic_launcher_{background,foreground}.xml
+  and app/src/main/res/drawable/ic_launcher_monochrome.xml.
+
+  Concept: "silenced bubble" — a sober chat bubble (rounded rect, chamfered notch bottom-left
+  instead of a pointed WhatsApp-style tail) crossed by a diagonal accent-colored slash, reading
+  as "no messages stored/intercepted". Replaces the earlier bubble+padlock concept, which is
+  now kept only as a documented alternative in docs/design/logo-alt-2.svg.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <rect x="0" y="0" width="108" height="108" fill="#1B1F22" />
+  <path d="M38,34 L70,34 A8,8 0 0 1 78,42 L78,66 A8,8 0 0 1 70,74 L38,74 L30,66 L30,42 A8,8 0 0 1 38,34 Z"
+        fill="none" stroke="#F3F6F5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M33,33 L75,75" fill="none" stroke="#E8A33B" stroke-width="6" stroke-linecap="butt" />
+</svg>

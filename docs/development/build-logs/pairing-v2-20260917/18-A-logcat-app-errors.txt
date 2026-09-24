@@ -1,0 +1,30 @@
+09-17 22:02:27.204 18432 18432 D AndroidRuntime: Shutting down VM
+09-17 22:02:38.803 18454 18454 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:02:38.805 18454 18454 I AndroidRuntime: Using default boot image
+09-17 22:02:38.805 18454 18454 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:02:38.868 18454 18454 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:02:39.918 18454 18454 D AndroidRuntime: Shutting down VM
+09-17 22:02:54.941   608   737 I ImeTracker: dev.mx3.nomessages.debug:5dfe37: onRequestHide at ORIGIN_SERVER reason HIDE_DISPLAY_IME_POLICY_HIDE fromUser false
+09-17 22:02:54.941   608   737 I ImeTracker: dev.mx3.nomessages.debug:5dfe37: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-17 22:02:54.941 17160 17160 I ImeTracker: dev.mx3.nomessages.debug:5311e1d7: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+09-17 22:02:54.942   608   737 I ImeTracker: dev.mx3.nomessages.debug:5311e1d7: onFailed at PHASE_SERVER_ACCESSIBILITY
+09-17 22:02:54.947   608   986 D ContentCapturePerUserService: Notified activity assist data for activity: Token{f82cdeb ActivityRecord{70fec65 u0 dev.mx3.nomessages.debug/dev.mx3.nomessages.MainActivity t59}} without a session Id
+09-17 22:02:54.950 17160 17160 I ImeTracker: dev.mx3.nomessages.debug:c8c441db: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+09-17 22:02:54.952   608   737 I ImeTracker: dev.mx3.nomessages.debug:c8c441db: onFailed at PHASE_SERVER_ACCESSIBILITY
+09-17 22:02:57.333   608   737 I ImeTracker: dev.mx3.nomessages.debug:95dd2753: onRequestHide at ORIGIN_SERVER reason HIDE_DISPLAY_IME_POLICY_HIDE fromUser false
+09-17 22:02:57.333   608   737 I ImeTracker: dev.mx3.nomessages.debug:95dd2753: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-17 22:03:01.657 18496 18496 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:03:01.660 18496 18496 I AndroidRuntime: Using default boot image
+09-17 22:03:01.660 18496 18496 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:03:01.726 18496 18496 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:03:02.757 18496 18496 D AndroidRuntime: Shutting down VM
+09-17 22:03:16.194 18519 18519 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:03:16.197 18519 18519 I AndroidRuntime: Using default boot image
+09-17 22:03:16.197 18519 18519 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:03:16.266 18519 18519 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:03:17.302 18519 18519 D AndroidRuntime: Shutting down VM
+09-17 22:03:31.591 18541 18541 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+09-17 22:03:31.594 18541 18541 I AndroidRuntime: Using default boot image
+09-17 22:03:31.594 18541 18541 I AndroidRuntime: Leaving lock profiling enabled
+09-17 22:03:31.667 18541 18541 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+09-17 22:03:32.709 18541 18541 D AndroidRuntime: Shutting down VM

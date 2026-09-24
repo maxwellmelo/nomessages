@@ -1,0 +1,74 @@
+name: Feature request
+description: Propose a new feature or an enhancement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an idea. NoMessages has a deliberately narrow, scoped security model
+        ([SPEC.md](../../blob/main/SPEC.md), [docs/security-model.md](../../blob/main/docs/security-model.md)) —
+        please describe the problem you're solving, not just the implementation, so we can discuss
+        whether and how it fits before any code is written. This is especially important for
+        anything touching cryptography, the pairing protocol, or the vault format.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: What are you trying to do that you currently can't, or find awkward?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any alternative solutions or features you've considered.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - App UI / UX
+        - Pairing / QR
+        - Messaging / transport (Tor)
+        - Groups (MLS)
+        - Vault / encryption
+        - Build / CI / tooling
+        - Documentation
+        - Other
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Security impact
+      options:
+        - label: >
+            This proposal touches cryptography, the pairing protocol, the wire format, or the
+            vault format. (If checked, please say so explicitly in the description — these
+            changes are discussed here before any implementation PR is opened.)
+          required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and didn't find a duplicate.
+          required: true

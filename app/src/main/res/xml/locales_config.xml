@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Supported app locales (Android 13+ per-app language picker). English is the default
+     (values/) and covers every locale not explicitly listed here, including a phone set to a
+     third language: Android falls back to the default resource set, never to a locale absent
+     from this list. Portuguese (values-pt/) covers both pt-BR and pt-PT since no region
+     qualifier is appended.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="pt" />
+</locale-config>

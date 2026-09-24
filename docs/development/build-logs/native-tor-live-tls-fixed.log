@@ -1,0 +1,16 @@
+
+running 1 test
+test onion_self_roundtrip_replies_and_stops has been running for over 60 seconds
+
+thread 'onion_self_roundtrip_replies_and_stops' (4141981) panicked at tests/tor_live.rs:37:17:
+Tor self-connect failed: deadline has elapsed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test onion_self_roundtrip_replies_and_stops ... FAILED
+
+failures:
+
+failures:
+    onion_self_roundtrip_replies_and_stops
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 350.08s
+

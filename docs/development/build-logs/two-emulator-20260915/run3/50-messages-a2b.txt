@@ -1,0 +1,14 @@
+=== A -> B (10 mensagens) ===
+a2b-01: 2.3s
+a2b-02: 4.9s
+a2b-03: 4.8s
+a2b-04: 4.8s
+a2b-05: 4.9s
+a2b-06: 4.8s
+a2b-07: 4.8s
+a2b-08: 4.9s
+a2b-09: 4.7s
+a2b-10: 4.8s
+
+emulator-5556 -> emulator-5560: 10/10 entregues
+min=2.3s  max=4.9s  media=4.6s

@@ -1,0 +1,21 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1 64.1M    1  699k    0     0   857k      0  0:01:16 --:--:--  0:01:16  857k 13 64.1M   13 8687k    0     0  4717k      0  0:00:13  0:00:01  0:00:12 4716k 26 64.1M   26 17.2M    0     0  6264k      0  0:00:10  0:00:02  0:00:08 6264k 42 64.1M   42 27.2M    0     0  7294k      0  0:00:09  0:00:03  0:00:06 7294k 57 64.1M   57 37.0M    0     0  7857k      0  0:00:08  0:00:04  0:00:04 7857k 75 64.1M   75 48.6M    0     0  8572k      0  0:00:07  0:00:05  0:00:02 9831k 90 64.1M   90 58.2M    0     0  8753k      0  0:00:07  0:00:06  0:00:01 10.0M100 64.1M  100 64.1M    0     0  8929k      0  0:00:07  0:00:07 --:--:-- 10.3M
+WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Android CLI will be used instead.
+The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+
+Warning: The --licenses option is no longer needed.
+WARNING: The SDK Manager CLI tool (sdkmanager) is deprecated. Android CLI will be used instead.
+The 'android' binary can also be found in the cmdline-tools directory, and 'android sdk' is the replacement for 'sdkmanager'.
+To learn more about the Android CLI and how to use it, see the documentation (https://d.android.com/tools/agents/android-cli)
+
+https://dl.google.com/android/repository/build-tools_r36_linux.zip...
+Unzipping build-tools/36.0.0......
+NoMessages Android tools ready.
+JAVA_HOME=/tmp/nomessages-tools/jdk-21
+ANDROID_SDK_ROOT=/tmp/nomessages-tools/android-sdk
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)
+javac 21.0.12.1

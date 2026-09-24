@@ -1,0 +1,10 @@
+09-17 23:49:19.714 13095 13095 D AndroidRuntime: Shutting down VM
+09-17 23:49:26.884 13156 13156 D AndroidRuntime: Shutting down VM
+09-17 23:51:17.806 13179 13179 D AndroidRuntime: Shutting down VM
+09-17 23:52:15.023 13235 13235 D AndroidRuntime: Shutting down VM
+09-17 23:52:46.811 13293 13293 D AndroidRuntime: Shutting down VM
+09-17 23:52:52.992 13335 13335 D AndroidRuntime: Shutting down VM
+09-17 23:53:23.315 13366 13366 D AndroidRuntime: Shutting down VM
+09-17 23:53:32.361 13390 13390 D AndroidRuntime: Shutting down VM
+09-17 23:54:05.471 13425 13425 D AndroidRuntime: Shutting down VM
+09-17 23:54:24.682 13463 13463 D AndroidRuntime: Shutting down VM

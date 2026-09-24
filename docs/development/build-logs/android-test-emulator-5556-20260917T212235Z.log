@@ -1,0 +1,326 @@
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.storage.AndroidVaultStorageTest:
+INSTRUMENTATION_STATUS: test=vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=vaultFromANewerAppVersionIsRejectedWithAnExplicitMessage
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=emptyGroupIsVisibleAndItsPreviewUpdatesAfterFirstMessage
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=doorbellColumnsRoundTripAfterTheSchemaVersionThreeMigration
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=typedRecordsAndOpaqueStateRoundTripAsCopies
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=typedRecordsAndOpaqueStateRoundTripAsCopies
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=transactionRollsBackBothReserveAndDataOnFailure
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=transactionRollsBackBothReserveAndDataOnFailure
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=identicalOutboxPayloadsShareOneEncryptedDatabaseBlob
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=identicalOutboxPayloadsShareOneEncryptedDatabaseBlob
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stack=android.database.sqlite.SQLiteException: duplicate column name: doorbell_onion (code 1): , while compiling: ALTER TABLE contacts ADD COLUMN doorbell_onion TEXT NOT NULL DEFAULT ''
+	at net.zetetic.database.sqlcipher.SQLiteConnection.nativePrepareStatement(Native Method)
+	at net.zetetic.database.sqlcipher.SQLiteConnection.acquirePreparedStatement(SQLiteConnection.java:973)
+	at net.zetetic.database.sqlcipher.SQLiteConnection.prepare(SQLiteConnection.java:537)
+	at net.zetetic.database.sqlcipher.SQLiteSession.prepare(SQLiteSession.java:593)
+	at net.zetetic.database.sqlcipher.SQLiteProgram.<init>(SQLiteProgram.java:65)
+	at net.zetetic.database.sqlcipher.SQLiteStatement.<init>(SQLiteStatement.java:38)
+	at net.zetetic.database.sqlcipher.SQLiteDatabase.executeSql(SQLiteDatabase.java:2001)
+	at net.zetetic.database.sqlcipher.SQLiteDatabase.execSQL(SQLiteDatabase.java:1911)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.migrateStep(AndroidVaultStorage.kt:278)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.migrate(AndroidVaultStorage.kt:230)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.open(AndroidVaultStorage.kt:75)
+	at dev.mx3.nomessages.core.vault.VaultManager.unlock(VaultManager.kt:74)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(AndroidVaultStorageTest.kt:293)
+
+INSTRUMENTATION_STATUS: stream=
+Error in vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(dev.mx3.nomessages.storage.AndroidVaultStorageTest):
+android.database.sqlite.SQLiteException: duplicate column name: doorbell_onion (code 1): , while compiling: ALTER TABLE contacts ADD COLUMN doorbell_onion TEXT NOT NULL DEFAULT ''
+	at net.zetetic.database.sqlcipher.SQLiteConnection.nativePrepareStatement(Native Method)
+	at net.zetetic.database.sqlcipher.SQLiteConnection.acquirePreparedStatement(SQLiteConnection.java:973)
+	at net.zetetic.database.sqlcipher.SQLiteConnection.prepare(SQLiteConnection.java:537)
+	at net.zetetic.database.sqlcipher.SQLiteSession.prepare(SQLiteSession.java:593)
+	at net.zetetic.database.sqlcipher.SQLiteProgram.<init>(SQLiteProgram.java:65)
+	at net.zetetic.database.sqlcipher.SQLiteStatement.<init>(SQLiteStatement.java:38)
+	at net.zetetic.database.sqlcipher.SQLiteDatabase.executeSql(SQLiteDatabase.java:2001)
+	at net.zetetic.database.sqlcipher.SQLiteDatabase.execSQL(SQLiteDatabase.java:1911)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.migrateStep(AndroidVaultStorage.kt:278)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.migrate(AndroidVaultStorage.kt:230)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.open(AndroidVaultStorage.kt:75)
+	at dev.mx3.nomessages.core.vault.VaultManager.unlock(VaultManager.kt:74)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(AndroidVaultStorageTest.kt:293)
+
+INSTRUMENTATION_STATUS: test=vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=decoyAttachmentsUseNormalHistoryAndDecryptForTheViewer
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=forwardedFlagRoundTripsAfterTheSchemaVersionTwoMigration
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=repeatedWritesConsumeReserveWithoutChangingObservableFileSize
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=repeatedWritesConsumeReserveWithoutChangingObservableFileSize
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=exportGuardRequiresTheSelectedDatabaseToBeClosed
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=exportGuardRequiresTheSelectedDatabaseToBeClosed
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=createProducesFixedEncryptedDatabasesAndBalancedMedia
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=createProducesFixedEncryptedDatabasesAndBalancedMedia
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=selectedVaultsAreIsolatedAndCloseClearsActive
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=selectedVaultsAreIsolatedAndCloseClearsActive
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=syntheticDecoyContactsHavePersistedSignalSessions
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=syntheticDecoyContactsHavePersistedSignalSessions
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=sqlCipherRejectsAnUnrelatedKey
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.storage.AndroidVaultStorageTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=sqlCipherRejectsAnUnrelatedKey
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.MemoryAudioEncoderTest:
+INSTRUMENTATION_STATUS: test=encodesToPlayableAacOrReturnsNullWithoutThrowing
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=encodesToPlayableAacOrReturnsNullWithoutThrowing
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=emptyPcmNeverThrowsAndYieldsNoOutput
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryAudioEncoderTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=emptyPcmNeverThrowsAndYieldsNoOutput
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryPdfDocumentTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.MemoryPdfDocumentTest:
+INSTRUMENTATION_STATUS: test=rendersGeneratedPagesFromAnonymousMemory
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.MemoryPdfDocumentTest
+INSTRUMENTATION_STATUS: current=18
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=rendersGeneratedPagesFromAnonymousMemory
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.VideoPreviewDecodeTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=
+dev.mx3.nomessages.ui.VideoPreviewDecodeTest:
+INSTRUMENTATION_STATUS: test=decodesPosterAndDurationFromSyntheticClipOrSkipsCleanly
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=dev.mx3.nomessages.ui.VideoPreviewDecodeTest
+INSTRUMENTATION_STATUS: current=19
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=19
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=decodesPosterAndDurationFromSyntheticClipOrSkipsCleanly
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 61.389
+There was 1 failure:
+1) vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(dev.mx3.nomessages.storage.AndroidVaultStorageTest)
+android.database.sqlite.SQLiteException: duplicate column name: doorbell_onion (code 1): , while compiling: ALTER TABLE contacts ADD COLUMN doorbell_onion TEXT NOT NULL DEFAULT ''
+	at net.zetetic.database.sqlcipher.SQLiteConnection.nativePrepareStatement(Native Method)
+	at net.zetetic.database.sqlcipher.SQLiteConnection.acquirePreparedStatement(SQLiteConnection.java:973)
+	at net.zetetic.database.sqlcipher.SQLiteConnection.prepare(SQLiteConnection.java:537)
+	at net.zetetic.database.sqlcipher.SQLiteSession.prepare(SQLiteSession.java:593)
+	at net.zetetic.database.sqlcipher.SQLiteProgram.<init>(SQLiteProgram.java:65)
+	at net.zetetic.database.sqlcipher.SQLiteStatement.<init>(SQLiteStatement.java:38)
+	at net.zetetic.database.sqlcipher.SQLiteDatabase.executeSql(SQLiteDatabase.java:2001)
+	at net.zetetic.database.sqlcipher.SQLiteDatabase.execSQL(SQLiteDatabase.java:1911)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.migrateStep(AndroidVaultStorage.kt:278)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.migrate(AndroidVaultStorage.kt:230)
+	at dev.mx3.nomessages.storage.AndroidVaultStorage.open(AndroidVaultStorage.kt:75)
+	at dev.mx3.nomessages.core.vault.VaultManager.unlock(VaultManager.kt:74)
+	at dev.mx3.nomessages.storage.AndroidVaultStorageTest.vaultCreatedBySchemaVersionOneIsMigratedInPlaceWhenOpened(AndroidVaultStorageTest.kt:293)
+
+FAILURES!!!
+Tests run: 19,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

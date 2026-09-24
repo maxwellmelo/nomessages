@@ -1,0 +1,69 @@
+=== 27 — Sonda do handoff DEPOIS da correção no nativo (emulator-5560, cofre B, 2026-09-18 UTC) ===
+
+Mesma sonda de 23-B-handoff-probe-instrumented.txt, mesmo aparelho, mesmo cofre, mesmo roteiro:
+destrancar → "Lock now" → esperar ~20 s → destrancar de novo com a MESMA senha. Nenhuma batida
+envolvida. Cinco repetições, para exigir da correção a mesma confiança que a falha tinha (5/5).
+
+Build sob teste: `native/src/tor.rs` + `native/src/doorbell.rs` com `forget_onion_key`, e
+`native/Cargo.toml` com a feature `onion-service-cli-extra` do `arti-client` (só a feature; o
+`Cargo.lock` não mudou, `cargo test --locked` aceita). `.so` recompiladas por
+`scripts/build-android.sh --with-native-android` e APK reinstalada nos dois emuladores.
+
+-- Antes (23-…, defeituoso) --
+
+  Rodada 1   21063 -> 21213   PID NOVO
+  Rodada 2   21426 -> 21563   PID NOVO
+  Rodada 3   21748 -> 21886   PID NOVO
+  Rodada 4   22119 -> 22245   PID NOVO
+  Rodada 5   22436 -> 22557   PID NOVO       (5/5 falhas)
+
+-- Depois (este arquivo) --
+
+  Rodada 1 (20:03–20:04)
+    t0 (destrancado, "Tor connected")   23120 app   23229 :tor
+    t1 (bloqueado, campainha)           23120 app   23229 :tor   <-- sobrevive
+    t2 (+20 s, ainda bloqueado)         23120 app   23229 :tor   <-- sobrevive
+    t3 (destrancado, MESMO cofre)       23120 app   23229 :tor   <-- MESMO PID
+  Rodada 2 (20:04–20:05)   23229 -> 23229   MESMO PID
+  Rodada 3 (20:05–20:06)   23229 -> 23229   MESMO PID
+  Rodada 4 (20:07)         23229 -> 23229   MESMO PID
+  Rodada 5 (20:08)         23229 -> 23229   MESMO PID       (5/5 estáveis)
+
+O processo `:tor` 23229 atravessou as cinco rodadas inteiras, e ainda atravessou depois o cenário
+de aceite completo (ver 28-B-acceptance-after-fix.txt): 6 ciclos de bloqueio/desbloqueio no mesmo
+processo, que antes eram 6 bootstraps do zero.
+
+-- Log de decisão, nas rodadas 1-5 --
+
+  D NoMessagesController: lock: minimal doorbell kept=true (stopped=false dead=false cause=none)
+  D NoMessagesController: doorbell handoff: reuse=true sameSlot=true hasSlot=true alive=true (stopped=false dead=false cause=none)
+  D NoMessagesController: transport attempt: reusingDoorbellChild=true
+  D TorService: START: native transport slot before start = STOPPED
+  (e nada mais — o START passa)
+
+Contagem literal no logcat das rodadas 1-3, filtro `NoMessagesController:D`:
+
+  transport attempt: failed            → 0 ocorrências
+  reusingDoorbellChild=false           → 0 ocorrências
+
+Antes da correção, cada rodada produzia exatamente uma de cada: o START morria em ~3 ms com
+"Key already exists", a tentativa adotiva virava FAILED, e a tentativa seguinte do supervisor
+(`reusingDoorbellChild=false` → `recycleTransport` → `TorConnection.shutdown()`) matava o filho vivo
+da campainha. As duas linhas sumiram porque a causa sumiu.
+
+-- Custo do desbloqueio --
+
+  Antes:  ~40–60 s até "Tor connected" (bootstrap completo num filho novo), precedidos de 5 s de
+          backoff do supervisor e da morte do filho da campainha.
+  Depois: 16 s até "Tor connected", medidos nas rodadas 4 e 5 a partir do toque em "Unlock", sem
+          nenhum bootstrap — só o relançamento do onion service de mensagens no cliente Arti que a
+          campainha manteve vivo.
+
+-- Como foi medido --
+
+  adb -s emulator-5560 shell "ps -A | grep nomessages"
+  adb -s emulator-5560 logcat -d -s NoMessagesController:D TorService:D
+  UI dirigida por `uiautomator dump` + `input tap` / `input text`.
+  ADB: C:\Users\maxwe\.nomessages-tools\platform-tools\adb.exe
+
+O aparelho físico RX8MA0GD9ZY estava conectado ao adb e NÃO foi tocado.

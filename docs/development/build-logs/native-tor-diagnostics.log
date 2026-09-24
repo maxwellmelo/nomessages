@@ -1,0 +1,33 @@
+
+running 1 test
+ INFO tor_memquota::mtracker: Memory quota tracking initialised max=4.62 GiB low_water=3.46 GiB
+ INFO tor_dirmgr: Didn't get usable directory from cache.
+ INFO tor_dirmgr::bootstrap: 1: Looking for a consensus. attempt=1
+ INFO tor_dirmgr::bootstrap: 1: Downloading certificates for consensus (we are missing 9/9). attempt=1
+ INFO tor_dirmgr::bootstrap: 1: Downloading microdescriptors (we are missing 9249). attempt=1
+test onion_self_roundtrip_replies_and_stops has been running for over 60 seconds
+ INFO tor_dirmgr: Marked consensus usable.
+ INFO tor_dirmgr: Directory is complete. attempt=1
+ INFO tor_dirmgr: We have enough information to build circuits.
+ INFO tor_hsservice: Using existing identity for service nomessages: […]7yd.onion
+ INFO tor_hsservice: Launching onion service nickname=nomessages
+Tor bootstrap completed; waiting for the synthetic onion service
+ INFO tor_guardmgr::guard: We have found that guard [scrubbed] is usable.
+ INFO tor_guardmgr::guard: We have found that guard [scrubbed] is usable.
+Synthetic self-connect pending: deadline has elapsed
+ WARN tor_guardmgr::guard: Could not connect to guard [scrubbed]. Retrying in 29s 999ms 885us 104ns.
+ WARN tor_guardmgr::guard: Could not connect to guard [scrubbed]. Retrying in 29s 999ms 926us 213ns.
+ INFO tor_hsservice::ipt_mgr: HS service nomessages: terminating due to shutdown signal
+
+thread 'onion_self_roundtrip_replies_and_stops' (4163214) panicked at tests/tor_live.rs:47:17:
+Tor self-connect failed: deadline has elapsed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test onion_self_roundtrip_replies_and_stops ... FAILED
+
+failures:
+
+failures:
+    onion_self_roundtrip_replies_and_stops
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 449.15s
+

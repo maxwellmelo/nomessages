@@ -1,0 +1,7 @@
+﻿=== 14:23:00.999 [nomessages35b/emulator-5560] emulator-5560 nao estava rodando.
+=== 14:23:01.003 [nomessages35b/emulator-5560] Iniciando emulador: C:\Users\maxwe\.nomessages-tools\android-sdk\emulator\emulator.exe -avd nomessages35b -port 5560 -no-audio -no-boot-anim -gpu swiftshader_indirect -camera-back virtualscene -virtualscene-poster wall=C:\Users\maxwe\AppData\Local\Temp\claude\E--Vibe-Coding-NoMessages\85fced12-c63f-4f73-8075-874a57c01c20\scratchpad\blank.png -no-snapshot-save
+=== 14:23:01.034 [nomessages35b/emulator-5560] Processo iniciado (PID 37532). Aguardando boot completo (timeout 180s)...
+=== 14:23:41.960 [nomessages35b/emulator-5560] Boot completo em 40.9238421s. Poster ativo: wall=C:\Users\maxwe\AppData\Local\Temp\claude\E--Vibe-Coding-NoMessages\85fced12-c63f-4f73-8075-874a57c01c20\scratchpad\blank.png
+=== 14:23:41.963 [nomessages35b/emulator-5560] Reproduzindo macro de automacao para enquadrar o poster: C:\Users\maxwe\.nomessages-tools\android-sdk\emulator\resources\macros\Walk_to_image_room
+=== 14:23:50.007 [nomessages35b/emulator-5560] Macro concluida (camera deve estar olhando para o poster 'wall').
+=== 14:23:50.008 [nomessages35b/emulator-5560] PID do emulador: 37532 | logs: E:\Vibe Coding\NoMessages\scripts\emulator-nomessages35b-stdout.log / E:\Vibe Coding\NoMessages\scripts\emulator-nomessages35b-stderr.log
