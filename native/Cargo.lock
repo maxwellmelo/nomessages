@@ -4037,9 +4037,9 @@ checksum = "cf54715a573b99ac80df0bc206da022bcd442c974952c7b9720069370852e21f"
 
 [[package]]
 name = "safelog"
-version = "0.9.0"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c0812d386a9992c036500b92565c41f84c28fd2e48fe853a395c393261b730b"
+checksum = "73ef1d6e273fc8ce5cc1376cf498c06d23b786e80e4a7679a643bb0a838b0029"
 dependencies = [
  "derive_more",
  "educe",
