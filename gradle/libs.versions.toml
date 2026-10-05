@@ -14,7 +14,7 @@ androidx-sqlite = "2.6.2"
 camerax = "1.6.1"
 compose-bom = "2026.06.01"
 material-icons = "1.7.8"
-sqlcipher = "4.19.0"
+sqlcipher = "4.19.1"
 zxing = "3.5.4"
 desugar = "2.1.5"
 
